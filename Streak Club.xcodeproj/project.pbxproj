@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
 		6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF661801A773A7600DA5177 /* KHAppDelegate.m */; };
 		6EF661891A773A7600DA5177 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF661881A773A7600DA5177 /* Images.xcassets */; };
@@ -24,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
+		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
 		6EF661781A773A7600DA5177 /* Streak Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Streak Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF6617C1A773A7600DA5177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF6617D1A773A7600DA5177 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E9875491A7A1C0E0042B3DD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */,
+				6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		6EF6616F1A773A7600DA5177 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +90,7 @@
 				6EF661801A773A7600DA5177 /* KHAppDelegate.m */,
 				6EF661881A773A7600DA5177 /* Images.xcassets */,
 				6EF6617B1A773A7600DA5177 /* Supporting Files */,
+				6E9875491A7A1C0E0042B3DD /* View Controllers */,
 			);
 			path = "Streak Club";
 			sourceTree = "<group>";
@@ -207,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */,
+				6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */,
 				6EF6617E1A773A7600DA5177 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
