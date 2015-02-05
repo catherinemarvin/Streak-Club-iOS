@@ -3,6 +3,9 @@
 
 target 'Streak Club' do
 
+pod 'CocoaLumberjack'
+pod 'AFNetworking'
+
 end
 
 target 'Streak ClubTests' do
