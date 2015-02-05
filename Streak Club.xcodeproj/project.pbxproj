@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E5B3F681A835D9E0091A556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */; };
+		6E5B3F6C1A8361E10091A556 /* KHSplashScreenIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B3F6B1A8361E10091A556 /* KHSplashScreenIntroViewController.m */; };
 		6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
 		6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF661801A773A7600DA5177 /* KHAppDelegate.m */; };
@@ -30,6 +31,8 @@
 		0E6370BDDA3881A0DE2D463F /* Pods-Streak Club.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Streak Club.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Streak Club/Pods-Streak Club.debug.xcconfig"; sourceTree = "<group>"; };
 		640B7F30FF86833A9D5D4AFF /* libPods-Streak Club.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Streak Club.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6E5B3F6A1A8361E10091A556 /* KHSplashScreenIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenIntroViewController.h; sourceTree = "<group>"; };
+		6E5B3F6B1A8361E10091A556 /* KHSplashScreenIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenIntroViewController.m; sourceTree = "<group>"; };
 		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
 		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
 		6EF661781A773A7600DA5177 /* Streak Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Streak Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,10 +69,20 @@
 		6E5B3F661A835B500091A556 /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
+				6E5B3F691A8361C60091A556 /* Pages */,
 				6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */,
 				6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */,
 			);
 			name = "Splash Screen";
+			sourceTree = "<group>";
+		};
+		6E5B3F691A8361C60091A556 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				6E5B3F6A1A8361E10091A556 /* KHSplashScreenIntroViewController.h */,
+				6E5B3F6B1A8361E10091A556 /* KHSplashScreenIntroViewController.m */,
+			);
+			name = Pages;
 			sourceTree = "<group>";
 		};
 		6E9875491A7A1C0E0042B3DD /* Modules */ = {
@@ -294,6 +307,7 @@
 				6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */,
 				6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */,
 				6EF6617E1A773A7600DA5177 /* main.m in Sources */,
+				6E5B3F6C1A8361E10091A556 /* KHSplashScreenIntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

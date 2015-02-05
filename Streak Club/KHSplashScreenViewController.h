@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KHSplashScreenViewController : UIViewController
+@interface KHSplashScreenViewController : UIPageViewController
 
 @end
