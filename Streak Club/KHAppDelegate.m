@@ -7,6 +7,7 @@
 //
 
 #import "KHAppDelegate.h"
+#import "KHSplashScreenViewController.h"
 
 @interface KHAppDelegate ()
 
@@ -18,8 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    KHSplashScreenViewController *splashScreen = [[KHSplashScreenViewController alloc] init];
+    
+    self.window.rootViewController = splashScreen;
     [self.window makeKeyAndVisible];
-    // Override point for customization after application launch.
     return YES;
 }
 
