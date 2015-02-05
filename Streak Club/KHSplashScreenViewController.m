@@ -8,7 +8,10 @@
 
 #import "KHSplashScreenViewController.h"
 
-@interface KHSplashScreenViewController ()
+@interface KHSplashScreenViewController ()<UIScrollViewDelegate>
+
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIPageControl *pageControl;
 
 @end
 
@@ -21,9 +24,11 @@
 }
 
 - (void)loadView {
-    UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-    view.backgroundColor = [UIColor greenColor];
-    self.view = view;
+    self.scrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
+    self.scrollView.backgroundColor = [UIColor blueColor];
+    self.scrollView.pagingEnabled = YES;
+    
+    self.view = self.scrollView;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
