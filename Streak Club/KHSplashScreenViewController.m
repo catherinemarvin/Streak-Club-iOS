@@ -15,6 +15,7 @@
 #import "KHSplashScreenInfo.h"
 
 // Views
+#import "KHSplashScreenContentViewController.h"
 #import <Masonry.h>
 
 @interface KHSplashScreenViewController ()<UIScrollViewDelegate>
@@ -63,6 +64,20 @@
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.view);
     }];
+}
+
+#pragma mark - Helper
+
+- (UIViewController *)_viewControllerAtIndex:(NSUInteger)index {
+    if (index >= [self.dataSource count]) {
+        return nil;
+    }
+    
+    KHSplashScreenInfo *info = [self.dataSource viewInfoForIndex:index];
+    
+    KHSplashScreenContentViewController *vc = [[KHSplashScreenContentViewController alloc] init];
+    [vc setImagePath:info.imagePath];
+    return vc;
 }
 
 @end

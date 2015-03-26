@@ -17,7 +17,7 @@
 
 @implementation KHSplashScreenDataSource
 
-- (KHSplashScreenViewInfo *)viewInfoForIndex:(NSUInteger)index {
+- (KHSplashScreenInfo *)viewInfoForIndex:(NSUInteger)index {
     if (index > self.splashScreens.count) {
         return nil;
     }

@@ -12,7 +12,7 @@
 
 @interface KHSplashScreenDataSource : NSObject
 
-- (KHSplashScreenViewInfo *)viewInfoForIndex:(NSUInteger)index;
+- (KHSplashScreenInfo *)viewInfoForIndex:(NSUInteger)index;
 
 /// @brief Returns the number of splash screens there are.
 - (NSUInteger)count;
