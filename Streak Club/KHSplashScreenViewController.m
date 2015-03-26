@@ -15,6 +15,7 @@
 #import "KHSplashScreenInfo.h"
 
 // Views
+#import <Masonry.h>
 
 @interface KHSplashScreenViewController ()<UIScrollViewDelegate>
 
@@ -58,6 +59,10 @@
     self.pageControl.numberOfPages = [self.dataSource count];
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl.currentPageIndicatorTintColor = [UIColor darkGrayColor];
+    
+    [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
 }
 
 @end
