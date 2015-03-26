@@ -5,6 +5,7 @@ target 'Streak Club' do
 
 pod 'CocoaLumberjack'
 pod 'AFNetworking'
+pod 'Masonry'
 
 end
 
