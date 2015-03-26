@@ -14,4 +14,7 @@
 
 - (KHSplashScreenViewInfo *)viewInfoForIndex:(NSUInteger)index;
 
+/// @brief Returns the number of splash screens there are.
+- (NSUInteger)count;
+
 @end
