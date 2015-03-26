@@ -14,7 +14,9 @@
 // Models
 #import "KHSplashScreenInfo.h"
 
-@interface KHSplashScreenViewController ()
+// Views
+
+@interface KHSplashScreenViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) KHSplashScreenDataSource *dataSource;
 
@@ -37,6 +39,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _setupScrollView];
+    [self _setupPageControl];
+}
+
+- (void)_setupScrollView {
+    [self.view addSubview:self.scrollView];
+    self.scrollView.frame = self.view.bounds;
+    CGSize pageScrollViewSize = self.scrollView.frame.size;
+    self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * [self.dataSource count], pageScrollViewSize.height);
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.delegate = self;
+}
+
+- (void)_setupPageControl {
+    [self.view addSubview:self.pageControl];
+    self.pageControl.currentPage = 0;
+    self.pageControl.numberOfPages = [self.dataSource count];
+    self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor darkGrayColor];
 }
 
 @end
