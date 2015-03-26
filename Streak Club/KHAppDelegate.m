@@ -20,7 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
     
-    KHSplashScreenViewController *splashScreen = [[KHSplashScreenViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    KHSplashScreenViewController *splashScreen = [[KHSplashScreenViewController alloc] init];
     
     self.window.rootViewController = splashScreen;
     return YES;
