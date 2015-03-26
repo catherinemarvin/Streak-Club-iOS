@@ -10,4 +10,6 @@
 
 @interface KHSplashScreenContentViewController : UIViewController
 
+- (void)setImagePath:(NSString *)imagePath;
+
 @end
