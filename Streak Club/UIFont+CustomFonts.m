@@ -8,6 +8,18 @@
 
 #import "UIFont+CustomFonts.h"
 
+static NSString *const KHkRegularFont = @"Dosis-Regular";
+static NSString *const KhkBoldFont = @"Dosis-Bold";
+
 @implementation UIFont (CustomFonts)
+
++ (UIFont *)regularWithSize:(CGFloat)size {
+    return [UIFont fontWithName:KHkRegularFont size:size];
+}
+
++ (UIFont *)boldWithSize:(CGFloat)size {
+    return [UIFont fontWithName:KhkBoldFont size:size];
+}
+
 
 @end

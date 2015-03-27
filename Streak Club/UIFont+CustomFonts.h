@@ -10,4 +10,7 @@
 
 @interface UIFont (CustomFonts)
 
++ (UIFont *)regularWithSize:(CGFloat)size;
++ (UIFont *)boldWithSize:(CGFloat)size;
+
 @end
