@@ -13,6 +13,7 @@
 @interface KHSplashScreenContentViewController ()
 
 @property (nonatomic, strong) UIImageView *backgroundImage;
+@property (nonatomic, strong) UILabel *descriptionLabel;
 
 @end
 
@@ -28,6 +29,16 @@
         make.edges.equalTo(self.view);
     }];
     
+    self.descriptionLabel = [[UILabel alloc] init];
+    [self.backgroundImage addSubview:self.descriptionLabel];
+    
+    [self.descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.backgroundImage);
+    }];
+}
+
+- (void)setDescriptionText:(NSString *)text {
+    self.descriptionLabel.text = text;
 }
 
 - (void)setImagePath:(NSString *)imagePath {
