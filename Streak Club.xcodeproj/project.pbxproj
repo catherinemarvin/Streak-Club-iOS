@@ -12,6 +12,13 @@
 		6E0BE4A81AC3D74800BF4B45 /* KHSplashScreenInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4A71AC3D74800BF4B45 /* KHSplashScreenInfo.m */; };
 		6E0BE4B31AC5F11000BF4B45 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4B21AC5F11000BF4B45 /* UIColor+HexString.m */; };
 		6E0BE4B61AC5FAF200BF4B45 /* UIFont+CustomFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4B51AC5FAF200BF4B45 /* UIFont+CustomFonts.m */; };
+		6E0BE4BF1AC5FB5500BF4B45 /* Dosis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4B81AC5FB5500BF4B45 /* Dosis-Bold.otf */; };
+		6E0BE4C01AC5FB5500BF4B45 /* Dosis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4B91AC5FB5500BF4B45 /* Dosis-ExtraBold.otf */; };
+		6E0BE4C11AC5FB5500BF4B45 /* Dosis-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4BA1AC5FB5500BF4B45 /* Dosis-ExtraLight.otf */; };
+		6E0BE4C21AC5FB5500BF4B45 /* Dosis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4BB1AC5FB5500BF4B45 /* Dosis-Light.otf */; };
+		6E0BE4C31AC5FB5500BF4B45 /* Dosis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4BC1AC5FB5500BF4B45 /* Dosis-Medium.otf */; };
+		6E0BE4C41AC5FB5500BF4B45 /* Dosis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4BD1AC5FB5500BF4B45 /* Dosis-Regular.otf */; };
+		6E0BE4C51AC5FB5500BF4B45 /* Dosis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4BE1AC5FB5500BF4B45 /* Dosis-SemiBold.otf */; };
 		6E5B3F681A835D9E0091A556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */; };
 		6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
@@ -44,6 +51,13 @@
 		6E0BE4B21AC5F11000BF4B45 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		6E0BE4B41AC5FAF200BF4B45 /* UIFont+CustomFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CustomFonts.h"; sourceTree = "<group>"; };
 		6E0BE4B51AC5FAF200BF4B45 /* UIFont+CustomFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CustomFonts.m"; sourceTree = "<group>"; };
+		6E0BE4B81AC5FB5500BF4B45 /* Dosis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Bold.otf"; sourceTree = "<group>"; };
+		6E0BE4B91AC5FB5500BF4B45 /* Dosis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraBold.otf"; sourceTree = "<group>"; };
+		6E0BE4BA1AC5FB5500BF4B45 /* Dosis-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraLight.otf"; sourceTree = "<group>"; };
+		6E0BE4BB1AC5FB5500BF4B45 /* Dosis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Light.otf"; sourceTree = "<group>"; };
+		6E0BE4BC1AC5FB5500BF4B45 /* Dosis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Medium.otf"; sourceTree = "<group>"; };
+		6E0BE4BD1AC5FB5500BF4B45 /* Dosis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Regular.otf"; sourceTree = "<group>"; };
+		6E0BE4BE1AC5FB5500BF4B45 /* Dosis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.otf"; sourceTree = "<group>"; };
 		6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
 		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
@@ -111,6 +125,20 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		6E0BE4B71AC5FB4700BF4B45 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6E0BE4B81AC5FB5500BF4B45 /* Dosis-Bold.otf */,
+				6E0BE4B91AC5FB5500BF4B45 /* Dosis-ExtraBold.otf */,
+				6E0BE4BA1AC5FB5500BF4B45 /* Dosis-ExtraLight.otf */,
+				6E0BE4BB1AC5FB5500BF4B45 /* Dosis-Light.otf */,
+				6E0BE4BC1AC5FB5500BF4B45 /* Dosis-Medium.otf */,
+				6E0BE4BD1AC5FB5500BF4B45 /* Dosis-Regular.otf */,
+				6E0BE4BE1AC5FB5500BF4B45 /* Dosis-SemiBold.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		6E5B3F661A835B500091A556 /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,11 +181,12 @@
 			isa = PBXGroup;
 			children = (
 				6E0BE4B01AC5F0FD00BF4B45 /* Categories */,
+				6E0BE4B71AC5FB4700BF4B45 /* Fonts */,
+				6EF661881A773A7600DA5177 /* Images.xcassets */,
 				6EF6617F1A773A7600DA5177 /* KHAppDelegate.h */,
 				6EF661801A773A7600DA5177 /* KHAppDelegate.m */,
-				6EF661881A773A7600DA5177 /* Images.xcassets */,
-				6EF6617B1A773A7600DA5177 /* Supporting Files */,
 				6E9875491A7A1C0E0042B3DD /* Modules */,
+				6EF6617B1A773A7600DA5177 /* Supporting Files */,
 			);
 			path = "Streak Club";
 			sourceTree = "<group>";
@@ -288,8 +317,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E0BE4C11AC5FB5500BF4B45 /* Dosis-ExtraLight.otf in Resources */,
+				6E0BE4C41AC5FB5500BF4B45 /* Dosis-Regular.otf in Resources */,
+				6E0BE4C21AC5FB5500BF4B45 /* Dosis-Light.otf in Resources */,
 				6EF661891A773A7600DA5177 /* Images.xcassets in Resources */,
+				6E0BE4C31AC5FB5500BF4B45 /* Dosis-Medium.otf in Resources */,
 				6E5B3F681A835D9E0091A556 /* Default-568h@2x.png in Resources */,
+				6E0BE4C01AC5FB5500BF4B45 /* Dosis-ExtraBold.otf in Resources */,
+				6E0BE4C51AC5FB5500BF4B45 /* Dosis-SemiBold.otf in Resources */,
+				6E0BE4BF1AC5FB5500BF4B45 /* Dosis-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
