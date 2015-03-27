@@ -43,6 +43,7 @@
     [super viewDidLoad];
     [self _setupScrollView];
     [self _setupPageControl];
+    [self _setupIntroScreens];
 }
 
 - (void)_setupScrollView {
@@ -66,8 +67,23 @@
     }];
 }
 
+- (void)_setupIntroScreens {
+    for (int i = 0; i < [self.dataSource count]; i++) {
+        UIViewController *vc = [self _viewControllerAtIndex:i];
+        [self addChildViewController:vc];
+        CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
+        CGFloat pageHeight = CGRectGetHeight(self.scrollView.frame);
+        CGFloat xOffset = pageWidth * i;
+        CGRect frame = CGRectMake(xOffset, 0, pageWidth, pageHeight);
+        vc.view.frame = frame;
+        [self.scrollView addSubview:vc.view];
+        [vc didMoveToParentViewController:self];
+    }
+}
+
 #pragma mark - Helper
 
+/// @brief Creates and returns a new VC that corresponds to the view controller at position index in the carousel.
 - (UIViewController *)_viewControllerAtIndex:(NSUInteger)index {
     if (index >= [self.dataSource count]) {
         return nil;
@@ -77,7 +93,17 @@
     
     KHSplashScreenContentViewController *vc = [[KHSplashScreenContentViewController alloc] init];
     [vc setImagePath:info.imagePath];
+    [vc setDescriptionText:info.descriptionText];
     return vc;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
+    float fractionalPage = self.scrollView.contentOffset.x / pageWidth;
+    NSInteger page = lround(fractionalPage);
+    self.pageControl.currentPage = page;
 }
 
 @end
