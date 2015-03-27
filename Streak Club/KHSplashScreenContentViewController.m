@@ -8,6 +8,7 @@
 
 #import "KHSplashScreenContentViewController.h"
 
+#import "UIColor+HexString.h"
 #import <Masonry.h>
 
 @interface KHSplashScreenContentViewController ()
@@ -21,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor colorWithHexString:@"34A0F2"];
     
     self.backgroundImage = [[UIImageView alloc] init];
     [self.view addSubview:self.backgroundImage];
