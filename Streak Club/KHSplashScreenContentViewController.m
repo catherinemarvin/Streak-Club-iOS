@@ -13,30 +13,36 @@
 
 @interface KHSplashScreenContentViewController ()
 
-@property (nonatomic, strong) UIImageView *backgroundImage;
+@property (nonatomic, strong) UIImageView *image;
 @property (nonatomic, strong) UILabel *descriptionLabel;
 
 @end
 
 @implementation KHSplashScreenContentViewController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _image = [[UIImageView alloc] init];
+        _descriptionLabel = [[UILabel alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor colorWithHexString:@"34A0F2"];
     
-    self.backgroundImage = [[UIImageView alloc] init];
-    [self.view addSubview:self.backgroundImage];
+    [self.view addSubview:self.image];
     
-    [self.backgroundImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+    [self.image mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view.mas_centerY);
     }];
     
-    self.descriptionLabel = [[UILabel alloc] init];
-    [self.backgroundImage addSubview:self.descriptionLabel];
+    [self.view addSubview:self.descriptionLabel];
     
     [self.descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.backgroundImage);
+        make.top.equalTo(self.view.mas_centerY);
     }];
 }
 
@@ -45,7 +51,7 @@
 }
 
 - (void)setImagePath:(NSString *)imagePath {
-    self.backgroundImage.image = [UIImage imageNamed:imagePath];
+    self.image.image = [UIImage imageNamed:imagePath];
 }
 
 @end
