@@ -20,6 +20,7 @@
 		6E0BE4C41AC5FB5500BF4B45 /* Dosis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4BD1AC5FB5500BF4B45 /* Dosis-Regular.otf */; };
 		6E0BE4C51AC5FB5500BF4B45 /* Dosis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4BE1AC5FB5500BF4B45 /* Dosis-SemiBold.otf */; };
 		6E0BE4C81AC5FFD600BF4B45 /* KHSplashScreenContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4C71AC5FFD600BF4B45 /* KHSplashScreenContentView.m */; };
+		6E0BE4CE1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4CD1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m */; };
 		6E5B3F681A835D9E0091A556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */; };
 		6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
@@ -61,6 +62,8 @@
 		6E0BE4BE1AC5FB5500BF4B45 /* Dosis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.otf"; sourceTree = "<group>"; };
 		6E0BE4C61AC5FFD600BF4B45 /* KHSplashScreenContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenContentView.h; sourceTree = "<group>"; };
 		6E0BE4C71AC5FFD600BF4B45 /* KHSplashScreenContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenContentView.m; sourceTree = "<group>"; };
+		6E0BE4CC1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignupOrLoginViewController.h; sourceTree = "<group>"; };
+		6E0BE4CD1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignupOrLoginViewController.m; sourceTree = "<group>"; };
 		6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
 		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
@@ -109,12 +112,9 @@
 		6E0BE4A91AC3D74D00BF4B45 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */,
-				6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */,
-				6E0BE49F1AC3D52C00BF4B45 /* KHSplashScreenContentViewController.h */,
-				6E0BE4A01AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m */,
-				6E0BE4C61AC5FFD600BF4B45 /* KHSplashScreenContentView.h */,
-				6E0BE4C71AC5FFD600BF4B45 /* KHSplashScreenContentView.m */,
+				6E0BE4CB1AC7AF2300BF4B45 /* Signup/Login */,
+				6E0BE4CA1AC7AF1500BF4B45 /* Carousel Pages */,
+				6E0BE4C91AC7AF0600BF4B45 /* Top Level Carousel */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -142,6 +142,35 @@
 				6E0BE4BE1AC5FB5500BF4B45 /* Dosis-SemiBold.otf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		6E0BE4C91AC7AF0600BF4B45 /* Top Level Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */,
+				6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */,
+			);
+			name = "Top Level Carousel";
+			sourceTree = "<group>";
+		};
+		6E0BE4CA1AC7AF1500BF4B45 /* Carousel Pages */ = {
+			isa = PBXGroup;
+			children = (
+				6E0BE49F1AC3D52C00BF4B45 /* KHSplashScreenContentViewController.h */,
+				6E0BE4A01AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m */,
+				6E0BE4C61AC5FFD600BF4B45 /* KHSplashScreenContentView.h */,
+				6E0BE4C71AC5FFD600BF4B45 /* KHSplashScreenContentView.m */,
+			);
+			name = "Carousel Pages";
+			sourceTree = "<group>";
+		};
+		6E0BE4CB1AC7AF2300BF4B45 /* Signup/Login */ = {
+			isa = PBXGroup;
+			children = (
+				6E0BE4CC1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.h */,
+				6E0BE4CD1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m */,
+			);
+			name = Signup/Login;
 			sourceTree = "<group>";
 		};
 		6E5B3F661A835B500091A556 /* Splash Screen */ = {
@@ -389,6 +418,7 @@
 				6E0BE4B61AC5FAF200BF4B45 /* UIFont+CustomFonts.m in Sources */,
 				6E0BE4B31AC5F11000BF4B45 /* UIColor+HexString.m in Sources */,
 				6EF6617E1A773A7600DA5177 /* main.m in Sources */,
+				6E0BE4CE1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m in Sources */,
 				6E0BE4A51AC3D54000BF4B45 /* KHSplashScreenDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
