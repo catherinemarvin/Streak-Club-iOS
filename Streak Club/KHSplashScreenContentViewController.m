@@ -8,14 +8,14 @@
 
 #import "KHSplashScreenContentViewController.h"
 
+// Views
+#import "KHSplashScreenContentView.h"
 #import "UIColor+HexString.h"
 #import <Masonry.h>
-#import "UIFont+CustomFonts.h"
 
 @interface KHSplashScreenContentViewController ()
 
-@property (nonatomic, strong) UIImageView *image;
-@property (nonatomic, strong) UILabel *descriptionLabel;
+@property (nonatomic, strong) KHSplashScreenContentView *contentView;
 
 @end
 
@@ -23,9 +23,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _image = [[UIImageView alloc] init];
-        _descriptionLabel = [[UILabel alloc] init];
-        _descriptionLabel.font = [UIFont regularWithSize:16.0f];
+        _contentView = [[KHSplashScreenContentView alloc] init];
     }
     return self;
 }
@@ -33,28 +31,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithHexString:@"34A0F2"];
+    [self.view addSubview:self.contentView];
     
-    [self.view addSubview:self.image];
-    
-    [self.image mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view.mas_centerY);
-    }];
-    
-    [self.view addSubview:self.descriptionLabel];
-    
-    [self.descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view.mas_centerY);
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
     }];
 }
 
 - (void)setDescriptionText:(NSString *)text {
-    self.descriptionLabel.text = text;
+    [self.contentView setDescriptionText:text];
 }
 
 - (void)setImagePath:(NSString *)imagePath {
-    self.image.image = [UIImage imageNamed:imagePath];
+    [self.contentView setImagePath:imagePath];
 }
 
 @end
