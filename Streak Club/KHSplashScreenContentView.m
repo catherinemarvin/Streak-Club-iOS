@@ -32,10 +32,13 @@
         [self addSubview:_imageView];
         
         _footer = [[UIView alloc] init];
+        _footer.backgroundColor = [UIColor whiteColor];
         [self addSubview:_footer];
         
         _descriptionLabel = [[UILabel alloc] init];
         _descriptionLabel.font = [UIFont regularWithSize:16.0f];
+        _descriptionLabel.numberOfLines = 0;
+        _descriptionLabel.textAlignment = NSTextAlignmentCenter;
         [_footer addSubview:_descriptionLabel];
         
         [self _initializeAutolayout];
@@ -54,8 +57,12 @@
         make.height.mas_equalTo(footerHeight);
     }];
     
+    CGFloat sidePadding = 20.0f;
+    
     [self.descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.descriptionLabel.superview);
+        make.left.equalTo(self.descriptionLabel.superview).with.offset(sidePadding);
+        make.right.equalTo(self.descriptionLabel.superview).with.offset(-sidePadding);
     }];
 }
 
