@@ -30,6 +30,7 @@
         self.backgroundColor = [UIColor colorWithHexString:@"34a0f2"];
         
         _imageView = [[UIImageView alloc] init];
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:_imageView];
         
         _footer = [[UIView alloc] init];
@@ -62,11 +63,14 @@
 }
 
 - (void)_initializeAutolayout {
+    CGFloat imageWidth = 200.0f;
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.and.height.mas_equalTo(imageWidth);
+        make.centerX.equalTo(self);
         make.bottom.equalTo(self.mas_centerY);
     }];
     
-    CGFloat footerHeight = 100.0f;
+    CGFloat footerHeight = 150.0f;
     [self.footer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.and.bottom.equalTo(self);
         make.height.mas_equalTo(footerHeight);

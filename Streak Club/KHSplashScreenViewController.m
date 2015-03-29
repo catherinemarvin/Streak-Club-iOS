@@ -63,7 +63,8 @@
     self.pageControl.currentPageIndicatorTintColor = [UIColor darkGrayColor];
     
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.view);
     }];
 }
 
