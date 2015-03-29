@@ -53,6 +53,7 @@
     self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * [self.dataSource count], pageScrollViewSize.height);
     self.scrollView.pagingEnabled = YES;
     self.scrollView.delegate = self;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
 }
 
 - (void)_setupPageControl {
