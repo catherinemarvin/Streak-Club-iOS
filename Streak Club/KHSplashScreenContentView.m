@@ -41,14 +41,19 @@
             label.font = [UIFont boldWithSize:20.0f];
             label.numberOfLines = 1;
             label.textAlignment = NSTextAlignmentCenter;
+            label.textColor = [UIColor colorWithHexString:@"666666"];
             label;
         });
         [_footer addSubview:_headerLabel];
         
-        _descriptionLabel = [[UILabel alloc] init];
-        _descriptionLabel.font = [UIFont regularWithSize:16.0f];
-        _descriptionLabel.numberOfLines = 0;
-        _descriptionLabel.textAlignment = NSTextAlignmentCenter;
+        _descriptionLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:16.0f];
+            label.numberOfLines = 0;
+            label.textAlignment = NSTextAlignmentCenter;
+            label.textColor = [UIColor colorWithHexString:@"333333"];
+            label;
+        });
         [_footer addSubview:_descriptionLabel];
         
         [self _initializeAutolayout];
