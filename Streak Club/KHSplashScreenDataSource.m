@@ -24,8 +24,9 @@
     return self.splashScreens[index];
 }
 
+// We have the regular splash screens and the special login/signup VC at the end
 - (NSUInteger)count {
-    return self.splashScreens.count;
+    return self.splashScreens.count + 1;
 }
 
 #pragma mark - Lazy Instantiation
