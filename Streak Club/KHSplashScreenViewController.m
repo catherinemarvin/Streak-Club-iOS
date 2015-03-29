@@ -16,6 +16,9 @@
 
 // Views
 #import "KHSplashScreenContentViewController.h"
+#import "KHSignupOrLoginViewController.h"
+
+// View Helpers
 #import <Masonry.h>
 
 @interface KHSplashScreenViewController ()<UIScrollViewDelegate>
@@ -89,6 +92,12 @@
 - (UIViewController *)_viewControllerAtIndex:(NSUInteger)index {
     if (index >= [self.dataSource count]) {
         return nil;
+    }
+    
+    // The last screen is a special signup/login page.
+    if (index == [self.dataSource count] - 1) {
+        KHSignupOrLoginViewController *vc = [[KHSignupOrLoginViewController alloc] init];
+        return vc;
     }
     
     KHSplashScreenInfo *info = [self.dataSource viewInfoForIndex:index];
