@@ -38,6 +38,10 @@
     }];
 }
 
+- (void)setHeaderText:(NSString *)headerText {
+    [self.contentView setHeaderText:headerText];
+}
+
 - (void)setDescriptionText:(NSString *)text {
     [self.contentView setDescriptionText:text];
 }

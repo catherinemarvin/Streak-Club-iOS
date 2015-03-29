@@ -10,6 +10,7 @@
 
 @interface KHSplashScreenContentView : UIView
 
+- (void)setHeaderText:(NSString *)text;
 - (void)setDescriptionText:(NSString *)text;
 - (void)setImagePath:(NSString *)imagePath;
 

@@ -92,6 +92,7 @@
     KHSplashScreenInfo *info = [self.dataSource viewInfoForIndex:index];
     
     KHSplashScreenContentViewController *vc = [[KHSplashScreenContentViewController alloc] init];
+    [vc setHeaderText:info.headerText];
     [vc setImagePath:info.imagePath];
     [vc setDescriptionText:info.descriptionText];
     return vc;

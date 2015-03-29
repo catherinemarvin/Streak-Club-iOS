@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UIImageView *imageView;
 
 @property (nonatomic, strong) UIView *footer;
+@property (nonatomic, strong) UILabel *headerLabel;
 @property (nonatomic, strong) UILabel *descriptionLabel;
 
 @end
@@ -34,6 +35,15 @@
         _footer = [[UIView alloc] init];
         _footer.backgroundColor = [UIColor whiteColor];
         [self addSubview:_footer];
+        
+        _headerLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont boldWithSize:20.0f];
+            label.numberOfLines = 1;
+            label.textAlignment = NSTextAlignmentCenter;
+            label;
+        });
+        [_footer addSubview:_headerLabel];
         
         _descriptionLabel = [[UILabel alloc] init];
         _descriptionLabel.font = [UIFont regularWithSize:16.0f];
@@ -59,11 +69,20 @@
     
     CGFloat sidePadding = 20.0f;
     
+    [self.headerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.footer);
+        make.left.equalTo(self.footer).with.offset(sidePadding);
+        make.right.equalTo(self.footer).with.offset(-sidePadding);
+    }];
+    
     [self.descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.descriptionLabel.superview);
-        make.left.equalTo(self.descriptionLabel.superview).with.offset(sidePadding);
-        make.right.equalTo(self.descriptionLabel.superview).with.offset(-sidePadding);
+        make.left.and.right.equalTo(self.headerLabel);
     }];
+}
+
+- (void)setHeaderText:(NSString *)text {
+    self.headerLabel.text = text;
 }
 
 - (void)setDescriptionText:(NSString *)text {
