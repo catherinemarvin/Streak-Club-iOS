@@ -34,10 +34,16 @@
     if (!_splashScreens) {
         NSMutableArray *screens = [NSMutableArray array];
         
-        KHSplashScreenInfo *pageOne = [[KHSplashScreenInfo alloc] initWithDescriptionText:NSLocalizedString(@"Streak Club is a way to keep motivated.", nil) imagePath:@"splash_screen_page_one_background"];
+        KHSplashScreenInfo *pageOne = [[KHSplashScreenInfo alloc]
+                                       initWithHeaderText:NSLocalizedString(@"Streaks?", nil)
+                                       descriptionText:NSLocalizedString(@"A streak is a commitment to yourself to complete some activity every day or week to help improve yourself.", nil)
+                                       imagePath:@"splash_screen_page_one"];
         [screens addObject:pageOne];
         
-        KHSplashScreenInfo *pageTwo = [[KHSplashScreenInfo alloc] initWithDescriptionText:NSLocalizedString(@"Organize or join creative streaks and improve yourself", nil) imagePath:@"splash_screen_page_two_background"];
+        KHSplashScreenInfo *pageTwo = [[KHSplashScreenInfo alloc]
+                                       initWithHeaderText:NSLocalizedString(@"How it works", nil)
+                                       descriptionText:NSLocalizedString(@"Pick start and end dates, write some rules, then invite some friends (or do it solo).", nil)
+                                       imagePath:@"splash_screen_page_two"];
         [screens addObject:pageTwo];
         
         _splashScreens = screens;

@@ -10,6 +10,7 @@
 
 @interface KHSplashScreenInfo()
 
+@property (nonatomic, strong) NSString *headerText;
 @property (nonatomic, strong) NSString *descriptionText;
 @property (nonatomic, strong) NSString *imagePath;
 
@@ -17,9 +18,10 @@
 
 @implementation KHSplashScreenInfo
 
-- (instancetype)initWithDescriptionText:(NSString *)desciptionText imagePath :(NSString *)imagePath {
+- (instancetype)initWithHeaderText:(NSString *)headerText descriptionText:(NSString *)descriptionText imagePath :(NSString *)imagePath {
     if (self = [super init]) {
-        _descriptionText = desciptionText;
+        _headerText = headerText;
+        _descriptionText = descriptionText;
         _imagePath = imagePath;
     }
     return self;

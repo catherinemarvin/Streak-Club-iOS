@@ -10,8 +10,9 @@
 
 @interface KHSplashScreenInfo : NSObject
 
-- (instancetype)initWithDescriptionText:(NSString *)descriptionText imagePath:(NSString *)imagePath NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithHeaderText:(NSString *)headerText descriptionText:(NSString *)descriptionText imagePath:(NSString *)imagePath NS_DESIGNATED_INITIALIZER;
 
+@property (nonatomic, strong, readonly) NSString *headerText;
 @property (nonatomic, strong, readonly) NSString *descriptionText;
 @property (nonatomic, strong, readonly) NSString *imagePath;
 
