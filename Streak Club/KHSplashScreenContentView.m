@@ -16,6 +16,8 @@
 @interface KHSplashScreenContentView()
 
 @property (nonatomic, strong) UIImageView *imageView;
+
+@property (nonatomic, strong) UIView *footer;
 @property (nonatomic, strong) UILabel *descriptionLabel;
 
 @end
@@ -28,9 +30,13 @@
         
         _imageView = [[UIImageView alloc] init];
         [self addSubview:_imageView];
+        
+        _footer = [[UIView alloc] init];
+        [self addSubview:_footer];
+        
         _descriptionLabel = [[UILabel alloc] init];
         _descriptionLabel.font = [UIFont regularWithSize:16.0f];
-        [self addSubview:_descriptionLabel];
+        [_footer addSubview:_descriptionLabel];
         
         [self _initializeAutolayout];
     }
@@ -42,9 +48,14 @@
         make.bottom.equalTo(self.mas_centerY);
     }];
     
+    CGFloat footerHeight = 100.0f;
+    [self.footer mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.and.bottom.equalTo(self);
+        make.height.mas_equalTo(footerHeight);
+    }];
+    
     [self.descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.top.equalTo(self.mas_centerY);
+        make.center.equalTo(self.descriptionLabel.superview);
     }];
 }
 
