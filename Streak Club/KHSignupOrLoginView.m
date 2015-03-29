@@ -8,14 +8,19 @@
 
 #import "KHSignupOrLoginView.h"
 
+// View Helpers
+#import <Masonry/Masonry.h>
+#import "UIFont+CustomFonts.h"
+#import "UIColor+HexString.h"
+
 @implementation KHSignupOrLoginView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)init {
+    if (self = [super init]) {
+        self.backgroundColor = [UIColor colorWithHexString:@"34a0f2"];
+        
+    }
+    return self;
 }
-*/
 
 @end
