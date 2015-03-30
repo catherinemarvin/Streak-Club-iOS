@@ -25,6 +25,9 @@
 @property (nonatomic, strong) UIButton *loginButton;
 @property (nonatomic, strong) UIButton *registerButton;
 
+// Checks if we're currently logging in or registering
+@property (nonatomic, assign) BOOL loginForm;
+
 @end
 
 @implementation KHSignupOrLoginView
@@ -33,8 +36,11 @@
     if (self = [super init]) {
         self.backgroundColor = [UIColor colorWithHexString:@"34a0f2"];
         
+        _loginForm = YES;
+        
         _usernameField = ({
             UITextField *field = [[UITextField alloc] init];
+            field.placeholder = NSLocalizedString(@"Username", nil);
             
             field;
         });
@@ -42,6 +48,7 @@
         
         _passwordField = ({
             UITextField *field = [[UITextField alloc] init];
+            field.placeholder = NSLocalizedString(@"Password", nil);
             field;
         });
         [self addSubview:_passwordField];
@@ -51,24 +58,28 @@
         
         _repeatPasswordField = ({
             UITextField *field = [[UITextField alloc] init];
+            field.placeholder = NSLocalizedString(@"Repeat password", nil);
             field;
         });
         [_registerOnlyFields addSubview:_repeatPasswordField];
         
         _emailField = ({
             UITextField *field = [[UITextField alloc] init];
+            field.placeholder = NSLocalizedString(@"E-mail", nil);
             field;
         });
         [_registerOnlyFields addSubview:_emailField];
         
         _loginButton = ({
             UIButton *button = [[UIButton alloc] init];
+            [button setTitle:NSLocalizedString(@"Login", nil) forState:UIControlStateNormal];
             button;
         });
         [self addSubview:_loginButton];
         
         _registerButton = ({
             UIButton *button = [[UIButton alloc] init];
+            [button setTitle:NSLocalizedString(@"Register", nil) forState:UIControlStateNormal];
             button;
         });
         [self addSubview:_registerButton];
