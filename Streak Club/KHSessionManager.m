@@ -8,11 +8,17 @@
 
 #import "KHSessionManager.h"
 
+// Keychain
+#import <SSKeychain/SSKeychain.h>
+
 @interface KHSessionManager()
 
 @property (nonatomic, strong) NSString *key;
 
 @end
+
+static NSString *const KhkKeychainServiceKey = @"com.khwang.StreakClub";
+static NSString *const KhkUsernameKey = @"KhkUsernameKey";
 
 @implementation KHSessionManager
 
@@ -30,7 +36,18 @@
 }
 
 - (void)logout {
+    NSError *error;
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [userDefaults objectForKey:KhkUsernameKey];
+    
+    if (![SSKeychain deletePasswordForService:KhkKeychainServiceKey account:username error:&error] && error) {
+        NSLog(@"Failed to logout: %@", error.localizedDescription);
+    }
+    self.key = nil;
+    
+    [userDefaults removeObjectForKey:KhkUsernameKey];
+    [userDefaults synchronize];
 }
 
 
