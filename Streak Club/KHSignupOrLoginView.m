@@ -72,8 +72,51 @@
             button;
         });
         [self addSubview:_registerButton];
+        
+        [self _initializeAutolayout];
     }
     return self;
+}
+
+- (void)_initializeAutolayout {
+    CGFloat sideMargin = 20.0f;
+    
+    [self.usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).with.offset(sideMargin);
+        make.right.equalTo(self).with.offset(-sideMargin);
+        make.top.equalTo(self);
+    }];
+    
+    [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.usernameField.mas_bottom);
+    }];
+    
+    [self.registerOnlyFields mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.repeatPasswordField);
+        make.bottom.equalTo(self.emailField);
+    }];
+    
+    [self.repeatPasswordField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.passwordField.mas_bottom);
+    }];
+    
+    [self.emailField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.repeatPasswordField.mas_bottom);
+    }];
+    
+    [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.emailField.mas_bottom);
+    }];
+    
+    [self.registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.loginButton.mas_bottom);
+    }];
 }
 
 @end
