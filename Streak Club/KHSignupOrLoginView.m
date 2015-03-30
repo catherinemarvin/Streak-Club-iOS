@@ -40,6 +40,7 @@
         
         _usernameField = ({
             UITextField *field = [[UITextField alloc] init];
+            field.font = [UIFont regularWithSize:16];
             field.placeholder = NSLocalizedString(@"Username", nil);
             
             field;
@@ -48,6 +49,7 @@
         
         _passwordField = ({
             UITextField *field = [[UITextField alloc] init];
+            field.font = [UIFont regularWithSize:16];
             field.placeholder = NSLocalizedString(@"Password", nil);
             field;
         });
@@ -58,6 +60,7 @@
         
         _repeatPasswordField = ({
             UITextField *field = [[UITextField alloc] init];
+            field.font = [UIFont regularWithSize:16];
             field.placeholder = NSLocalizedString(@"Repeat password", nil);
             field;
         });
@@ -65,6 +68,7 @@
         
         _emailField = ({
             UITextField *field = [[UITextField alloc] init];
+            field.font = [UIFont regularWithSize:16];
             field.placeholder = NSLocalizedString(@"E-mail", nil);
             field;
         });
@@ -72,6 +76,7 @@
         
         _loginButton = ({
             UIButton *button = [[UIButton alloc] init];
+            button.titleLabel.font = [UIFont regularWithSize:16];
             [button setTitle:NSLocalizedString(@"Login", nil) forState:UIControlStateNormal];
             button;
         });
@@ -79,6 +84,7 @@
         
         _registerButton = ({
             UIButton *button = [[UIButton alloc] init];
+            button.titleLabel.font = [UIFont regularWithSize:16];
             [button setTitle:NSLocalizedString(@"Register", nil) forState:UIControlStateNormal];
             button;
         });
