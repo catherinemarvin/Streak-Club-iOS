@@ -19,6 +19,8 @@
 @end
 
 static NSString *const KhkStreakClubBaseUrl = @"http://streak.club/api/1/";
+static NSString *const KHkSourceKey = @"source";
+static NSString *const KhkSourceValue = @"ios";
 
 @implementation KHAPIService
 
@@ -37,29 +39,45 @@ static NSString *const KhkStreakClubBaseUrl = @"http://streak.club/api/1/";
  parameters:(NSDictionary *)parameters
     success:(void (^)(id responseObject))success
     failure:(void (^)(NSDictionary *errorDictionary, NSError *error))failure {
-    [self.manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        success(responseObject);
-    } failure:
-    ^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSError *jsonError;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:0 error:&jsonError];
-        
-        failure(json, error);
-    }];
+    NSDictionary *params = [self _updatedParameters:parameters];
+    
+    [self.manager GET:url
+           parameters:params
+              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  success(responseObject);
+    }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  NSError *jsonError;
+                  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:0 error:&jsonError];
+                  
+                  failure(json, error);
+              }];
 }
 
 - (void)post:(NSString *)url
   parameters:(NSDictionary *)parameters
      success:(void (^)(id responseObject))success
      failure:(void (^)(NSDictionary *errorDictionary, NSError *error))failure {
-    [self.manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        success(responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSError *jsonError;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:0 error:&jsonError];
-        
-        failure(json, error);
-    }];
+    NSDictionary *params = [self _updatedParameters:parameters];
+    
+    [self.manager POST:url
+            parameters:params
+               success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                   success(responseObject);
+    }
+               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                   NSError *jsonError;
+                   NSDictionary *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:0 error:&jsonError];
+                   
+                   failure(json, error);
+               }];
 }
+
+- (NSDictionary *)_updatedParameters:(NSDictionary *)dictionary {
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:dictionary];
+    [params setValue:KhkSourceValue forKey:KHkSourceKey];
+    return params;
+}
+
 
 @end
