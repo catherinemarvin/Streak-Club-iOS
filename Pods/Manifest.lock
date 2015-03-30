@@ -26,15 +26,18 @@ PODS:
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
   - Masonry (0.6.1)
+  - SSKeychain (1.2.2)
 
 DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack
   - Masonry
+  - SSKeychain
 
 SPEC CHECKSUMS:
-  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
-  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
-  Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
+  AFNetworking: 96ac9bf3eda33582701cb1fcc5b896aa1e20311e
+  CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  SSKeychain: 88767e903ee8d274ed380e364d96b7a101235286
 
 COCOAPODS: 0.35.0

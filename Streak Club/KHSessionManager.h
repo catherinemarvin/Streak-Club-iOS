@@ -10,4 +10,18 @@
 
 @interface KHSessionManager : NSObject
 
+@property (nonatomic, strong, readonly) NSString *key;
+
++ (KHSessionManager *)sharedInstance;
+
+/**
+ @brief Logs a user in and saves the key in the keychain.
+ */
+- (void)loginWithUsername:(NSString *)username key:(NSString *)key;
+
+/**
+ @brief Logs the user out and removes their key from the keychain
+*/
+- (void)logout;
+
 @end
