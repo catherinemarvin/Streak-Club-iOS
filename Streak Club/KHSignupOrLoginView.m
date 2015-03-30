@@ -95,7 +95,7 @@
     [self.usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).with.offset(sideMargin);
         make.right.equalTo(self).with.offset(-sideMargin);
-        make.top.equalTo(self);
+        make.centerY.equalTo(self);
     }];
     
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
