@@ -32,7 +32,18 @@ static NSString *const KhkUsernameKey = @"KhkUsernameKey";
 }
 
 - (void)loginWithUsername:(NSString *)username key:(NSString *)key {
+    self.key = key;
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:username forKey:KhkUsernameKey];
+    [userDefaults synchronize];
+    
+    NSError *error;
+    if ([SSKeychain setPassword:key forService:KhkKeychainServiceKey account:username error:&error]) {
+        NSLog(@"Key saved!");
+    } else {
+        NSLog(@"Failed to save key: %@", error.debugDescription);
+    }
 }
 
 - (void)logout {
