@@ -22,6 +22,7 @@
 		6E0BE4C81AC5FFD600BF4B45 /* KHSplashScreenContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4C71AC5FFD600BF4B45 /* KHSplashScreenContentView.m */; };
 		6E0BE4CE1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4CD1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m */; };
 		6E0BE4D11AC7B15300BF4B45 /* KHSignupOrLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4D01AC7B15300BF4B45 /* KHSignupOrLoginView.m */; };
+		6E0BE4D51AC8DEB800BF4B45 /* KHAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4D41AC8DEB800BF4B45 /* KHAPIService.m */; };
 		6E5B3F681A835D9E0091A556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */; };
 		6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
@@ -67,6 +68,8 @@
 		6E0BE4CD1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignupOrLoginViewController.m; sourceTree = "<group>"; };
 		6E0BE4CF1AC7B15300BF4B45 /* KHSignupOrLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignupOrLoginView.h; sourceTree = "<group>"; };
 		6E0BE4D01AC7B15300BF4B45 /* KHSignupOrLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignupOrLoginView.m; sourceTree = "<group>"; };
+		6E0BE4D31AC8DEB800BF4B45 /* KHAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHAPIService.h; sourceTree = "<group>"; };
+		6E0BE4D41AC8DEB800BF4B45 /* KHAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHAPIService.m; sourceTree = "<group>"; };
 		6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
 		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
@@ -178,6 +181,15 @@
 			name = Signup/Login;
 			sourceTree = "<group>";
 		};
+		6E0BE4D21AC8DEA200BF4B45 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6E0BE4D31AC8DEB800BF4B45 /* KHAPIService.h */,
+				6E0BE4D41AC8DEB800BF4B45 /* KHAPIService.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		6E5B3F661A835B500091A556 /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +231,7 @@
 		6EF6617A1A773A7600DA5177 /* Streak Club */ = {
 			isa = PBXGroup;
 			children = (
+				6E0BE4D21AC8DEA200BF4B45 /* API */,
 				6E0BE4B01AC5F0FD00BF4B45 /* Categories */,
 				6E0BE4B71AC5FB4700BF4B45 /* Fonts */,
 				6EF661881A773A7600DA5177 /* Images.xcassets */,
@@ -422,6 +435,7 @@
 				6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */,
 				6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */,
 				6E0BE4B61AC5FAF200BF4B45 /* UIFont+CustomFonts.m in Sources */,
+				6E0BE4D51AC8DEB800BF4B45 /* KHAPIService.m in Sources */,
 				6E0BE4B31AC5F11000BF4B45 /* UIColor+HexString.m in Sources */,
 				6EF6617E1A773A7600DA5177 /* main.m in Sources */,
 				6E0BE4CE1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m in Sources */,
