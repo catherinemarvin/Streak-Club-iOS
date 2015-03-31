@@ -27,6 +27,7 @@
 		6E0BE4DD1AC8E09D00BF4B45 /* KHRegisterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4DC1AC8E09D00BF4B45 /* KHRegisterService.m */; };
 		6E0BE4E41AC8EBBF00BF4B45 /* KHSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4E31AC8EBBF00BF4B45 /* KHSessionManager.m */; };
 		6E0BE4E91AC92C2000BF4B45 /* KHLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4E81AC92C2000BF4B45 /* KHLoginManager.m */; };
+		6E0BE4EE1ACA731200BF4B45 /* KHRegisterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4ED1ACA731200BF4B45 /* KHRegisterManager.m */; };
 		6E5B3F681A835D9E0091A556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */; };
 		6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
@@ -85,6 +86,9 @@
 		6E0BE4E71AC92C2000BF4B45 /* KHLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLoginManager.h; sourceTree = "<group>"; };
 		6E0BE4E81AC92C2000BF4B45 /* KHLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHLoginManager.m; sourceTree = "<group>"; };
 		6E0BE4EA1AC92C3900BF4B45 /* KHLoginManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLoginManagerDelegate.h; sourceTree = "<group>"; };
+		6E0BE4EC1ACA731200BF4B45 /* KHRegisterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHRegisterManager.h; sourceTree = "<group>"; };
+		6E0BE4ED1ACA731200BF4B45 /* KHRegisterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHRegisterManager.m; sourceTree = "<group>"; };
+		6E0BE4EF1ACA731B00BF4B45 /* KHRegisterManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHRegisterManagerDelegate.h; sourceTree = "<group>"; };
 		6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
 		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
@@ -122,7 +126,8 @@
 		6E0BE4A21AC3D53400BF4B45 /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
-				6E0BE4E61AC92C1000BF4B45 /* Login/Register */,
+				6E0BE4EB1ACA730300BF4B45 /* Register */,
+				6E0BE4E61AC92C1000BF4B45 /* Login */,
 				6E0BE4E51AC92C0700BF4B45 /* Content */,
 			);
 			name = "Data Sources";
@@ -252,14 +257,24 @@
 			name = Content;
 			sourceTree = "<group>";
 		};
-		6E0BE4E61AC92C1000BF4B45 /* Login/Register */ = {
+		6E0BE4E61AC92C1000BF4B45 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				6E0BE4E71AC92C2000BF4B45 /* KHLoginManager.h */,
 				6E0BE4E81AC92C2000BF4B45 /* KHLoginManager.m */,
 				6E0BE4EA1AC92C3900BF4B45 /* KHLoginManagerDelegate.h */,
 			);
-			name = Login/Register;
+			name = Login;
+			sourceTree = "<group>";
+		};
+		6E0BE4EB1ACA730300BF4B45 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				6E0BE4EC1ACA731200BF4B45 /* KHRegisterManager.h */,
+				6E0BE4ED1ACA731200BF4B45 /* KHRegisterManager.m */,
+				6E0BE4EF1ACA731B00BF4B45 /* KHRegisterManagerDelegate.h */,
+			);
+			name = Register;
 			sourceTree = "<group>";
 		};
 		6E5B3F661A835B500091A556 /* Splash Screen */ = {
@@ -502,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E0BE4EE1ACA731200BF4B45 /* KHRegisterManager.m in Sources */,
 				6E0BE4C81AC5FFD600BF4B45 /* KHSplashScreenContentView.m in Sources */,
 				6E0BE4A11AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m in Sources */,
 				6E0BE4E91AC92C2000BF4B45 /* KHLoginManager.m in Sources */,
