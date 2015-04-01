@@ -10,4 +10,7 @@
 
 @protocol KHLoginServiceDelegate <NSObject>
 
+- (void)loginSucceededWithKey:(NSString *)key;
+- (void)loginFailed;
+
 @end

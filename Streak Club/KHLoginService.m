@@ -18,6 +18,13 @@
 
 @end
 
+static NSString *const KHkUsernameKey = @"username";
+static NSString *const KhkPasswordKey = @"password";
+
+static NSString *const KhkLoginUrl = @"login";
+
+static NSString *const KHkSessionKeyKey = @"key";
+
 @implementation KHLoginService
 
 - (instancetype)initWithDelegate:(id<KHLoginServiceDelegate>)delegate {
@@ -26,6 +33,23 @@
         _apiService = [[KHAPIService alloc] init];
     }
     return self;
+}
+
+- (void)loginWithUsername:(NSString *)username password:(NSString *)password {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:username forKey:KHkUsernameKey];
+    [params setValue:password forKey:KhkPasswordKey];
+    
+    [self.apiService post:KhkLoginUrl parameters:params success:^(id responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *response = (NSDictionary *)responseObject;
+            NSString *key = [response valueForKey:KHkSessionKeyKey];
+            [self.delegate loginSucceededWithKey:key];
+        }
+    } failure:^(NSDictionary *errorDictionary, NSError *error) {
+        // TODO: Catch error
+        [self.delegate loginFailed];
+    }];
 }
 
 @end
