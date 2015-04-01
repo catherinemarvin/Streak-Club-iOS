@@ -10,4 +10,13 @@
 
 @interface KHSignupOrLoginView : UIView
 
+@property (nonatomic, strong, readonly) UITextField *usernameField;
+@property (nonatomic, strong, readonly) UITextField *passwordField;
+
+@property (nonatomic, strong, readonly) UITextField *repeatPasswordField;
+@property (nonatomic, strong, readonly) UITextField *emailField;
+
+@property (nonatomic, strong, readonly) UIButton *loginButton;
+@property (nonatomic, strong, readonly) UIButton *registerButton;
+
 @end
