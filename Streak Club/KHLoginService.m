@@ -18,6 +18,13 @@
 
 @end
 
+static NSString *const KHkLoginErrorDomain = @"login";
+
+typedef NS_ENUM(NSInteger, KHLoginError) {
+    KHLoginErrorGenericError = 0,
+    KHLoginErrorBadCredentials
+};
+
 static NSString *const KHkUsernameKey = @"username";
 static NSString *const KhkPasswordKey = @"password";
 
@@ -66,13 +73,27 @@ static NSString *const KHkErrorsKey = @"errors";
     // Only handle the first error for now.
     NSString *firstError = [errors firstObject];
     
-    NSError *error;
+    NSString *localizedDescription;
+    NSString *localizedFailureReason;
+    NSString *localizedRecoverySuggestion;
+    KHLoginError errorCode;
     
     if ([firstError isEqualToString:@"Incorrect username or password"]) {
-        error = [NSError errorWithDomain:@"login" code:200 userInfo:nil];
+        localizedDescription = NSLocalizedString(@"Login failed.", nil);
+        localizedFailureReason = NSLocalizedString(@"Username or password was incorrect.", nil);
+        localizedRecoverySuggestion = NSLocalizedString(@"Please double check your username and password.", nil);
     } else {
-        error = [NSError errorWithDomain:@"login" code:201 userInfo:nil];
+        localizedDescription = NSLocalizedString(@"Login failed.", nil);
+        localizedFailureReason = NSLocalizedString(@"Something went wrong.", nil);
+        localizedRecoverySuggestion = NSLocalizedString(@"Please try again.", nil);
     }
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    
+    [dictionary setValue:localizedDescription forKey:NSLocalizedDescriptionKey];
+    [dictionary setValue:localizedFailureReason forKey:NSLocalizedFailureReasonErrorKey];
+    [dictionary setValue:localizedRecoverySuggestion forKey:NSLocalizedRecoverySuggestionErrorKey];
+    
+    NSError *error = [NSError errorWithDomain:KHkLoginErrorDomain code:errorCode userInfo:dictionary];
     [self.delegate loginFailedWithError:error];
 }
 
