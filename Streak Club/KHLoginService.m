@@ -24,6 +24,7 @@ static NSString *const KhkPasswordKey = @"password";
 static NSString *const KhkLoginUrl = @"login";
 
 static NSString *const KHkSessionKeyKey = @"key";
+static NSString *const KHkErrorsKey = @"errors";
 
 @implementation KHLoginService
 
@@ -43,12 +44,18 @@ static NSString *const KHkSessionKeyKey = @"key";
     [self.apiService post:KhkLoginUrl parameters:params success:^(id responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *response = (NSDictionary *)responseObject;
+            NSArray *errors = [response valueForKey:KHkErrorsKey];
+            if (errors) {
+                [self.delegate loginFailedWithError:[errors firstObject]];
+                return;
+            }
+            
             NSString *key = [response valueForKey:KHkSessionKeyKey];
             [self.delegate loginSucceededWithKey:key];
         }
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
         // TODO: Catch error
-        [self.delegate loginFailed];
+        [self.delegate loginFailedWithError:NSLocalizedString(@"Something went wrong.", nil)];
     }];
 }
 
