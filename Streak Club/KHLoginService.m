@@ -46,7 +46,7 @@ static NSString *const KHkErrorsKey = @"errors";
             NSDictionary *response = (NSDictionary *)responseObject;
             NSArray *errors = [response valueForKey:KHkErrorsKey];
             if (errors) {
-                [self.delegate loginFailedWithError:[errors firstObject]];
+                [self _handleErrors:errors];
                 return;
             }
             
@@ -55,8 +55,25 @@ static NSString *const KHkErrorsKey = @"errors";
         }
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
         // TODO: Catch error
-        [self.delegate loginFailedWithError:NSLocalizedString(@"Something went wrong.", nil)];
+        [self.delegate loginFailedWithError:error];
     }];
+}
+
+/** Right now the API gives errors like this:
+ [ "Error reason 1", "Error reason 2" ]
+ */
+- (void)_handleErrors:(NSArray *)errors {
+    // Only handle the first error for now.
+    NSString *firstError = [errors firstObject];
+    
+    NSError *error;
+    
+    if ([firstError isEqualToString:@"Incorrect username or password"]) {
+        error = [NSError errorWithDomain:@"login" code:200 userInfo:nil];
+    } else {
+        error = [NSError errorWithDomain:@"login" code:201 userInfo:nil];
+    }
+    [self.delegate loginFailedWithError:error];
 }
 
 @end

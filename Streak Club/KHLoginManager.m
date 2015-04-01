@@ -38,8 +38,8 @@
     NSLog(@"Login succeeded with key: %@", key);
 }
 
-- (void)loginFailedWithError:(NSString *)error {
-    NSLog(@"Login failed: %@", error);
+- (void)loginFailedWithError:(NSError *)error {
+    NSLog(@"Login failed with error: %@", error.localizedDescription);
 }
 
 @end
