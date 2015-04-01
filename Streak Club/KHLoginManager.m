@@ -8,9 +8,13 @@
 
 #import "KHLoginManager.h"
 
-@interface KHLoginManager()
+// Service
+#import "KHLoginService.h"
+
+@interface KHLoginManager()<KHLoginServiceDelegate>
 
 @property (nonatomic, weak) id<KHLoginManagerDelegate>delegate;
+@property (nonatomic, strong) KHLoginService *loginService;
 
 @end
 
@@ -19,8 +23,23 @@
 - (instancetype)initWithDelegate:(id<KHLoginManagerDelegate>)delegate {
     if (self = [super init]) {
         _delegate = delegate;
+        _loginService = [[KHLoginService alloc] initWithDelegate:self];
     }
     return self;
+}
+
+- (void)loginWithUsername:(NSString *)username password:(NSString *)password {
+    [self.loginService loginWithUsername:username password:password];
+}
+
+#pragma mark - KHLoginServiceDelegate
+
+- (void)loginSucceededWithKey:(NSString *)key {
+    NSLog(@"Login succeeded with key: %@", key);
+}
+
+- (void)loginFailed {
+    NSLog(@"Login failed");
 }
 
 @end

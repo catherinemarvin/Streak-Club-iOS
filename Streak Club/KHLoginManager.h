@@ -13,4 +13,6 @@
 
 - (instancetype)initWithDelegate:(id<KHLoginManagerDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
+- (void)loginWithUsername:(NSString *)username password:(NSString *)password;
+
 @end
