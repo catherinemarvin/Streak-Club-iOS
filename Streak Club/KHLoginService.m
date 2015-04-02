@@ -26,9 +26,9 @@ typedef NS_ENUM(NSInteger, KHLoginError) {
 };
 
 static NSString *const KHkUsernameKey = @"username";
-static NSString *const KhkPasswordKey = @"password";
+static NSString *const KHkPasswordKey = @"password";
 
-static NSString *const KhkLoginUrl = @"login";
+static NSString *const KHkLoginUrl = @"login";
 
 static NSString *const KHkSessionKeyKey = @"key";
 static NSString *const KHkErrorsKey = @"errors";
@@ -46,9 +46,9 @@ static NSString *const KHkErrorsKey = @"errors";
 - (void)loginWithUsername:(NSString *)username password:(NSString *)password {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:username forKey:KHkUsernameKey];
-    [params setValue:password forKey:KhkPasswordKey];
+    [params setValue:password forKey:KHkPasswordKey];
     
-    [self.apiService post:KhkLoginUrl parameters:params success:^(id responseObject) {
+    [self.apiService post:KHkLoginUrl parameters:params success:^(id responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *response = (NSDictionary *)responseObject;
             NSArray *errors = [response valueForKey:KHkErrorsKey];
