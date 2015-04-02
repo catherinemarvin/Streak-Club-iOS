@@ -47,20 +47,20 @@
         make.edges.equalTo(self.view);
     }];
     
-    [self.signupLoginView.loginButton addTarget:self action:@selector(_loginTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.signupLoginView.actionButton addTarget:self action:@selector(_actionTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.signupLoginView.registerButton addTarget:self action:@selector(_registerTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.signupLoginView.switchModeButton addTarget:self action:@selector(_switchModeTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - Button Presses
 
-- (void)_loginTapped:(id)sender {
+- (void)_actionTapped:(id)sender {
     NSString *username = self.signupLoginView.usernameField.text;
     NSString *password = self.signupLoginView.passwordField.text;
     [self.loginManager loginWithUsername:username password:password];
 }
 
-- (void)_registerTapped:(id)sender {
+- (void)_switchModeTapped:(id)sender {
     self.loginForm = !self.loginForm;
     
     self.signupLoginView.loginForm = self.loginForm;

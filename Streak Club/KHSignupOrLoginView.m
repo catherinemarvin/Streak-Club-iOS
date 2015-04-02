@@ -25,8 +25,8 @@
 @property (nonatomic, strong) UITextField *repeatPasswordField;
 @property (nonatomic, strong) UITextField *emailField;
 
-@property (nonatomic, strong) UIButton *loginButton;
-@property (nonatomic, strong) UIButton *registerButton;
+@property (nonatomic, strong) UIButton *actionButton;
+@property (nonatomic, strong) UIButton *switchModeButton;
 
 @end
 
@@ -74,21 +74,21 @@
         });
         [_registerOnlyFields addSubview:_emailField];
         
-        _loginButton = ({
+        _actionButton = ({
             UIButton *button = [[UIButton alloc] init];
             button.titleLabel.font = [UIFont regularWithSize:16];
             [button setTitle:NSLocalizedString(@"Login", nil) forState:UIControlStateNormal];
             button;
         });
-        [self addSubview:_loginButton];
+        [self addSubview:_actionButton];
         
-        _registerButton = ({
+        _switchModeButton = ({
             UIButton *button = [[UIButton alloc] init];
             button.titleLabel.font = [UIFont regularWithSize:16];
             [button setTitle:NSLocalizedString(@"Register", nil) forState:UIControlStateNormal];
             button;
         });
-        [self addSubview:_registerButton];
+        [self addSubview:_switchModeButton];
         
         [self _initializeAutolayout];
     }
@@ -126,14 +126,14 @@
         make.top.equalTo(self.repeatPasswordField.mas_bottom);
     }];
     
-    [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.actionButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.usernameField);
         make.top.equalTo(self.emailField.mas_bottom);
     }];
     
-    [self.registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.switchModeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.usernameField);
-        make.top.equalTo(self.loginButton.mas_bottom);
+        make.top.equalTo(self.actionButton.mas_bottom);
     }];
 }
 

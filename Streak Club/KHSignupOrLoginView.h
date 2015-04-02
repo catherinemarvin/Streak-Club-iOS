@@ -16,8 +16,8 @@
 @property (nonatomic, strong, readonly) UITextField *repeatPasswordField;
 @property (nonatomic, strong, readonly) UITextField *emailField;
 
-@property (nonatomic, strong, readonly) UIButton *loginButton;
-@property (nonatomic, strong, readonly) UIButton *registerButton;
+@property (nonatomic, strong, readonly) UIButton *actionButton;
+@property (nonatomic, strong, readonly) UIButton *switchModeButton;
 
 // Checks if we're currently logging in or registering
 @property (nonatomic, assign) BOOL loginForm;
