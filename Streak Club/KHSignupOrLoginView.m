@@ -145,7 +145,7 @@
         
         if (loginForm) {
             [self.registerOnlyFields mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(0);
+                self.registerOnlyFieldsHeightConstraint = make.height.mas_equalTo(0);
             }];
         }
     }
