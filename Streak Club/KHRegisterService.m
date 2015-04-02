@@ -18,6 +18,16 @@
 
 @end
 
+static NSString *const KHkUsernameKey = @"username";
+static NSString *const KHkPasswordKey = @"password";
+static NSString *const KHkPasswordRepeatKey = @"password_repeat";
+static NSString *const KHkEmailKey = @"email";
+
+static NSString *const KHkRegisterUrl = @"register";
+
+static NSString *const KHkSessionKeyKey = @"key";
+static NSString *const KHkErrorsKey = @"errors";
+
 @implementation KHRegisterService
 
 - (instancetype)initWithDelegate:(id<KHRegisterServiceDelegate>)delegate {
