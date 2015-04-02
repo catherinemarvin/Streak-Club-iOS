@@ -19,6 +19,9 @@
 @property (nonatomic, strong) UITextField *passwordField;
 
 @property (nonatomic, strong) UIView *registerOnlyFields;
+@property (nonatomic, strong) MASConstraint *registerOnlyFieldsHeightConstraint;
+
+
 @property (nonatomic, strong) UITextField *repeatPasswordField;
 @property (nonatomic, strong) UITextField *emailField;
 
@@ -113,6 +116,7 @@
         make.left.and.right.equalTo(self.usernameField);
         make.top.equalTo(self.repeatPasswordField);
         make.bottom.equalTo(self.emailField);
+        self.registerOnlyFieldsHeightConstraint = make.height.mas_equalTo(0);
     }];
     
     [self.repeatPasswordField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -134,6 +138,20 @@
         make.left.and.right.equalTo(self.usernameField);
         make.top.equalTo(self.loginButton.mas_bottom);
     }];
+}
+
+- (void)setLoginForm:(BOOL)loginForm {
+    if (_loginForm != loginForm) {
+        _loginForm = loginForm;
+        
+        [self.registerOnlyFieldsHeightConstraint uninstall];
+        
+        if (loginForm) {
+            [self.registerOnlyFields mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(0);
+            }];
+        }
+    }
 }
 
 @end
