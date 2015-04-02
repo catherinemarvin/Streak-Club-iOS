@@ -61,7 +61,6 @@ static NSString *const KHkErrorsKey = @"errors";
             [self.delegate loginSucceededWithKey:key];
         }
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
-        // TODO: Catch error
         [self.delegate loginFailedWithError:error];
     }];
 }
