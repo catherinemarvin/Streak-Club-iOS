@@ -148,7 +148,23 @@
                 self.registerOnlyFieldsHeightConstraint = make.height.mas_equalTo(0);
             }];
         }
+        [self _setButtonTitles];
     }
+}
+
+- (void)_setButtonTitles {
+    NSString *actionTitle;
+    NSString *switchModeTitle;
+    
+    if (self.loginForm) {
+        actionTitle = NSLocalizedString(@"Login", nil);
+        switchModeTitle = NSLocalizedString(@"Register", nil);
+    } else {
+        actionTitle = NSLocalizedString(@"Register", nil);
+        switchModeTitle = NSLocalizedString(@"Go back", nil);
+    }
+    [self.actionButton setTitle:actionTitle forState:UIControlStateNormal];
+    [self.switchModeButton setTitle:switchModeTitle forState:UIControlStateNormal];
 }
 
 @end
