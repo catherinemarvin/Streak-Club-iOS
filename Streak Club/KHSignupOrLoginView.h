@@ -19,4 +19,7 @@
 @property (nonatomic, strong, readonly) UIButton *loginButton;
 @property (nonatomic, strong, readonly) UIButton *registerButton;
 
+// Checks if we're currently logging in or registering
+@property (nonatomic, assign) BOOL loginForm;
+
 @end

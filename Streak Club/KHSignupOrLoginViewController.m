@@ -23,12 +23,15 @@
 
 @property (nonatomic, strong) KHLoginManager *loginManager;
 
+@property (nonatomic, assign) BOOL loginForm;
+
 @end
 
 @implementation KHSignupOrLoginViewController
 
 - (instancetype)init {
     if (self = [super init]) {
+        _loginForm = YES;
         _loginManager = [[KHLoginManager alloc] initWithDelegate:self];
     }
     return self;
@@ -58,7 +61,9 @@
 }
 
 - (void)_registerTapped:(id)sender {
+    self.loginForm = !self.loginForm;
     
+    self.signupLoginView.loginForm = self.loginForm;
 }
 
 @end

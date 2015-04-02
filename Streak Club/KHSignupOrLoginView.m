@@ -28,9 +28,6 @@
 @property (nonatomic, strong) UIButton *loginButton;
 @property (nonatomic, strong) UIButton *registerButton;
 
-// Checks if we're currently logging in or registering
-@property (nonatomic, assign) BOOL loginForm;
-
 @end
 
 @implementation KHSignupOrLoginView
