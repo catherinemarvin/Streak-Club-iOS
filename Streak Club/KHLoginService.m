@@ -30,7 +30,9 @@ static NSString *const KHkPasswordKey = @"password";
 
 static NSString *const KHkLoginUrl = @"login";
 
-static NSString *const KHkSessionKeyKey = @"key";
+static NSString *const KHkLoginInfo = @"key";
+
+static NSString *const KhkLoginInfoKeyKey = @"key";
 static NSString *const KHkErrorsKey = @"errors";
 
 @implementation KHLoginService
@@ -57,7 +59,9 @@ static NSString *const KHkErrorsKey = @"errors";
                 return;
             }
             
-            NSString *key = [response valueForKey:KHkSessionKeyKey];
+            NSDictionary *loginInfo = [response valueForKey:KHkLoginInfo];
+            
+            NSString *key = [loginInfo valueForKey:KhkLoginInfoKeyKey];
             [self.delegate loginSucceededWithKey:key];
         }
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
