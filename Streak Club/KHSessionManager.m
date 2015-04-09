@@ -32,6 +32,13 @@ static NSString *const KhkUsernameKey = @"KhkUsernameKey";
     return shared;
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _loggedIn = [self _restoreSession];
+    }
+    return self;
+}
+
 - (void)loginWithUsername:(NSString *)username key:(NSString *)key {
     self.key = key;
     
@@ -62,6 +69,24 @@ static NSString *const KhkUsernameKey = @"KhkUsernameKey";
     
     [userDefaults removeObjectForKey:KhkUsernameKey];
     [userDefaults synchronize];
+}
+
+- (BOOL)_restoreSession {
+    BOOL success = NO;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [userDefaults objectForKey:KhkUsernameKey];
+    
+    if (username) {
+        NSError *error = nil;
+        NSString *key = [SSKeychain passwordForService:KhkKeychainServiceKey account:username error:&error];
+        if (key && !error) {
+            success = YES;
+            self.key = key;
+        } else {
+            NSLog(@"Failed to query session key: %@", error.debugDescription);
+        }
+    }
+    return success;
 }
 
 
