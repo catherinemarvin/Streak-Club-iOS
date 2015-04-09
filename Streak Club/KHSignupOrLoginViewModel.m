@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Kevin Hwang. All rights reserved.
 //
 
-#import "KHSignuporLoginViewModel.h"
+#import "KHSignupOrLoginViewModel.h"
 
-@interface KHSignuporLoginViewModel()
+@interface KHSignupOrLoginViewModel()
 
 @property (nonatomic, weak) id<KHSignupOrLoginViewProtocol>view;
 
 @end
 
-@implementation KHSignuporLoginViewModel
+@implementation KHSignupOrLoginViewModel
 
 - (instancetype)initWithView:(id<KHSignupOrLoginViewProtocol>)view {
     if (self = [super init]) {

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KHSignupOrLoginViewProtocol.h"
 
-@interface KHSignuporLoginViewModel : NSObject
+@interface KHSignupOrLoginViewModel : NSObject
 
 - (instancetype)initWithView:(id<KHSignupOrLoginViewProtocol>)view;
 

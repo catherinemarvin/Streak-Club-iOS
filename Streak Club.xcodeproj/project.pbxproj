@@ -29,7 +29,7 @@
 		6E0BE4E91AC92C2000BF4B45 /* KHLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4E81AC92C2000BF4B45 /* KHLoginManager.m */; };
 		6E0BE4EE1ACA731200BF4B45 /* KHRegisterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4ED1ACA731200BF4B45 /* KHRegisterManager.m */; };
 		6E5B3F681A835D9E0091A556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */; };
-		6E5E60DA1ACD2AB300669A0D /* KHSignuporLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60D91ACD2AB300669A0D /* KHSignuporLoginViewModel.m */; };
+		6E5E60DA1ACD2AB300669A0D /* KHSignupOrLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60D91ACD2AB300669A0D /* KHSignupOrLoginViewModel.m */; };
 		6E5E60E01AD1199B00669A0D /* KHGlobalTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60DF1AD1199B00669A0D /* KHGlobalTabBarViewController.m */; };
 		6E5E60E31AD3791A00669A0D /* KHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60E21AD3791A00669A0D /* KHHomeViewController.m */; };
 		6E5E60EA1AD5158F00669A0D /* KHHomeScreenService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60E91AD5158F00669A0D /* KHHomeScreenService.m */; };
@@ -95,8 +95,8 @@
 		6E0BE4ED1ACA731200BF4B45 /* KHRegisterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHRegisterManager.m; sourceTree = "<group>"; };
 		6E0BE4EF1ACA731B00BF4B45 /* KHRegisterManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHRegisterManagerDelegate.h; sourceTree = "<group>"; };
 		6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		6E5E60D81ACD2AB300669A0D /* KHSignuporLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignuporLoginViewModel.h; sourceTree = "<group>"; };
-		6E5E60D91ACD2AB300669A0D /* KHSignuporLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignuporLoginViewModel.m; sourceTree = "<group>"; };
+		6E5E60D81ACD2AB300669A0D /* KHSignupOrLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignupOrLoginViewModel.h; sourceTree = "<group>"; };
+		6E5E60D91ACD2AB300669A0D /* KHSignupOrLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignupOrLoginViewModel.m; sourceTree = "<group>"; };
 		6E5E60DB1ACD2B0D00669A0D /* KHSignupOrLoginViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignupOrLoginViewProtocol.h; sourceTree = "<group>"; };
 		6E5E60DE1AD1199B00669A0D /* KHGlobalTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarViewController.h; sourceTree = "<group>"; };
 		6E5E60DF1AD1199B00669A0D /* KHGlobalTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarViewController.m; sourceTree = "<group>"; };
@@ -309,8 +309,8 @@
 		6E5E60D71ACD2A9D00669A0D /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				6E5E60D81ACD2AB300669A0D /* KHSignuporLoginViewModel.h */,
-				6E5E60D91ACD2AB300669A0D /* KHSignuporLoginViewModel.m */,
+				6E5E60D81ACD2AB300669A0D /* KHSignupOrLoginViewModel.h */,
+				6E5E60D91ACD2AB300669A0D /* KHSignupOrLoginViewModel.m */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -630,7 +630,7 @@
 				6EF6617E1A773A7600DA5177 /* main.m in Sources */,
 				6E0BE4D91AC8DFAD00BF4B45 /* KHLoginService.m in Sources */,
 				6E0BE4CE1AC7AF4900BF4B45 /* KHSignupOrLoginViewController.m in Sources */,
-				6E5E60DA1ACD2AB300669A0D /* KHSignuporLoginViewModel.m in Sources */,
+				6E5E60DA1ACD2AB300669A0D /* KHSignupOrLoginViewModel.m in Sources */,
 				6E0BE4A51AC3D54000BF4B45 /* KHSplashScreenDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
