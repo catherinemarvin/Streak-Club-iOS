@@ -15,13 +15,13 @@
 #import <Masonry.h>
 
 // Login
-#import "KHLoginManager.h"
+#import "KHSignupOrLoginViewModel.h"
 
-@interface KHSignupOrLoginViewController ()<KHLoginManagerDelegate>
+@interface KHSignupOrLoginViewController()<KHSignupOrLoginViewProtocol>
 
 @property (nonatomic, strong) KHSignupOrLoginView *signupLoginView;
 
-@property (nonatomic, strong) KHLoginManager *loginManager;
+@property (nonatomic, strong) KHSignupOrLoginViewModel *viewModel;
 
 @property (nonatomic, assign) BOOL loginForm;
 
@@ -32,7 +32,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         _loginForm = YES;
-        _loginManager = [[KHLoginManager alloc] initWithDelegate:self];
+        _viewModel = [[KHSignupOrLoginViewModel alloc] initWithView:self];
     }
     return self;
 }
@@ -57,7 +57,7 @@
 - (void)_actionTapped:(id)sender {
     NSString *username = self.signupLoginView.usernameField.text;
     NSString *password = self.signupLoginView.passwordField.text;
-    [self.loginManager loginWithUsername:username password:password];
+    [self.viewModel requestLoginWithUsername:username password:password];
 }
 
 - (void)_switchModeTapped:(id)sender {

@@ -13,4 +13,6 @@
 
 - (instancetype)initWithView:(id<KHSignupOrLoginViewProtocol>)view;
 
+- (void)requestLoginWithUsername:(NSString *)username password:(NSString *)password;
+
 @end

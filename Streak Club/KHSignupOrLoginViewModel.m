@@ -8,9 +8,14 @@
 
 #import "KHSignupOrLoginViewModel.h"
 
-@interface KHSignupOrLoginViewModel()
+// Login
+#import "KHLoginManager.h"
+
+@interface KHSignupOrLoginViewModel()<KHLoginManagerDelegate>
 
 @property (nonatomic, weak) id<KHSignupOrLoginViewProtocol>view;
+
+@property (nonatomic, strong) KHLoginManager *loginManager;
 
 @end
 
@@ -19,8 +24,15 @@
 - (instancetype)initWithView:(id<KHSignupOrLoginViewProtocol>)view {
     if (self = [super init]) {
         _view = view;
+        _loginManager = [[KHLoginManager alloc] initWithDelegate:self];
     }
     return self;
 }
+
+- (void)requestLoginWithUsername:(NSString *)username password:(NSString *)password {
+    [self.loginManager loginWithUsername:username password:password];
+}
+
+#pragma mark - KHLoginManagerDelegate
 
 @end
