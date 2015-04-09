@@ -11,11 +11,15 @@
 // Login
 #import "KHLoginManager.h"
 
-@interface KHSignupOrLoginViewModel()<KHLoginManagerDelegate>
+// Register
+#import "KHRegisterManager.h"
+
+@interface KHSignupOrLoginViewModel()<KHLoginManagerDelegate, KHRegisterManagerDelegate>
 
 @property (nonatomic, weak) id<KHSignupOrLoginViewProtocol>view;
 
 @property (nonatomic, strong) KHLoginManager *loginManager;
+@property (nonatomic, strong) KHRegisterManager *registerManager;
 
 @end
 
@@ -25,6 +29,7 @@
     if (self = [super init]) {
         _view = view;
         _loginManager = [[KHLoginManager alloc] initWithDelegate:self];
+        _registerManager = [[KHRegisterManager alloc] initWithDelegate:self];
     }
     return self;
 }
@@ -34,5 +39,7 @@
 }
 
 #pragma mark - KHLoginManagerDelegate
+
+#pragma mark - KHRegisterManagerDelegate
 
 @end
