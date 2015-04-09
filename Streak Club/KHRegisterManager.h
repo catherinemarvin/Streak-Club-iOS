@@ -13,4 +13,6 @@
 
 - (instancetype)initWithDelegate:(id<KHRegisterManagerDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
+- (void)registerWithUsername:(NSString *)username password:(NSString *)password repeatPassword:(NSString *)repeatPassword email:(NSString *)email;
+
 @end
