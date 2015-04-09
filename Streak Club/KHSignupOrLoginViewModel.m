@@ -29,8 +29,8 @@
     return self;
 }
 
-- (void)requestLoginWithUsername:(NSString *)username password:(NSString *)password {
-    [self.loginManager loginWithUsername:username password:password];
+- (void)actionTapped:(NSString *)username password:(NSString *)password repeatPassword:(NSString *)repeatPassword email:(NSString *)email {
+    
 }
 
 #pragma mark - KHLoginManagerDelegate

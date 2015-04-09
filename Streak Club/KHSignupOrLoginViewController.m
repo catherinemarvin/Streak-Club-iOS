@@ -57,7 +57,9 @@
 - (void)_actionTapped:(id)sender {
     NSString *username = self.signupLoginView.usernameField.text;
     NSString *password = self.signupLoginView.passwordField.text;
-    [self.viewModel requestLoginWithUsername:username password:password];
+    NSString *repeatPassword = self.signupLoginView.repeatPasswordField.text;
+    NSString *email = self.signupLoginView.emailField.text;
+    [self.viewModel actionTapped:username password:password repeatPassword:repeatPassword email:email];
 }
 
 - (void)_switchModeTapped:(id)sender {
