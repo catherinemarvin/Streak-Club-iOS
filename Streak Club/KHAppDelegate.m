@@ -21,6 +21,10 @@
 
 @implementation KHAppDelegate
 
+- (void)dealloc {
+    [[KHSessionManager sharedInstance] removeObserver:self forKeyPath:NSStringFromSelector(@selector(loggedIn))];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -28,11 +32,14 @@
     
     UIViewController *mainScreen;
     
-    if ([[KHSessionManager sharedInstance] loggedIn]) {
+    KHSessionManager *sessionManager = [KHSessionManager sharedInstance];
+    if ([sessionManager loggedIn]) {
         mainScreen = [[KHGlobalTabBarViewController alloc] init];
     } else {
         mainScreen = [[KHSplashScreenViewController alloc] init];
     }
+    
+    [sessionManager addObserver:self forKeyPath:NSStringFromSelector(@selector(loggedIn)) options:0 context:nil];
     
     self.window.rootViewController = mainScreen;
     return YES;
@@ -58,6 +65,17 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(loggedIn))]) {
+        if (![[KHSessionManager sharedInstance] loggedIn]) {
+            // If you logged out, dump back to the splash screen
+            self.window.rootViewController = [[KHSplashScreenViewController alloc] init];
+        }
+    }
 }
 
 @end
