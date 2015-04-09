@@ -10,14 +10,17 @@
 
 // Tab Bar Sections
 #import "KHHomeViewController.h"
+#import "KHSettingsViewController.h"
 
 typedef NS_ENUM(NSInteger, KHGlobalTabBarSection) {
-    KHGlobalTabBarSectionHome
+    KHGlobalTabBarSectionHome,
+    KHGlobalTabBarSectionSettings
 };
 
 @interface KHGlobalTabBarViewController ()
 
 @property (nonatomic, strong) KHHomeViewController *homeViewController;
+@property (nonatomic, strong) KHSettingsViewController *settingsViewController;
 
 @end
 
@@ -29,7 +32,11 @@ typedef NS_ENUM(NSInteger, KHGlobalTabBarSection) {
         _homeViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Home", nil) image:[UIImage imageNamed:@"homeTabIcon"] tag:KHGlobalTabBarSectionHome];
         UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:_homeViewController];
         
-        NSArray *viewControllers = @[homeNav];
+        _settingsViewController = [[KHSettingsViewController alloc] init];
+        _settingsViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Settings", nil) image:[UIImage imageNamed:@"settingsTabIcon"] tag:KHGlobalTabBarSectionSettings];
+        UINavigationController *settingsNav = [[UINavigationController alloc] initWithRootViewController:_settingsViewController];
+        
+        NSArray *viewControllers = @[homeNav, settingsNav];
         [self setViewControllers:viewControllers];
     }
     return self;
