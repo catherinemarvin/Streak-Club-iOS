@@ -1,0 +1,1 @@
+PODS_STREAK_CLUB_MANTLE_OTHER_LDFLAGS = -framework "Foundation"

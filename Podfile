@@ -7,6 +7,7 @@ pod 'CocoaLumberjack'
 pod 'AFNetworking'
 pod 'Masonry'
 pod 'SSKeychain'
+pod 'Mantle'
 
 end
 

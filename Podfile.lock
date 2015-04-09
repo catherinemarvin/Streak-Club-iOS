@@ -25,18 +25,23 @@ PODS:
   - CocoaLumberjack/Core (1.9.2)
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
+  - Mantle (2.0):
+    - Mantle/extobjc (= 2.0)
+  - Mantle/extobjc (2.0)
   - Masonry (0.6.1)
   - SSKeychain (1.2.2)
 
 DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack
+  - Mantle
   - Masonry
   - SSKeychain
 
 SPEC CHECKSUMS:
   AFNetworking: 96ac9bf3eda33582701cb1fcc5b896aa1e20311e
   CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
+  Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   SSKeychain: 88767e903ee8d274ed380e364d96b7a101235286
 
