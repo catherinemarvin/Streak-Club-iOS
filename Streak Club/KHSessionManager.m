@@ -14,6 +14,7 @@
 @interface KHSessionManager()
 
 @property (nonatomic, strong) NSString *key;
+@property (nonatomic, assign) BOOL loggedIn;
 
 @end
 
@@ -40,6 +41,7 @@ static NSString *const KhkUsernameKey = @"KhkUsernameKey";
     
     NSError *error;
     if ([SSKeychain setPassword:key forService:KhkKeychainServiceKey account:username error:&error]) {
+        self.loggedIn = YES;
         NSLog(@"Key saved!");
     } else {
         NSLog(@"Failed to save key: %@", error.debugDescription);
@@ -56,6 +58,7 @@ static NSString *const KhkUsernameKey = @"KhkUsernameKey";
         NSLog(@"Failed to logout: %@", error.localizedDescription);
     }
     self.key = nil;
+    self.loggedIn = NO;
     
     [userDefaults removeObjectForKey:KhkUsernameKey];
     [userDefaults synchronize];

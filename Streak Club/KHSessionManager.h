@@ -11,6 +11,7 @@
 @interface KHSessionManager : NSObject
 
 @property (nonatomic, strong, readonly) NSString *key;
+@property (nonatomic, assign, readonly) BOOL loggedIn;
 
 + (KHSessionManager *)sharedInstance;
 

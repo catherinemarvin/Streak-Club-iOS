@@ -7,7 +7,13 @@
 //
 
 #import "KHAppDelegate.h"
+
+// Session
+#import "KHSessionManager.h"
+
+// Views
 #import "KHSplashScreenViewController.h"
+#import "KHGlobalTabBarViewController.h"
 
 @interface KHAppDelegate ()
 
@@ -20,9 +26,15 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
     
-    KHSplashScreenViewController *splashScreen = [[KHSplashScreenViewController alloc] init];
+    UIViewController *mainScreen;
     
-    self.window.rootViewController = splashScreen;
+    if ([[KHSessionManager sharedInstance] loggedIn]) {
+        mainScreen = [[KHGlobalTabBarViewController alloc] init];
+    } else {
+        mainScreen = [[KHSplashScreenViewController alloc] init];
+    }
+    
+    self.window.rootViewController = mainScreen;
     return YES;
 }
 
