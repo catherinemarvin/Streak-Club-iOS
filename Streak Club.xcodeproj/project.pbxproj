@@ -742,6 +742,10 @@
 				INFOPLIST_FILE = "Streak Club/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Werror",
+					"-Wall",
+				);
 			};
 			name = Debug;
 		};
@@ -755,6 +759,10 @@
 				INFOPLIST_FILE = "Streak Club/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Werror",
+					"-Wall",
+				);
 			};
 			name = Release;
 		};

@@ -85,10 +85,12 @@ static NSString *const KHkErrorsKey = @"errors";
         localizedDescription = NSLocalizedString(@"Login failed.", nil);
         localizedFailureReason = NSLocalizedString(@"Username or password was incorrect.", nil);
         localizedRecoverySuggestion = NSLocalizedString(@"Please double check your username and password.", nil);
+        errorCode = KHLoginErrorBadCredentials;
     } else {
         localizedDescription = NSLocalizedString(@"Login failed.", nil);
         localizedFailureReason = NSLocalizedString(@"Something went wrong.", nil);
         localizedRecoverySuggestion = NSLocalizedString(@"Please try again.", nil);
+        errorCode = KHLoginErrorGenericError;
     }
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     
