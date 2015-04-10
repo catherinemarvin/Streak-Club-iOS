@@ -40,6 +40,22 @@
 
 #pragma mark - KHLoginManagerDelegate
 
+- (void)loginSucceededWithKey:(NSString *)key {
+    NSLog(@"Login succeeded with key: %@", key);
+}
+
+- (void)loginFailedWithError:(NSError *)error {
+    NSLog(@"Login failed with error: %@", error.debugDescription);
+}
+
 #pragma mark - KHRegisterManagerDelegate
+
+- (void)registerSucceededWithKey:(NSString *)key {
+    NSLog(@"Register succeeded with key: %@", key);
+}
+
+- (void)registerFailedWithError:(NSError *)error {
+    NSLog(@"Register failed with error: %@", error.debugDescription);
+}
 
 @end

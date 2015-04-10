@@ -35,11 +35,11 @@
 #pragma mark - KHLoginServiceDelegate
 
 - (void)loginSucceededWithKey:(NSString *)key {
-    NSLog(@"Login succeeded with key: %@", key);
+    [self.delegate loginSucceededWithKey:key];
 }
 
 - (void)loginFailedWithError:(NSError *)error {
-    NSLog(@"Login failed with error: %@", error.localizedDescription);
+    [self.delegate loginFailedWithError:error];
 }
 
 @end

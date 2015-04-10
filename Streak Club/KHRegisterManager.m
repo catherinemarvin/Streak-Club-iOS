@@ -35,11 +35,11 @@
 #pragma mark - KHRegisterServiceDelegate
 
 - (void)registerSucceededWithKey:(NSString *)key {
-    NSLog(@"Register succeeded with key: %@", key);
+    [self.delegate registerSucceededWithKey:key];
 }
 
 - (void)registerFailedWithError:(NSError *)error {
-    NSLog(@"Register failed with error: %@", error.localizedDescription);
+    [self.delegate registerFailedWithError:error];
 }
 
 @end

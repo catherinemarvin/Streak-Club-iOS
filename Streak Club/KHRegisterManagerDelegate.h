@@ -10,4 +10,8 @@
 
 @protocol KHRegisterManagerDelegate <NSObject>
 
+- (void)registerSucceededWithKey:(NSString *)key;
+
+- (void)registerFailedWithError:(NSError *)error;
+
 @end
