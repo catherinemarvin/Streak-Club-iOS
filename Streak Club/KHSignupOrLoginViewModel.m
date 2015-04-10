@@ -14,6 +14,9 @@
 // Register
 #import "KHRegisterManager.h"
 
+// Session Management
+#import "KHSessionManager.h"
+
 @interface KHSignupOrLoginViewModel()<KHLoginManagerDelegate, KHRegisterManagerDelegate>
 
 @property (nonatomic, weak) id<KHSignupOrLoginViewProtocol>view;
@@ -45,10 +48,15 @@
     }
 }
 
+- (void)toggleModeTapped {
+    self.loginMode = !self.loginMode;
+    [self.view setLoginMode:self.loginMode];
+}
+
 #pragma mark - KHLoginManagerDelegate
 
-- (void)loginSucceededWithKey:(NSString *)key {
-    NSLog(@"Login succeeded with key: %@", key);
+- (void)loginSucceededWithUsername:(NSString *)username key:(NSString *)key {
+    [[KHSessionManager sharedInstance] loginWithUsername:username key:key];
 }
 
 - (void)loginFailedWithError:(NSError *)error {

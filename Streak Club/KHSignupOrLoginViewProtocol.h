@@ -10,4 +10,6 @@
 
 @protocol KHSignupOrLoginViewProtocol <NSObject>
 
+- (void)setLoginMode:(BOOL)loginMode;
+
 @end

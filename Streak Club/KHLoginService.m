@@ -62,7 +62,7 @@ static NSString *const KHkErrorsKey = @"errors";
             NSDictionary *loginInfo = [response valueForKey:KHkLoginInfo];
             
             NSString *key = [loginInfo valueForKey:KhkLoginInfoKeyKey];
-            [self.delegate loginSucceededWithKey:key];
+            [self.delegate loginSucceededWithUsername:username key:key];
         }
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
         [self.delegate loginFailedWithError:error];

@@ -52,6 +52,12 @@
     [self.signupLoginView.switchModeButton addTarget:self action:@selector(_switchModeTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+#pragma mark - KHSignupOrLoginViewProtocol
+- (void)setLoginMode:(BOOL)loginMode {
+    self.loginForm = loginMode;
+    self.signupLoginView.loginForm = self.loginForm;
+}
+
 #pragma mark - Button Presses
 
 - (void)_actionTapped:(id)sender {
@@ -63,9 +69,7 @@
 }
 
 - (void)_switchModeTapped:(id)sender {
-    self.loginForm = !self.loginForm;
-    
-    self.signupLoginView.loginForm = self.loginForm;
+    [self.viewModel toggleModeTapped];
 }
 
 @end

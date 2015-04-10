@@ -34,8 +34,8 @@
 
 #pragma mark - KHLoginServiceDelegate
 
-- (void)loginSucceededWithKey:(NSString *)key {
-    [self.delegate loginSucceededWithKey:key];
+- (void)loginSucceededWithUsername:(NSString *)username key:(NSString *)key {
+    [self.delegate loginSucceededWithUsername:username key:key];
 }
 
 - (void)loginFailedWithError:(NSError *)error {

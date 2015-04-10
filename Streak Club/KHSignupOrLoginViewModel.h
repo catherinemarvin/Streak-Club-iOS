@@ -15,4 +15,6 @@
 
 - (void)actionTapped:(NSString *)username password:(NSString *)password repeatPassword:(NSString *)repeatPassword email:(NSString *)email;
 
+- (void)toggleModeTapped;
+
 @end
