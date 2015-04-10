@@ -21,6 +21,8 @@
 @property (nonatomic, strong) KHLoginManager *loginManager;
 @property (nonatomic, strong) KHRegisterManager *registerManager;
 
+@property (nonatomic, assign) BOOL loginMode;
+
 @end
 
 @implementation KHSignupOrLoginViewModel
@@ -30,12 +32,17 @@
         _view = view;
         _loginManager = [[KHLoginManager alloc] initWithDelegate:self];
         _registerManager = [[KHRegisterManager alloc] initWithDelegate:self];
+        _loginMode = YES;
     }
     return self;
 }
 
 - (void)actionTapped:(NSString *)username password:(NSString *)password repeatPassword:(NSString *)repeatPassword email:(NSString *)email {
-    
+    if (self.loginMode) {
+        [self.loginManager loginWithUsername:username password:password];
+    } else {
+        [self.registerManager registerWithUsername:username password:password repeatPassword:repeatPassword email:email];
+    }
 }
 
 #pragma mark - KHLoginManagerDelegate
