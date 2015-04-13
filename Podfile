@@ -15,3 +15,5 @@ target 'Streak ClubTests' do
 
 end
 
+inhibit_all_warnings!
+
