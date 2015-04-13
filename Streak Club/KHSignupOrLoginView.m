@@ -42,6 +42,9 @@
             UITextField *field = [[UITextField alloc] init];
             field.font = [UIFont regularWithSize:16];
             field.placeholder = NSLocalizedString(@"Username", nil);
+            field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            field.autocorrectionType = UITextAutocorrectionTypeNo;
+            field.returnKeyType = UIReturnKeyNext;
             
             field;
         });
@@ -51,6 +54,9 @@
             UITextField *field = [[UITextField alloc] init];
             field.font = [UIFont regularWithSize:16];
             field.placeholder = NSLocalizedString(@"Password", nil);
+            field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            field.autocorrectionType = UITextAutocorrectionTypeNo;
+            field.returnKeyType = UIReturnKeyGo;
             field;
         });
         [self addSubview:_passwordField];
