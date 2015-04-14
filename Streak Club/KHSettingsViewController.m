@@ -8,11 +8,16 @@
 
 #import "KHSettingsViewController.h"
 
+// View
+#import "KHSettingsViewCell.h"
+
 // View Helper
 #import <Masonry.h>
 
 // Data Source
 #import "KHSettingsDataSource.h"
+
+static NSString *KHkSettingsCellIdentifier = @"KHkSettingsCellIdentifier";
 
 @interface KHSettingsViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -38,6 +43,7 @@
         make.edges.equalTo(self.view);
     }];
     self.tableView.dataSource = self;
+    [self.tableView registerClass:[KHSettingsViewCell class] forCellReuseIdentifier:KHkSettingsCellIdentifier];
 }
 
 #pragma mark - UITableViewDataSource
@@ -48,6 +54,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.dataSource numberOfRowsInSection:section];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KHkSettingsCellIdentifier forIndexPath:indexPath];
+    
+    if ([cell isKindOfClass:[KHSettingsViewCell class]]) {
+        KHSettingsViewCell *settingCell = (KHSettingsViewCell *)cell;
+        [self _configureCell:settingCell indexPath:indexPath];
+    }
+    return cell;
+}
+
+- (void)_configureCell:(KHSettingsViewCell *)cell indexPath:(NSIndexPath *)indexPath {
+    
 }
 
 @end
