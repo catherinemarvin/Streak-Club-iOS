@@ -17,7 +17,7 @@
 // Login
 #import "KHSignupOrLoginViewModel.h"
 
-@interface KHSignupOrLoginViewController()<KHSignupOrLoginViewProtocol>
+@interface KHSignupOrLoginViewController()<KHSignupOrLoginViewProtocol, UITextFieldDelegate>
 
 @property (nonatomic, strong) KHSignupOrLoginView *signupLoginView;
 
@@ -47,12 +47,18 @@
         make.edges.equalTo(self.view);
     }];
     
+    self.signupLoginView.usernameField.delegate = self;
+    self.signupLoginView.passwordField.delegate = self;
+    self.signupLoginView.repeatPasswordField.delegate = self;
+    self.signupLoginView.emailField.delegate = self;
+    
     [self.signupLoginView.actionButton addTarget:self action:@selector(_actionTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.signupLoginView.switchModeButton addTarget:self action:@selector(_switchModeTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - KHSignupOrLoginViewProtocol
+
 - (void)setLoginMode:(BOOL)loginMode {
     self.loginForm = loginMode;
     self.signupLoginView.loginForm = self.loginForm;
@@ -70,6 +76,29 @@
 
 - (void)_switchModeTapped:(id)sender {
     [self.viewModel toggleModeTapped];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:self.signupLoginView.usernameField]) {
+        [self.signupLoginView.passwordField becomeFirstResponder];
+        return NO;
+    } else if ([textField isEqual:self.signupLoginView.passwordField]) {
+        if (self.loginForm) {
+            return YES;
+        } else {
+            [self.signupLoginView.repeatPasswordField becomeFirstResponder];
+            return NO;
+        }
+    } else if ([textField isEqual:self.signupLoginView.repeatPasswordField]) {
+        [self.signupLoginView.emailField becomeFirstResponder];
+        return NO;
+    } else {
+        [textField resignFirstResponder];
+        [self _actionTapped:nil];
+        return YES;
+    }
 }
 
 @end
