@@ -8,30 +8,46 @@
 
 #import "KHSettingsViewController.h"
 
-@interface KHSettingsViewController ()
+// View Helper
+#import <Masonry.h>
+
+// Data Source
+#import "KHSettingsDataSource.h"
+
+@interface KHSettingsViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) KHSettingsDataSource *dataSource;
 
 @end
 
 @implementation KHSettingsViewController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _dataSource = [[KHSettingsDataSource alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    self.tableView.dataSource = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.dataSource numberOfSections];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.dataSource numberOfRowsInSection:section];
 }
-*/
 
 @end

@@ -35,6 +35,7 @@
 		6E5E60EA1AD5158F00669A0D /* KHHomeScreenService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60E91AD5158F00669A0D /* KHHomeScreenService.m */; };
 		6E5E60EF1AD6334D00669A0D /* KHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60EE1AD6334D00669A0D /* KHSettingsViewController.m */; };
 		6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */; };
+		6ECCF0BF1ADD0A6B0028EC35 /* KHSettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECCF0BE1ADD0A6B0028EC35 /* KHSettingsDataSource.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
 		6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF661801A773A7600DA5177 /* KHAppDelegate.m */; };
 		6EF661891A773A7600DA5177 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF661881A773A7600DA5177 /* Images.xcassets */; };
@@ -109,6 +110,8 @@
 		6E5E60EE1AD6334D00669A0D /* KHSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSettingsViewController.m; sourceTree = "<group>"; };
 		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
 		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
+		6ECCF0BD1ADD0A6B0028EC35 /* KHSettingsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsDataSource.h; sourceTree = "<group>"; };
+		6ECCF0BE1ADD0A6B0028EC35 /* KHSettingsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSettingsDataSource.m; sourceTree = "<group>"; };
 		6EF661781A773A7600DA5177 /* Streak Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Streak Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF6617C1A773A7600DA5177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF6617D1A773A7600DA5177 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -371,8 +374,8 @@
 		6E5E60EC1AD6333000669A0D /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
-				6E5E60ED1AD6334D00669A0D /* KHSettingsViewController.h */,
-				6E5E60EE1AD6334D00669A0D /* KHSettingsViewController.m */,
+				6ECCF0BC1ADD0A480028EC35 /* Data Source */,
+				6ECCF0BB1ADD0A3F0028EC35 /* View */,
 			);
 			name = "Settings Screen";
 			sourceTree = "<group>";
@@ -386,6 +389,24 @@
 				6E5B3F661A835B500091A556 /* Splash Screen */,
 			);
 			name = Modules;
+			sourceTree = "<group>";
+		};
+		6ECCF0BB1ADD0A3F0028EC35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E5E60ED1AD6334D00669A0D /* KHSettingsViewController.h */,
+				6E5E60EE1AD6334D00669A0D /* KHSettingsViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6ECCF0BC1ADD0A480028EC35 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				6ECCF0BD1ADD0A6B0028EC35 /* KHSettingsDataSource.h */,
+				6ECCF0BE1ADD0A6B0028EC35 /* KHSettingsDataSource.m */,
+			);
+			name = "Data Source";
 			sourceTree = "<group>";
 		};
 		6EF6616F1A773A7600DA5177 = {
@@ -626,6 +647,7 @@
 				6E0BE4E41AC8EBBF00BF4B45 /* KHSessionManager.m in Sources */,
 				6E0BE4B61AC5FAF200BF4B45 /* UIFont+CustomFonts.m in Sources */,
 				6E0BE4D51AC8DEB800BF4B45 /* KHAPIService.m in Sources */,
+				6ECCF0BF1ADD0A6B0028EC35 /* KHSettingsDataSource.m in Sources */,
 				6E0BE4B31AC5F11000BF4B45 /* UIColor+HexString.m in Sources */,
 				6EF6617E1A773A7600DA5177 /* main.m in Sources */,
 				6E0BE4D91AC8DFAD00BF4B45 /* KHLoginService.m in Sources */,
