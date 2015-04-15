@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, KHSettingsCellType) {
+    KHSettingsCellTypeLogout,
+    KHSettingsCellTypeUsername,
+    KHSettingsCellTypeContact
+};
+
 @interface KHSettingsDataSource : NSObject
 
 - (NSInteger)numberOfSections;
