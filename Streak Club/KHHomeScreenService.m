@@ -11,12 +11,17 @@
 // API Calls
 #import "KHAPIService.h"
 
+// Models
+#import "KHStreakModel.h"
+
 @interface KHHomeScreenService()
 
 @property (nonatomic, weak) id<KHHomeScreenServiceDelegate>delegate;
 @property (nonatomic, strong) KHAPIService *apiService;
 
 @end
+
+static NSString *const KHkHomeScreenUrl = @"my-streaks";
 
 @implementation KHHomeScreenService
 
@@ -26,6 +31,16 @@
         _apiService = [[KHAPIService alloc] init];
     }
     return self;
+}
+
+- (void)requestHomePage {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    [self.apiService post:KHkHomeScreenUrl parameters:params success:^(id responseObject) {
+        
+    } failure:^(NSDictionary *errorDictionary, NSError *error) {
+        
+    }];
 }
 
 @end

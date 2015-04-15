@@ -13,4 +13,6 @@
 
 - (instancetype)initWithDelegate:(id<KHHomeScreenServiceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
+- (void)requestHomePage;
+
 @end

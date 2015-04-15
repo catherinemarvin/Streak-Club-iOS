@@ -37,6 +37,7 @@
 		6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */; };
 		6ECCF0BF1ADD0A6B0028EC35 /* KHSettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECCF0BE1ADD0A6B0028EC35 /* KHSettingsDataSource.m */; };
 		6ECCF0C21ADD0EBA0028EC35 /* KHSettingsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECCF0C11ADD0EBA0028EC35 /* KHSettingsViewCell.m */; };
+		6ECCF0C61ADE5C150028EC35 /* KHStreakModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECCF0C51ADE5C150028EC35 /* KHStreakModel.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
 		6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF661801A773A7600DA5177 /* KHAppDelegate.m */; };
 		6EF661891A773A7600DA5177 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF661881A773A7600DA5177 /* Images.xcassets */; };
@@ -115,6 +116,8 @@
 		6ECCF0BE1ADD0A6B0028EC35 /* KHSettingsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSettingsDataSource.m; sourceTree = "<group>"; };
 		6ECCF0C01ADD0EBA0028EC35 /* KHSettingsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsViewCell.h; sourceTree = "<group>"; };
 		6ECCF0C11ADD0EBA0028EC35 /* KHSettingsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSettingsViewCell.m; sourceTree = "<group>"; };
+		6ECCF0C41ADE5C150028EC35 /* KHStreakModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakModel.h; sourceTree = "<group>"; };
+		6ECCF0C51ADE5C150028EC35 /* KHStreakModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakModel.m; sourceTree = "<group>"; };
 		6EF661781A773A7600DA5177 /* Streak Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Streak Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF6617C1A773A7600DA5177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF6617D1A773A7600DA5177 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -386,6 +389,7 @@
 		6E9875491A7A1C0E0042B3DD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6ECCF0C31ADE5C030028EC35 /* Models */,
 				6E5E60DD1AD1190900669A0D /* Global Tab Bar */,
 				6E5E60DC1AD1185E00669A0D /* Home Screen */,
 				6E5E60EC1AD6333000669A0D /* Settings Screen */,
@@ -412,6 +416,15 @@
 				6ECCF0BE1ADD0A6B0028EC35 /* KHSettingsDataSource.m */,
 			);
 			name = "Data Source";
+			sourceTree = "<group>";
+		};
+		6ECCF0C31ADE5C030028EC35 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6ECCF0C41ADE5C150028EC35 /* KHStreakModel.h */,
+				6ECCF0C51ADE5C150028EC35 /* KHStreakModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		6EF6616F1A773A7600DA5177 = {
@@ -645,6 +658,7 @@
 				6E0BE4E91AC92C2000BF4B45 /* KHLoginManager.m in Sources */,
 				6E0BE4D11AC7B15300BF4B45 /* KHSignupOrLoginView.m in Sources */,
 				6E5E60EF1AD6334D00669A0D /* KHSettingsViewController.m in Sources */,
+				6ECCF0C61ADE5C150028EC35 /* KHStreakModel.m in Sources */,
 				6E0BE4A81AC3D74800BF4B45 /* KHSplashScreenInfo.m in Sources */,
 				6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */,
 				6E0BE4DD1AC8E09D00BF4B45 /* KHRegisterService.m in Sources */,
