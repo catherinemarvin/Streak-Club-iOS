@@ -37,9 +37,10 @@ static NSString *const KHkHomeScreenUrl = @"my-streaks";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     [self.apiService post:KHkHomeScreenUrl parameters:params success:^(id responseObject) {
+        NSLog(responseObject);
         
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
-        
+        NSLog(error.debugDescription);
     }];
 }
 
