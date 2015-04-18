@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0481291AE0938900007187 /* KHHomeScreenDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0481281AE0938900007187 /* KHHomeScreenDataSource.m */; };
 		6E0BE4A11AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4A01AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m */; };
 		6E0BE4A51AC3D54000BF4B45 /* KHSplashScreenDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4A41AC3D54000BF4B45 /* KHSplashScreenDataSource.m */; };
 		6E0BE4A81AC3D74800BF4B45 /* KHSplashScreenInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4A71AC3D74800BF4B45 /* KHSplashScreenInfo.m */; };
@@ -58,6 +59,9 @@
 /* Begin PBXFileReference section */
 		0E6370BDDA3881A0DE2D463F /* Pods-Streak Club.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Streak Club.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Streak Club/Pods-Streak Club.debug.xcconfig"; sourceTree = "<group>"; };
 		640B7F30FF86833A9D5D4AFF /* libPods-Streak Club.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Streak Club.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E0481271AE0938900007187 /* KHHomeScreenDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHHomeScreenDataSource.h; sourceTree = "<group>"; };
+		6E0481281AE0938900007187 /* KHHomeScreenDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHHomeScreenDataSource.m; sourceTree = "<group>"; };
+		6E04812A1AE0939C00007187 /* KHHomeScreenDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHHomeScreenDataSourceDelegate.h; sourceTree = "<group>"; };
 		6E0BE49F1AC3D52C00BF4B45 /* KHSplashScreenContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenContentViewController.h; sourceTree = "<group>"; };
 		6E0BE4A01AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenContentViewController.m; sourceTree = "<group>"; };
 		6E0BE4A31AC3D54000BF4B45 /* KHSplashScreenDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenDataSource.h; sourceTree = "<group>"; };
@@ -363,6 +367,9 @@
 		6E5E60E61AD5156E00669A0D /* Data Source */ = {
 			isa = PBXGroup;
 			children = (
+				6E0481271AE0938900007187 /* KHHomeScreenDataSource.h */,
+				6E0481281AE0938900007187 /* KHHomeScreenDataSource.m */,
+				6E04812A1AE0939C00007187 /* KHHomeScreenDataSourceDelegate.h */,
 			);
 			name = "Data Source";
 			sourceTree = "<group>";
@@ -663,6 +670,7 @@
 				6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */,
 				6E0BE4DD1AC8E09D00BF4B45 /* KHRegisterService.m in Sources */,
 				6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */,
+				6E0481291AE0938900007187 /* KHHomeScreenDataSource.m in Sources */,
 				6E0BE4E41AC8EBBF00BF4B45 /* KHSessionManager.m in Sources */,
 				6ECCF0C21ADD0EBA0028EC35 /* KHSettingsViewCell.m in Sources */,
 				6E0BE4B61AC5FAF200BF4B45 /* UIFont+CustomFonts.m in Sources */,
