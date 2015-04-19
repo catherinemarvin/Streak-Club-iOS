@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, KHSettingsCellType) {
-    KHSettingsCellTypeLogout,
+    KHSettingsCellTypeLogout = 0,
     KHSettingsCellTypeUsername,
     KHSettingsCellTypeContact
 };
@@ -18,5 +18,6 @@ typedef NS_ENUM(NSInteger, KHSettingsCellType) {
 
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
+- (NSString *)titleForIndex:(NSInteger)index;
 
 @end

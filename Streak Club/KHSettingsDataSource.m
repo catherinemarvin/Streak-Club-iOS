@@ -18,4 +18,25 @@
     return 1;
 }
 
+- (NSString *)titleForIndex:(NSInteger)index {
+    switch (index) {
+        case KHSettingsCellTypeLogout: {
+            return NSLocalizedString(@"Logout", nil);
+            break;
+        }
+        case KHSettingsCellTypeUsername: {
+            return NSLocalizedString(@"Username", nil);
+            break;
+        }
+        case KHSettingsCellTypeContact: {
+            return NSLocalizedString(@"Contact", nil);
+            break;
+        }
+        default: {
+            return NSLocalizedString(@"Unknown cell", nil);
+            break;
+        }
+    }
+}
+
 @end
