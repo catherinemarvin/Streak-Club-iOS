@@ -15,6 +15,8 @@
 
 @end
 
+static NSString *const KHkEmailRecipient = @"k3vinhwang@gmail.com";
+
 @implementation KHSettingsMailController
 
 - (instancetype)initWithDelegate:(id<KHSettingsMailControllerDelegate>)delegate {
@@ -34,10 +36,22 @@
     
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
     mailController.mailComposeDelegate = self;
-    [mailController setToRecipients:@[@"k3vinhwang@gmail.com"]];
+    [mailController setToRecipients:@[KHkEmailRecipient]];
     [mailController setSubject:NSLocalizedString(@"Itch.io App Feedback", nil)];
     
     [self.delegate mailControllerCreated:mailController];
+}
+
+
+#pragma mark - MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"Mail sent!");
+    }
+    
+    [self.delegate dismissMailController];
 }
 
 @end

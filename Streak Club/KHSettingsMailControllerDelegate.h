@@ -16,5 +16,7 @@
 
 - (void)mailControllerCreated:(UIViewController *)mailController;
 
+- (void)dismissMailController;
+
 
 @end
