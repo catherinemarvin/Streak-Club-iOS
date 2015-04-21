@@ -17,12 +17,14 @@
 // Data Source
 #import "KHSettingsDataSource.h"
 
-static NSString *KHkSettingsCellIdentifier = @"KHkSettingsCellIdentifier";
+// Delegate
+#import "KHSettingsDelegate.h"
 
-@interface KHSettingsViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface KHSettingsViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) KHSettingsDataSource *dataSource;
+@property (nonatomic, strong) KHSettingsDelegate *delegate;
 
 @end
 
@@ -31,6 +33,7 @@ static NSString *KHkSettingsCellIdentifier = @"KHkSettingsCellIdentifier";
 - (instancetype)init {
     if (self = [super init]) {
         _dataSource = [[KHSettingsDataSource alloc] init];
+        _delegate = [[KHSettingsDelegate alloc] init];
     }
     return self;
 }
@@ -42,33 +45,10 @@ static NSString *KHkSettingsCellIdentifier = @"KHkSettingsCellIdentifier";
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    self.tableView.dataSource = self;
+    self.tableView.delegate = self.delegate;
+    self.tableView.dataSource = self.dataSource;
     [self.tableView registerClass:[KHSettingsViewCell class] forCellReuseIdentifier:KHkSettingsCellIdentifier];
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.dataSource numberOfSections];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.dataSource numberOfRowsInSection:section];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KHkSettingsCellIdentifier forIndexPath:indexPath];
-    
-    if ([cell isKindOfClass:[KHSettingsViewCell class]]) {
-        KHSettingsViewCell *settingCell = (KHSettingsViewCell *)cell;
-        [self _configureCell:settingCell indexPath:indexPath];
-    }
-    return cell;
-}
-
-- (void)_configureCell:(KHSettingsViewCell *)cell indexPath:(NSIndexPath *)indexPath {
-    NSString *title = [self.dataSource titleForIndex:indexPath.row];
-    cell.textLabel.text = title;
-}
 
 @end

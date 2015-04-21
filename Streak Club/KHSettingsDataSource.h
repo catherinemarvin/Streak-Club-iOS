@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, KHSettingsCellType) {
     KHSettingsCellTypeLogout = 0,
@@ -15,10 +16,8 @@ typedef NS_ENUM(NSInteger, KHSettingsCellType) {
     KHSettingsCellTypeCount
 };
 
-@interface KHSettingsDataSource : NSObject
+FOUNDATION_EXPORT NSString *KHkSettingsCellIdentifier;
 
-- (NSInteger)numberOfSections;
-- (NSInteger)numberOfRowsInSection:(NSInteger)section;
-- (NSString *)titleForIndex:(NSInteger)index;
+@interface KHSettingsDataSource : NSObject<UITableViewDataSource>
 
 @end
