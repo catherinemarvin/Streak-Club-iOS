@@ -11,7 +11,8 @@
 typedef NS_ENUM(NSInteger, KHSettingsCellType) {
     KHSettingsCellTypeLogout = 0,
     KHSettingsCellTypeUsername,
-    KHSettingsCellTypeContact
+    KHSettingsCellTypeContact,
+    KHSettingsCellTypeCount
 };
 
 @interface KHSettingsDataSource : NSObject

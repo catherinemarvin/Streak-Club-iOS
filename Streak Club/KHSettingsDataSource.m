@@ -15,7 +15,7 @@
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return KHSettingsCellTypeCount;
 }
 
 - (NSString *)titleForIndex:(NSInteger)index {
