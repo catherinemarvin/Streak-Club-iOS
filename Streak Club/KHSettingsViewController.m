@@ -67,7 +67,8 @@ static NSString *KHkSettingsCellIdentifier = @"KHkSettingsCellIdentifier";
 }
 
 - (void)_configureCell:(KHSettingsViewCell *)cell indexPath:(NSIndexPath *)indexPath {
-    
+    NSString *title = [self.dataSource titleForIndex:indexPath.row];
+    cell.textLabel.text = title;
 }
 
 @end
