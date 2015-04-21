@@ -40,6 +40,7 @@
 		6ECCF0C21ADD0EBA0028EC35 /* KHSettingsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECCF0C11ADD0EBA0028EC35 /* KHSettingsViewCell.m */; };
 		6ECCF0C61ADE5C150028EC35 /* KHStreakModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECCF0C51ADE5C150028EC35 /* KHStreakModel.m */; };
 		6ECCF0C91AE60C890028EC35 /* KHSettingsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECCF0C81AE60C890028EC35 /* KHSettingsDelegate.m */; };
+		6ECCF0CC1AE620DA0028EC35 /* KHSettingsMailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECCF0CB1AE620DA0028EC35 /* KHSettingsMailController.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
 		6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF661801A773A7600DA5177 /* KHAppDelegate.m */; };
 		6EF661891A773A7600DA5177 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF661881A773A7600DA5177 /* Images.xcassets */; };
@@ -125,6 +126,9 @@
 		6ECCF0C51ADE5C150028EC35 /* KHStreakModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakModel.m; sourceTree = "<group>"; };
 		6ECCF0C71AE60C890028EC35 /* KHSettingsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsDelegate.h; sourceTree = "<group>"; };
 		6ECCF0C81AE60C890028EC35 /* KHSettingsDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSettingsDelegate.m; sourceTree = "<group>"; };
+		6ECCF0CA1AE620DA0028EC35 /* KHSettingsMailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsMailController.h; sourceTree = "<group>"; };
+		6ECCF0CB1AE620DA0028EC35 /* KHSettingsMailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSettingsMailController.m; sourceTree = "<group>"; };
+		6ECCF0CE1AE621920028EC35 /* KHSettingsMailControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsMailControllerDelegate.h; sourceTree = "<group>"; };
 		6EF661781A773A7600DA5177 /* Streak Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Streak Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF6617C1A773A7600DA5177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF6617D1A773A7600DA5177 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 		6E5E60EC1AD6333000669A0D /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
+				6ECCF0CD1AE6217A0028EC35 /* Mail */,
 				6ECCF0BC1ADD0A480028EC35 /* Data Source */,
 				6ECCF0BB1ADD0A3F0028EC35 /* View */,
 			);
@@ -437,6 +442,16 @@
 				6ECCF0C51ADE5C150028EC35 /* KHStreakModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		6ECCF0CD1AE6217A0028EC35 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				6ECCF0CA1AE620DA0028EC35 /* KHSettingsMailController.h */,
+				6ECCF0CB1AE620DA0028EC35 /* KHSettingsMailController.m */,
+				6ECCF0CE1AE621920028EC35 /* KHSettingsMailControllerDelegate.h */,
+			);
+			name = Mail;
 			sourceTree = "<group>";
 		};
 		6EF6616F1A773A7600DA5177 = {
@@ -665,6 +680,7 @@
 				6E0BE4C81AC5FFD600BF4B45 /* KHSplashScreenContentView.m in Sources */,
 				6E5E60E01AD1199B00669A0D /* KHGlobalTabBarViewController.m in Sources */,
 				6E0BE4A11AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m in Sources */,
+				6ECCF0CC1AE620DA0028EC35 /* KHSettingsMailController.m in Sources */,
 				6E5E60EA1AD5158F00669A0D /* KHHomeScreenService.m in Sources */,
 				6E5E60E31AD3791A00669A0D /* KHHomeViewController.m in Sources */,
 				6E0BE4E91AC92C2000BF4B45 /* KHLoginManager.m in Sources */,
