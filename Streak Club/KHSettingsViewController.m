@@ -33,7 +33,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         _dataSource = [[KHSettingsDataSource alloc] init];
-        _delegate = [[KHSettingsDelegate alloc] init];
+        _delegate = [[KHSettingsDelegate alloc] initWithRootVC:self];
     }
     return self;
 }

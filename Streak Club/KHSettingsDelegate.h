@@ -12,4 +12,6 @@
 
 @interface KHSettingsDelegate : NSObject<UITableViewDelegate>
 
+- (instancetype)initWithRootVC:(UIViewController *)vc;
+
 @end
