@@ -8,30 +8,42 @@
 
 #import "KHHomeViewController.h"
 
-@interface KHHomeViewController ()
+// Data Source
+#import "KHHomeScreenDataSource.h"
+
+// View
+#import <Masonry.h>
+
+@interface KHHomeViewController ()<KHHomeScreenDataSourceDelegate>
+
+@property (nonatomic, strong) KHHomeScreenDataSource *dataSource;
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
 @implementation KHHomeViewController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _dataSource = [[KHHomeScreenDataSource alloc] initWithDelegate:self];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.collectionView = ({
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        collectionView.backgroundColor = [UIColor whiteColor];
+        collectionView;
+    });
+    [self.view addSubview:self.collectionView];
+    
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
