@@ -10,4 +10,16 @@
 
 @implementation KHStreakModel
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"endDate" : @"end_date",
+             @"host" : @"host",
+             @"hourOffset" : @"hour_offset",
+             @"remoteId" : @"id",
+             @"publishStatus" : @"publish_status",
+             @"startDate" : @"start_date"
+             };
+}
+
+
 @end

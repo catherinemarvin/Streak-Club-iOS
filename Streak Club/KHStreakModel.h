@@ -6,8 +6,21 @@
 //  Copyright (c) 2015 Kevin Hwang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Mantle.h>
 
-@interface KHStreakModel : NSObject
+@class KHUserModel;
+
+typedef NS_ENUM(NSInteger, KHStreakPublishStatus) {
+    KHStreakPublishStatusPublished
+};
+
+@interface KHStreakModel : MTLModel<MTLJSONSerializing>
+
+@property (nonatomic, copy, readonly) NSDate *endDate;
+@property (nonatomic, copy, readonly) KHUserModel *host;
+@property (nonatomic, copy, readonly) NSNumber *hourOffset;
+@property (nonatomic, copy, readonly) NSNumber *remoteId;
+@property (nonatomic, assign, readonly) KHStreakPublishStatus *publishStatus;
+@property (nonatomic, copy, readonly) NSDate *startDate;
 
 @end
