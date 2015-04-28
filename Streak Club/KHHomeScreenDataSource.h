@@ -10,8 +10,12 @@
 
 #import "KHHomeScreenDataSourceDelegate.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHHomeScreenDataSource : NSObject
 
 - (instancetype)initWithDelegate:(id<KHHomeScreenDataSourceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

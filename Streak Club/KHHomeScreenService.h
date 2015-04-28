@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "KHHomeScreenServiceDelegate.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHHomeScreenService : NSObject
 
 - (instancetype)initWithDelegate:(id<KHHomeScreenServiceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
@@ -16,3 +18,5 @@
 - (void)requestHomePage;
 
 @end
+
+NS_ASSUME_NONNULL_END
