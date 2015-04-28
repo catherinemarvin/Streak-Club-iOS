@@ -9,14 +9,14 @@
 #import "KHHomeViewController.h"
 
 // Data Source
-#import "KHHomeScreenDataSource.h"
+#import "KHHomeCollectionViewDataSource.h"
 
 // View
 #import <Masonry.h>
 
-@interface KHHomeViewController ()<KHHomeScreenDataSourceDelegate>
+@interface KHHomeViewController ()
 
-@property (nonatomic, strong) KHHomeScreenDataSource *dataSource;
+@property (nonatomic, strong) KHHomeCollectionViewDataSource *dataSource;
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
@@ -25,7 +25,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _dataSource = [[KHHomeScreenDataSource alloc] initWithDelegate:self];
+        
     }
     return self;
 }
@@ -44,6 +44,18 @@
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    self.dataSource = [[KHHomeCollectionViewDataSource alloc] initWithCollectionView:self.collectionView];
+    
+    self.collectionView.dataSource = self.dataSource;
+    
+    [self.dataSource refreshData];
+}
+
+#pragma mark - KHHomeScreenDataSource
+
+- (void)homeStreaksReceived:(NSArray * __nonnull)streaks {
+    // Reload
 }
 
 @end

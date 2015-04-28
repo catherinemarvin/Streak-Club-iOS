@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithDelegate:(id<KHHomeScreenDataSourceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
+- (void)requestHomeScreen;
+
 @end
 
 NS_ASSUME_NONNULL_END

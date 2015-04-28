@@ -39,7 +39,7 @@ static NSString *const KHkHomeScreenUrl = @"my-streaks";
     
     [self.apiService post:KHkHomeScreenUrl parameters:params success:^(id responseObject) {
         NSLog(@"%@", responseObject);
-        
+        [self.delegate homeStreaksReceived:responseObject];
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
         NSLog(@"%@", error.debugDescription);
     }];

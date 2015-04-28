@@ -29,4 +29,14 @@
     return self;
 }
 
+- (void)requestHomeScreen {
+    [self.service requestHomePage];
+}
+
+#pragma mark - KHHomeScreenServiceDelegate
+
+- (void)homeStreaksReceived:(NSArray * __nonnull)streaks {
+    [self.delegate homeStreaksReceived:streaks];
+}
+
 @end

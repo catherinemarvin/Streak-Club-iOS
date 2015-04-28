@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol KHHomeScreenServiceDelegate <NSObject>
 
+- (void)homeStreaksReceived:(NSArray *)streaks;
+
 @end
+
+NS_ASSUME_NONNULL_END
