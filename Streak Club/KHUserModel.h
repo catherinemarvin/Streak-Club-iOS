@@ -6,8 +6,13 @@
 //  Copyright (c) 2015 Kevin Hwang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Mantle.h>
 
-@interface KHUserModel : NSObject
+@interface KHUserModel : MTLModel
+
+@property (nonatomic, copy, readonly) NSNumber *remoteId;
+@property (nonatomic, copy, readonly) NSString *displayName;
+@property (nonatomic, copy, readonly) NSString *username;
+
 
 @end
