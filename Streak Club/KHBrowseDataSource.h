@@ -10,8 +10,10 @@
 
 #import "KHBrowseDataSourceDelegate.h"
 
+NS_ASSUME_NONNULL_BEGIN
 @interface KHBrowseDataSource : NSObject
 
 - (instancetype)initWithDelegate:(id<KHBrowseDataSourceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 @end
+NS_ASSUME_NONNULL_END
