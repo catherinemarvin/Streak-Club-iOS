@@ -8,6 +8,9 @@
 
 #import "KHAPIService.h"
 
+// Key
+#import "KHSessionManager.h"
+
 // Networking
 #import <AFHTTPRequestOperationManager.h>
 
@@ -21,6 +24,7 @@
 static NSString *const KhkStreakClubBaseUrl = @"http://streak.club/api/1/";
 static NSString *const KHkSourceKey = @"source";
 static NSString *const KhkSourceValue = @"ios";
+static NSString *const KHkKeyKey = @"key";
 
 @implementation KHAPIService
 
@@ -76,6 +80,7 @@ static NSString *const KhkSourceValue = @"ios";
 - (NSDictionary *)_updatedParameters:(NSDictionary *)dictionary {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:dictionary];
     [params setValue:KhkSourceValue forKey:KHkSourceKey];
+    [params setValue:[KHSessionManager sharedInstance].key forKey:KHkKeyKey];
     return params;
 }
 
