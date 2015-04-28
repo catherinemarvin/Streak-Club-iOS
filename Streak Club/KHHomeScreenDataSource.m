@@ -8,17 +8,23 @@
 
 #import "KHHomeScreenDataSource.h"
 
-@interface KHHomeScreenDataSource()
+// Service
+#import "KHHomeScreenService.h"
+
+@interface KHHomeScreenDataSource()<KHHomeScreenServiceDelegate>
 
 @property (nonatomic, weak) id<KHHomeScreenDataSourceDelegate>delegate;
+@property (nonatomic, strong) KHHomeScreenService *service;
 
 @end
 
 @implementation KHHomeScreenDataSource
 
 - (instancetype)initWithDelegate:(id<KHHomeScreenDataSourceDelegate>)delegate {
+    NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
+        _service = [[KHHomeScreenService alloc] initWithDelegate:self];
     }
     return self;
 }

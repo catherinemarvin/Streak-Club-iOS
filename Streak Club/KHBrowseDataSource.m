@@ -8,17 +8,24 @@
 
 #import "KHBrowseDataSource.h"
 
-@interface KHBrowseDataSource()
+// Service
+#import "KHBrowseService.h"
+
+@interface KHBrowseDataSource()<KHBrowseServiceDelegate>
 
 @property (nonatomic, weak) id<KHBrowseDataSourceDelegate>delegate;
+@property (nonatomic, strong) KHBrowseService *service;
 
 @end
 
 @implementation KHBrowseDataSource
 
 - (instancetype)initWithDelegate:(id<KHBrowseDataSourceDelegate>)delegate {
+    NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
+        _service = [[KHBrowseService alloc] initWithDelegate:self];
+        
     }
     return self;
 }

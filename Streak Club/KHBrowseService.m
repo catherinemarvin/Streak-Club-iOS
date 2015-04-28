@@ -26,6 +26,7 @@ static NSString *const KHkBrowseScreenUrl = @"streaks";
 @implementation KHBrowseService
 
 - (instancetype)initWithDelegate:(id<KHBrowseServiceDelegate>)delegate {
+    NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
         _apiService = [[KHAPIService alloc] init];
