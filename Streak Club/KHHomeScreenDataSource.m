@@ -35,7 +35,7 @@
 
 #pragma mark - KHHomeScreenServiceDelegate
 
-- (void)homeStreaksReceived:(NSArray * __nonnull)streaks {
+- (void)homeStreaksReceived:(KHHomeStreaksModel * __nonnull)streaks {
     [self.delegate homeStreaksReceived:streaks];
 }
 

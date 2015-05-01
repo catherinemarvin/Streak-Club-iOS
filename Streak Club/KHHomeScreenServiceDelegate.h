@@ -10,9 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class KHHomeStreaksModel;
+
 @protocol KHHomeScreenServiceDelegate <NSObject>
 
-- (void)homeStreaksReceived:(NSArray *)streaks;
+- (void)homeStreaksReceived:(KHHomeStreaksModel *)streaks;
 
 @end
 

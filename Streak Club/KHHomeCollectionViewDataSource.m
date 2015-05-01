@@ -11,7 +11,18 @@
 // Data Source
 #import "KHHomeScreenDataSource.h"
 
+// Models
+#import "KHHomeStreaksModel.h"
+#import "KHHomeStreaksGroup.h"
+#import "KHStreakModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_ENUM(NSUInteger, KHHomeScreenSection) {
+    KHHomeScreenSectionActiveStreaks = 0,
+    KHHomeScreenSectionCreatedStreaks,
+    KHHomeScreenSectionCount
+};
 
 @interface KHHomeCollectionViewDataSource ()<KHHomeScreenDataSourceDelegate>
 
@@ -19,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) KHHomeScreenDataSource *dataSource;
 
-@property (nonatomic, strong) NSArray *streaks;
+@property (nonatomic, strong) KHHomeStreaksModel *streaks;
 
 @end
 
@@ -44,11 +55,26 @@ static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return KHHomeScreenSectionCount;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.streaks.count;
+    KHHomeScreenSection homeScreenSection = section;
+    switch (homeScreenSection) {
+        case KHHomeScreenSectionActiveStreaks: {
+            return [[[self.streaks joinedStreaks] activeStreaks] count];
+            break;
+        }
+        case KHHomeScreenSectionCreatedStreaks: {
+            return [[[self.streaks hostedStreaks] activeStreaks] count];
+            break;
+        }
+        case KHHomeScreenSectionCount:
+        default: {
+            return 0;
+            break;
+        }
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,7 +84,7 @@ static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
 
 #pragma mark - KHHomeScreenDataSourceDelegate
 
-- (void)homeStreaksReceived:(NSArray * __nonnull)streaks {
+- (void)homeStreaksReceived:(KHHomeStreaksModel * __nonnull)streaks {
     self.streaks = streaks;
     [self.collectionView reloadData];
 }

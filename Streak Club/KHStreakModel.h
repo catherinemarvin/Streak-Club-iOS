@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, KHStreakPublishStatus) {
 @property (nonatomic, copy, readonly) KHUserModel *host;
 @property (nonatomic, copy, readonly) NSNumber *hourOffset;
 @property (nonatomic, copy, readonly) NSNumber *remoteId;
-@property (nonatomic, assign, readonly) KHStreakPublishStatus *publishStatus;
+@property (nonatomic, assign, readonly) KHStreakPublishStatus publishStatus;
 @property (nonatomic, copy, readonly) NSDate *startDate;
 
 @end
