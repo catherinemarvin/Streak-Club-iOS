@@ -11,7 +11,8 @@
 @class KHUserModel;
 
 typedef NS_ENUM(NSInteger, KHStreakPublishStatus) {
-    KHStreakPublishStatusPublished
+    KHStreakPublishStatusPublished,
+    KHStreakPublishStatusDraft
 };
 
 @interface KHStreakModel : MTLModel<MTLJSONSerializing>

@@ -8,7 +8,15 @@
 
 #import "KHStreakModel.h"
 
+#import "KHUserModel.h"
+
 @implementation KHStreakModel
+
++ (NSDateFormatter *)dateformatter {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-mm-dd";
+    return dateFormatter;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
@@ -19,6 +27,39 @@
              @"publishStatus" : @"publish_status",
              @"startDate" : @"start_date"
              };
+}
+
++ (NSValueTransformer *)endDateJSONTransformer {
+    return [MTLValueTransformer transformerUsingReversibleBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        if ([value isKindOfClass:[NSString class]]) {
+            return [[self dateformatter] dateFromString:value];
+        } else {
+            return [[self dateformatter] stringFromDate:value];
+        }
+    }];
+}
+
++ (NSValueTransformer *)startDateJSONTransformer {
+    return [MTLValueTransformer transformerUsingReversibleBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        if ([value isKindOfClass:[NSString class]]) {
+            return [[self dateformatter] dateFromString:value];
+        } else {
+            return [[self dateformatter] stringFromDate:value];
+        }
+    }];
+}
+
++ (NSValueTransformer *)hostJSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[KHUserModel class]];
+}
+
++ (NSValueTransformer *)publishStatusJSONTransformer {
+    return [NSValueTransformer
+            mtl_valueMappingTransformerWithDictionary:
+  @{
+    @"draft" : @(KHStreakPublishStatusDraft),
+    @"published" : @(KHStreakPublishStatusPublished)
+    }];
 }
 
 
