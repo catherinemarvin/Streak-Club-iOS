@@ -8,6 +8,9 @@
 
 #import "KHHomeCollectionViewDataSource.h"
 
+// View
+#import "KHHomeStreakCell.h"
+
 // Data Source
 #import "KHHomeScreenDataSource.h"
 
@@ -44,6 +47,7 @@ static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
         _dataSource = [[KHHomeScreenDataSource alloc] initWithDelegate:self];
         _collectionView = collectionView;
         _collectionView.dataSource = self;
+        [_collectionView registerClass:[KHHomeStreakCell class] forCellWithReuseIdentifier:KHkHomeCellIdentifier];
     }
     return self;
 }
@@ -78,7 +82,7 @@ static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHkHomeCellIdentifier forIndexPath:indexPath];
+    KHHomeStreakCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHkHomeCellIdentifier forIndexPath:indexPath];
     return cell;
 }
 
