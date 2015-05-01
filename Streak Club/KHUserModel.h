@@ -8,7 +8,7 @@
 
 #import <Mantle.h>
 
-@interface KHUserModel : MTLModel
+@interface KHUserModel : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, copy, readonly) NSNumber *remoteId;
 @property (nonatomic, copy, readonly) NSString *displayName;

@@ -10,4 +10,12 @@
 
 @implementation KHUserModel
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"remoteId" : @"id",
+             @"username" : @"username",
+             @"displayName" : @"display_name"
+             };
+}
+
 @end
