@@ -12,7 +12,7 @@
 #import "KHAPIService.h"
 
 // Models
-#import "KHStreakModel.h"
+#import "KHHomeStreaksModel.h"
 
 @interface KHHomeScreenService()
 
@@ -39,6 +39,9 @@ static NSString *const KHkHomeScreenUrl = @"my-streaks";
     
     [self.apiService post:KHkHomeScreenUrl parameters:params success:^(id responseObject) {
         NSLog(@"%@", responseObject);
+        NSError *error;
+        KHHomeStreaksModel *homeStreaks = [MTLJSONAdapter modelOfClass:[KHHomeStreaksModel class] fromJSONDictionary:responseObject error:&error];
+        NSLog(@"%@", homeStreaks);
         [self.delegate homeStreaksReceived:responseObject];
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
         NSLog(@"%@", error.debugDescription);
