@@ -14,16 +14,16 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"hosted" : @"hostedStreaks",
-             @"joined" : @"joinedStreaks"
+             @"hostedStreaks" : @"hosted",
+             @"joinedStreaks" : @"joined"
              };
 }
 
-+ (NSValueTransformer *)hostedJSONTransformer {
++ (NSValueTransformer *)hostedStreaksJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:[KHHomeStreaksGroup class]];
 }
 
-+ (NSValueTransformer *)joinedJSONTransformer {
++ (NSValueTransformer *)joinedStreaksJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:[KHHomeStreaksGroup class]];
 }
 

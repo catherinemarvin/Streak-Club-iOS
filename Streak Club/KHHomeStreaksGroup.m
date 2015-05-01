@@ -8,14 +8,24 @@
 
 #import "KHHomeStreaksGroup.h"
 
+#import "KHStreakModel.h"
+
 
 @implementation KHHomeStreaksGroup
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"active": @"activeStreaks",
-             @"completed" : @"completedStreaks"
+             @"activeStreaks" : @"active",
+             @"completedStreaks" :@"completed"
              };
+}
+
++ (NSValueTransformer *)activeStreaksJSONTransformer {
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[KHStreakModel class]];
+}
+
++ (NSValueTransformer *)completedStreaksJSONTransformer {
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[KHStreakModel class]];
 }
 
 @end
