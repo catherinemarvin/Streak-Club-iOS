@@ -8,6 +8,19 @@
 
 #import "KHHomeStreakCell.h"
 
+@interface KHHomeStreakCell()
+
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *authorLabel;
+@property (nonatomic, strong) UILabel *durationLabel;
+
+@property (nonatomic, strong) UIView *divider;
+
+@property (nonatomic, strong) UILabel *participantsLabel;
+@property (nonatomic, strong) UILabel *submissionsLabel;
+
+@end
+
 @implementation KHHomeStreakCell
 
 @end
