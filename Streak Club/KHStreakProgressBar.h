@@ -10,4 +10,6 @@
 
 @interface KHStreakProgressBar : UIView
 
+- (void)setCompletionPercentage:(CGFloat)percentage;
+
 @end
