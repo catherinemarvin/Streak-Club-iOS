@@ -34,8 +34,8 @@
 
 #pragma mark - KHRegisterServiceDelegate
 
-- (void)registerSucceededWithKey:(NSString *)key {
-    [self.delegate registerSucceededWithKey:key];
+- (void)registerSucceededWithUsername:(NSString *)username key:(NSString *)key {
+    [self.delegate registerSucceededWithUsername:username key:key];
 }
 
 - (void)registerFailedWithError:(NSError *)error {

@@ -10,7 +10,7 @@
 
 @protocol KHRegisterManagerDelegate <NSObject>
 
-- (void)registerSucceededWithKey:(NSString *)key;
+- (void)registerSucceededWithUsername:(NSString *)username key:(NSString *)key;
 
 - (void)registerFailedWithError:(NSError *)error;
 

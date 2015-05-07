@@ -17,6 +17,9 @@
 // Session Management
 #import "KHSessionManager.h"
 
+// Wireframe
+#import "KHGlobalTabBarWireframe.h"
+
 @interface KHSignupOrLoginViewModel()<KHLoginManagerDelegate, KHRegisterManagerDelegate>
 
 @property (nonatomic, weak) id<KHSignupOrLoginViewProtocol>view;
@@ -65,8 +68,8 @@
 
 #pragma mark - KHRegisterManagerDelegate
 
-- (void)registerSucceededWithKey:(NSString *)key {
-    NSLog(@"Register succeeded with key: %@", key);
+- (void)registerSucceededWithUsername:(NSString *)username key:(NSString *)key {
+    [[KHSessionManager sharedInstance] loginWithUsername:username key:key];
 }
 
 - (void)registerFailedWithError:(NSError *)error {

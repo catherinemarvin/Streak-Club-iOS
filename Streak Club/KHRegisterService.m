@@ -60,7 +60,7 @@ static NSString *const KhkRegisterErrorDomain = @"register";
                 return;
             }
             NSString *key = [response valueForKey:KHkSessionKeyKey];
-            [self.delegate registerSucceededWithKey:key];
+            [self.delegate registerSucceededWithUsername:username key:key];
         }
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
         [self.delegate registerFailedWithError:error];
