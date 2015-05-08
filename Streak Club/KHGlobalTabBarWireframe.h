@@ -10,4 +10,7 @@
 
 @interface KHGlobalTabBarWireframe : NSObject
 
+/// @brief Presents the main view
+- (void)presentMainView;
+
 @end

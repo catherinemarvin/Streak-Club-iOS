@@ -8,6 +8,22 @@
 
 #import "KHGlobalTabBarWireframe.h"
 
+// Views
+#import "KHGlobalTabBarViewController.h"
+
+// App Delegate
+#import "KHAppDelegate.h"
+
 @implementation KHGlobalTabBarWireframe
+
+- (void)presentMainView {
+    KHGlobalTabBarViewController *vc = [[KHGlobalTabBarViewController alloc] init];
+    
+    id<UIApplicationDelegate> delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate isKindOfClass:[KHAppDelegate class]]) {
+        KHAppDelegate *appDelegate = (KHAppDelegate *)delegate;
+        appDelegate.window.rootViewController = vc;
+    }
+}
 
 @end
