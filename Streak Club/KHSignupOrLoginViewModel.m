@@ -60,6 +60,8 @@
 
 - (void)loginSucceededWithUsername:(NSString *)username key:(NSString *)key {
     [[KHSessionManager sharedInstance] loginWithUsername:username key:key];
+    KHGlobalTabBarWireframe *wire = [[KHGlobalTabBarWireframe alloc] init];
+    [wire presentMainView];
 }
 
 - (void)loginFailedWithError:(NSError *)error {
@@ -70,6 +72,8 @@
 
 - (void)registerSucceededWithUsername:(NSString *)username key:(NSString *)key {
     [[KHSessionManager sharedInstance] loginWithUsername:username key:key];
+    KHGlobalTabBarWireframe *wire = [[KHGlobalTabBarWireframe alloc] init];
+    [wire presentMainView];
 }
 
 - (void)registerFailedWithError:(NSError *)error {
