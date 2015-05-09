@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class KHBrowseStreaksModel;
+
 @protocol KHBrowseServiceDelegate <NSObject>
+
+- (void)browseStreaksReceived:(KHBrowseStreaksModel *)streaks;
 
 @end

@@ -38,6 +38,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - KHBrowseServiceDelegate
 
+- (void)browseStreaksReceived:(KHBrowseStreaksModel *)streaks {
+    [self.delegate browseStreaksReceived:streaks];
+}
+
 @end
 
 NS_ASSUME_NONNULL_END
