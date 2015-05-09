@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KHHomeScreenDataSource : NSObject
 
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+
 - (instancetype)initWithDelegate:(id<KHHomeScreenDataSourceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 - (void)requestHomeScreen;

@@ -353,6 +353,7 @@
 		6E25F01F1AEF246300A4E76C /* Browse Screen */ = {
 			isa = PBXGroup;
 			children = (
+				6EE80B011AFDEB2C0091B4E4 /* Models */,
 				6E25F0291AEF50C800A4E76C /* Data Source */,
 				6E25F0241AEF4E4F00A4E76C /* Service */,
 				6E25F0231AEF247D00A4E76C /* View */,
@@ -497,8 +498,8 @@
 		6E5E60EC1AD6333000669A0D /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
-				6ECCF0CD1AE6217A0028EC35 /* Mail */,
 				6ECCF0BC1ADD0A480028EC35 /* Data Source */,
+				6ECCF0CD1AE6217A0028EC35 /* Mail */,
 				6ECCF0BB1ADD0A3F0028EC35 /* View */,
 			);
 			name = "Settings Screen";
@@ -567,6 +568,13 @@
 				6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */,
 			);
 			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		6EE80B011AFDEB2C0091B4E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		6EF6616F1A773A7600DA5177 = {

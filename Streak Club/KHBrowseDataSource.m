@@ -11,6 +11,8 @@
 // Service
 #import "KHBrowseService.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHBrowseDataSource()<KHBrowseServiceDelegate>
 
 @property (nonatomic, weak) id<KHBrowseDataSourceDelegate>delegate;
@@ -30,4 +32,12 @@
     return self;
 }
 
+- (void)requestBrowseScreen {
+    [self.service requestBrowse];
+}
+
+#pragma mark - KHBrowseServiceDelegate
+
 @end
+
+NS_ASSUME_NONNULL_END

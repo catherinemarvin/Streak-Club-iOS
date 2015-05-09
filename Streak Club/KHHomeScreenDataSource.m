@@ -11,6 +11,8 @@
 // Service
 #import "KHHomeScreenService.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHHomeScreenDataSource()<KHHomeScreenServiceDelegate>
 
 @property (nonatomic, weak) id<KHHomeScreenDataSourceDelegate>delegate;
@@ -40,3 +42,5 @@
 }
 
 @end
+
+NS_ASSUME_NONNULL_END
