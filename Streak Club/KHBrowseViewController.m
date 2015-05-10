@@ -8,7 +8,16 @@
 
 #import "KHBrowseViewController.h"
 
+// Data Source
+#import "KHBrowseDataSource.h"
+
+// View Helper
+#import <Masonry.h>
+
 @interface KHBrowseViewController ()
+
+@property (nonatomic, strong) KHBrowseDataSource *dataSource;
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 

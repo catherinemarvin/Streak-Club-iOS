@@ -53,6 +53,7 @@
 		6ECCF0CC1AE620DA0028EC35 /* KHSettingsMailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECCF0CB1AE620DA0028EC35 /* KHSettingsMailController.m */; };
 		6EE80AFF1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */; };
 		6EE80B071AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80B061AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m */; };
+		6EE80B0A1B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80B091B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m */; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
 		6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF661801A773A7600DA5177 /* KHAppDelegate.m */; };
 		6EF661891A773A7600DA5177 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF661881A773A7600DA5177 /* Images.xcassets */; };
@@ -167,6 +168,8 @@
 		6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarWireframe.m; sourceTree = "<group>"; };
 		6EE80B051AFDEBCB0091B4E4 /* KHBrowseStreaksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBrowseStreaksModel.h; sourceTree = "<group>"; };
 		6EE80B061AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHBrowseStreaksModel.m; sourceTree = "<group>"; };
+		6EE80B081B0013470091B4E4 /* KHBrowseCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBrowseCollectionViewDataSource.h; sourceTree = "<group>"; };
+		6EE80B091B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHBrowseCollectionViewDataSource.m; sourceTree = "<group>"; };
 		6EF661781A773A7600DA5177 /* Streak Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Streak Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF6617C1A773A7600DA5177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF6617D1A773A7600DA5177 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				6E25F02A1AEF50E600A4E76C /* KHBrowseDataSource.h */,
 				6E25F02B1AEF50E600A4E76C /* KHBrowseDataSource.m */,
 				6E25F02D1AEF50F600A4E76C /* KHBrowseDataSourceDelegate.h */,
+				6EE80B081B0013470091B4E4 /* KHBrowseCollectionViewDataSource.h */,
+				6EE80B091B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m */,
 			);
 			name = "Data Source";
 			sourceTree = "<group>";
@@ -844,6 +849,7 @@
 				6E5E60DA1ACD2AB300669A0D /* KHSignupOrLoginViewModel.m in Sources */,
 				6E0BE4A51AC3D54000BF4B45 /* KHSplashScreenDataSource.m in Sources */,
 				6E25F03E1AF342B900A4E76C /* KHHomeStreaksModel.m in Sources */,
+				6EE80B0A1B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
