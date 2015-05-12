@@ -52,10 +52,4 @@
     [self.dataSource refreshData];
 }
 
-#pragma mark - KHHomeScreenDataSource
-
-- (void)homeStreaksReceived:(NSArray * __nonnull)streaks {
-    [self.collectionView reloadData];
-}
-
 @end
