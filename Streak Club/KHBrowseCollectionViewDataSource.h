@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KHBrowseCollectionViewDataSource : NSObject
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface KHBrowseCollectionViewDataSource : NSObject<UICollectionViewDataSource>
+
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+
+- (instancetype)initWithCollectionView:(UICollectionView *)collectionView NS_DESIGNATED_INITIALIZER;
+
+- (void)refreshData;
 
 @end
+
+NS_ASSUME_NONNULL_END

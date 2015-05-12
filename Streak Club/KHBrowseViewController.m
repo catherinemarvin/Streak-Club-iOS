@@ -9,14 +9,14 @@
 #import "KHBrowseViewController.h"
 
 // Data Source
-#import "KHBrowseDataSource.h"
+#import "KHBrowseCollectionViewDataSource.h"
 
 // View Helper
 #import <Masonry.h>
 
 @interface KHBrowseViewController ()
 
-@property (nonatomic, strong) KHBrowseDataSource *dataSource;
+@property (nonatomic, strong) KHBrowseCollectionViewDataSource *dataSource;
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
@@ -25,22 +25,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.collectionView = ({
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        collectionView.backgroundColor = [UIColor whiteColor];
+        collectionView;
+    });
+    [self.view addSubview:self.collectionView];
+    
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
