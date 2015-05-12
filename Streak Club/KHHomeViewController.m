@@ -55,7 +55,7 @@
 #pragma mark - KHHomeScreenDataSource
 
 - (void)homeStreaksReceived:(NSArray * __nonnull)streaks {
-    // Reload
+    [self.collectionView reloadData];
 }
 
 @end
