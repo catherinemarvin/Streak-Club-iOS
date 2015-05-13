@@ -25,7 +25,9 @@
              @"hourOffset" : @"hour_offset",
              @"remoteId" : @"id",
              @"publishStatus" : @"publish_status",
-             @"startDate" : @"start_date"
+             @"startDate" : @"start_date",
+             @"category" : @"category",
+             @"title" : @"title"
              };
 }
 
@@ -60,6 +62,15 @@
     @"draft" : @(KHStreakPublishStatusDraft),
     @"published" : @(KHStreakPublishStatusPublished)
     }];
+}
+
++ (NSValueTransformer *)categoryJSONTransformer {
+    return [NSValueTransformer mtl_valueMappingTransformerWithDictionary:
+            @{
+              @"other" : @(KHStreakCategoryOther),
+              @"interactive" : @(KHStreakCategoryInteractive),
+              @"visual_art" : @(KHStreakCategoryVisualArt)
+              }];
 }
 
 
