@@ -75,7 +75,7 @@
 
 - (void)_initializeAutolayout {
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
+        make.edges.equalTo(self);
     }];
 }
 

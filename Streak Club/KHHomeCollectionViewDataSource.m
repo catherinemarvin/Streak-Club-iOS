@@ -11,6 +11,9 @@
 // View
 #import "KHHomeStreakCell.h"
 
+// ViewModel
+#import "KHHomeStreakCellViewModel.h"
+
 // Data Source
 #import "KHHomeScreenDataSource.h"
 
@@ -82,8 +85,44 @@ static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    KHHomeStreakCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHkHomeCellIdentifier forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHkHomeCellIdentifier forIndexPath:indexPath];
+    
+    if ([cell isKindOfClass:[KHHomeStreakCell class]]) {
+        KHHomeStreakCell *homeStreakCell = (KHHomeStreakCell *)cell;
+        
+        KHStreakModel *streak = [self _streakForIndexPath:indexPath];
+        KHHomeStreakCellViewModel *vm = [[KHHomeStreakCellViewModel alloc] init];
+        [vm configureWithStreak:streak];
+        [homeStreakCell configureWithViewModel:vm];
+    }
     return cell;
+}
+
+- (KHStreakModel *)_streakForIndexPath:(NSIndexPath *)indexPath {
+    
+    KHHomeStreaksGroup *streakGroup;
+    switch (indexPath.section) {
+        case KHHomeScreenSectionActiveStreaks: {
+            streakGroup = self.streaks.joinedStreaks;
+            break;
+        }
+        case KHHomeScreenSectionCreatedStreaks: {
+            streakGroup = self.streaks.hostedStreaks;
+            break;
+        }
+        case KHHomeScreenSectionCount:
+        default: {
+            break;
+        }
+    }
+    NSArray *activeStreaks = streakGroup.activeStreaks;
+    NSArray *completedStreaks = streakGroup.completedStreaks;
+    
+    NSMutableArray *allStreaks = [NSMutableArray arrayWithArray:activeStreaks];
+    [allStreaks addObjectsFromArray:completedStreaks];
+    
+    KHStreakModel *streak = allStreaks[indexPath.row];
+    return streak;
 }
 
 #pragma mark - KHHomeScreenDataSourceDelegate
