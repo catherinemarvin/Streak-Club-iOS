@@ -30,7 +30,7 @@ typedef NS_ENUM(NSUInteger, KHHomeScreenSection) {
     KHHomeScreenSectionCount
 };
 
-@interface KHHomeCollectionViewDataSource ()<KHHomeScreenDataSourceDelegate>
+@interface KHHomeCollectionViewDataSource ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, KHHomeScreenDataSourceDelegate>
 
 @property (nonatomic, weak) UICollectionView *collectionView;
 
@@ -50,6 +50,7 @@ static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
         _dataSource = [[KHHomeScreenDataSource alloc] initWithDelegate:self];
         _collectionView = collectionView;
         _collectionView.dataSource = self;
+        _collectionView.delegate = self;
         [_collectionView registerClass:[KHHomeStreakCell class] forCellWithReuseIdentifier:KHkHomeCellIdentifier];
     }
     return self;
@@ -123,6 +124,13 @@ static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
     
     KHStreakModel *streak = allStreaks[indexPath.row];
     return streak;
+}
+
+#pragma mark - UICollectionViewDelegateCollectionFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 200.0f;
+    return CGSizeMake(CGRectGetWidth(collectionView.bounds), height);
 }
 
 #pragma mark - KHHomeScreenDataSourceDelegate

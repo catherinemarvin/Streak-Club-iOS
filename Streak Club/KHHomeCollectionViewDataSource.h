@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHHomeCollectionViewDataSource : NSObject<UICollectionViewDataSource>
+@interface KHHomeCollectionViewDataSource : NSObject
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 
