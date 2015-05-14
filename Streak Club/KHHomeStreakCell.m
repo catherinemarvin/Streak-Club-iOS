@@ -8,6 +8,13 @@
 
 #import "KHHomeStreakCell.h"
 
+// ViewModel
+#import "KHHomeStreakCellViewModel.h"
+
+// View Helper
+#import <Masonry.h>
+#import "UIFont+CustomFonts.h"
+
 @interface KHHomeStreakCell()
 
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -22,5 +29,64 @@
 @end
 
 @implementation KHHomeStreakCell
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        _titleLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label;
+        });
+        [self addSubview:_titleLabel];
+        
+        _authorLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label;
+        });
+        [self addSubview:_authorLabel];
+        
+        _durationLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label;
+        });
+        [self addSubview:_durationLabel];
+        
+        _divider = ({
+            UIView *view = [[UIView alloc] init];
+            view;
+        });
+        [self addSubview:_divider];
+        
+        _participantsLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label;
+        });
+        [self addSubview:_participantsLabel];
+        
+        _submissionsLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label;
+        });
+        [self addSubview:_submissionsLabel];
+        
+        [self _initializeAutolayout];
+    }
+    return self;
+}
+
+- (void)_initializeAutolayout {
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self);
+    }];
+}
+
+- (void)configureWithViewModel:(KHHomeStreakCellViewModel * __nonnull)viewModel {
+    NSParameterAssert(viewModel);
+    self.titleLabel.text = viewModel.title;
+    self.authorLabel.text = viewModel.author;
+    self.durationLabel.text = viewModel.duration;
+    
+    self.participantsLabel.text = viewModel.participants;
+    self.submissionsLabel.text = viewModel.participants;
+}
 
 @end

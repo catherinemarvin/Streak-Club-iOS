@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class KHHomeStreakCellViewModel;
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHHomeStreakCell : UICollectionViewCell
 
+- (void)configureWithViewModel:(KHHomeStreakCellViewModel *)viewModel;
+
 @end
+
+NS_ASSUME_NONNULL_END
