@@ -25,7 +25,7 @@
 @implementation KHHomeStreakCellViewModel
 
 - (void)configureWithStreak:(KHStreakModel *)streak {
-    self.title = @"Streak Title";
+    self.title = streak.title;
     self.author = streak.host.username;
     self.duration = [NSString stringWithFormat:NSLocalizedString(@"from %@ to %@", @"Example: from June 15th to June 20th"), streak.startDate, streak.endDate];
     self.participants = @"5 participants";
