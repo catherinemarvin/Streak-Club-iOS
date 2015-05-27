@@ -46,9 +46,6 @@
     }];
     
     self.dataSource = [[KHHomeCollectionViewDataSource alloc] initWithCollectionView:self.collectionView];
-    
-    self.collectionView.dataSource = self.dataSource;
-    
     [self.dataSource refreshData];
 }
 
