@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) KHHomeCollectionViewDataSource *dataSource;
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -37,6 +38,7 @@
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         collectionView.backgroundColor = [UIColor whiteColor];
+        collectionView.alwaysBounceVertical = YES;
         collectionView;
     });
     [self.view addSubview:self.collectionView];
@@ -44,6 +46,12 @@
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    self.refreshControl = ({
+        UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+        refreshControl;
+    });
+    [self.collectionView addSubview:self.refreshControl];
     
     self.dataSource = [[KHHomeCollectionViewDataSource alloc] initWithCollectionView:self.collectionView];
     [self.dataSource refreshData];
