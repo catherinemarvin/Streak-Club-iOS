@@ -40,11 +40,11 @@
         make.edges.equalTo(self.view);
     }];
     
-    self.refreshControl = [({
+    self.refreshControl = ({
         UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
         refreshControl;
-    })
-                           self.collectionView addSubview:self.refreshControl];
+    });
+    [self.collectionView addSubview:self.refreshControl];
 }
 
 
