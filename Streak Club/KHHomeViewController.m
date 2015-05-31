@@ -49,11 +49,18 @@
     
     self.refreshControl = ({
         UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+        [refreshControl addTarget:self action:@selector(_refreshControl:) forControlEvents:UIControlEventValueChanged];
         refreshControl;
     });
     [self.collectionView addSubview:self.refreshControl];
     
     self.dataSource = [[KHHomeCollectionViewDataSource alloc] initWithCollectionView:self.collectionView];
+    [self.dataSource refreshData];
+}
+
+#pragma mark - UIRefreshControl
+
+- (void)_refreshControl:(id)sender {
     [self.dataSource refreshData];
 }
 
