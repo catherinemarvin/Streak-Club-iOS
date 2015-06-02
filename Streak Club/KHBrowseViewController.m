@@ -42,10 +42,16 @@
     
     self.refreshControl = ({
         UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+        [refreshControl addTarget:self action:@selector(_refreshControl:) forControlEvents:UIControlEventValueChanged];
         refreshControl;
     });
     [self.collectionView addSubview:self.refreshControl];
 }
 
+#pragma mark - UIRefreshControl
+
+- (void)_refreshControl:(id)sender {
+    [self.dataSource refreshData];
+}
 
 @end
