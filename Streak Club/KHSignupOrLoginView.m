@@ -38,7 +38,7 @@
     if (self = [super init]) {
         self.backgroundColor = [UIColor colorWithHexString:@"34a0f2"];
         
-        _loginForm = YES;
+        _loginForm = NO;
         
         _formContainer = ({
             UIView *view = [[UIView alloc] init];
@@ -95,7 +95,7 @@
         _actionButton = ({
             UIButton *button = [[UIButton alloc] init];
             button.titleLabel.font = [UIFont regularWithSize:16];
-            [button setTitle:NSLocalizedString(@"Login", nil) forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             button;
         });
         [_formContainer addSubview:_actionButton];
@@ -109,6 +109,7 @@
         [self addSubview:_switchModeButton];
         
         [self _initializeAutolayout];
+        [self _setButtonTitles];
     }
     return self;
 }
@@ -182,10 +183,10 @@
     
     if (self.loginForm) {
         actionTitle = NSLocalizedString(@"Login", nil);
-        switchModeTitle = NSLocalizedString(@"Register", nil);
-    } else {
-        actionTitle = NSLocalizedString(@"Register", nil);
         switchModeTitle = NSLocalizedString(@"Go back", nil);
+    } else {
+        actionTitle = NSLocalizedString(@"Create Account", nil);
+        switchModeTitle = NSLocalizedString(@"Already have an account?", nil);
     }
     [self.actionButton setTitle:actionTitle forState:UIControlStateNormal];
     [self.switchModeButton setTitle:switchModeTitle forState:UIControlStateNormal];
