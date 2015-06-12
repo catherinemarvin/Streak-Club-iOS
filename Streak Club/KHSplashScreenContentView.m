@@ -79,7 +79,7 @@
     CGFloat sidePadding = 20.0f;
     
     [self.headerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.footer);
+        make.top.equalTo(self.footer).with.offset(sidePadding);
         make.left.equalTo(self.footer).with.offset(sidePadding);
         make.right.equalTo(self.footer).with.offset(-sidePadding);
     }];

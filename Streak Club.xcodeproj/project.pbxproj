@@ -421,10 +421,10 @@
 		6E5B3F661A835B500091A556 /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
-				6E5E60D71ACD2A9D00669A0D /* View Models */,
-				6E0BE4D61AC8DF9B00BF4B45 /* Services */,
-				6E0BE4A91AC3D74D00BF4B45 /* Views */,
 				6E0BE4A21AC3D53400BF4B45 /* Data Sources */,
+				6E0BE4D61AC8DF9B00BF4B45 /* Services */,
+				6E5E60D71ACD2A9D00669A0D /* View Models */,
+				6E0BE4A91AC3D74D00BF4B45 /* Views */,
 			);
 			name = "Splash Screen";
 			sourceTree = "<group>";
