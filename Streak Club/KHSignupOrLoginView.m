@@ -15,6 +15,8 @@
 
 @interface KHSignupOrLoginView()
 
+@property (nonatomic, strong) UIView *formContainer;
+
 @property (nonatomic, strong) UITextField *usernameField;
 @property (nonatomic, strong) UITextField *passwordField;
 
@@ -38,6 +40,16 @@
         
         _loginForm = YES;
         
+        _formContainer = ({
+            UIView *view = [[UIView alloc] init];
+            view.backgroundColor = [UIColor whiteColor];
+            view.layer.cornerRadius = 3.0f;
+            view.layer.masksToBounds = YES;
+            view;
+        });
+        [self addSubview:_formContainer];
+        
+        
         _usernameField = ({
             UITextField *field = [[UITextField alloc] init];
             field.font = [UIFont regularWithSize:16];
@@ -48,7 +60,7 @@
             
             field;
         });
-        [self addSubview:_usernameField];
+        [_formContainer addSubview:_usernameField];
         
         _passwordField = ({
             UITextField *field = [[UITextField alloc] init];
@@ -59,7 +71,7 @@
             field.returnKeyType = UIReturnKeyGo;
             field;
         });
-        [self addSubview:_passwordField];
+        [_formContainer addSubview:_passwordField];
         
         _registerOnlyFields = [[UIView alloc] init];
         [self addSubview:_registerOnlyFields];
@@ -86,7 +98,7 @@
             [button setTitle:NSLocalizedString(@"Login", nil) forState:UIControlStateNormal];
             button;
         });
-        [self addSubview:_actionButton];
+        [_formContainer addSubview:_actionButton];
         
         _switchModeButton = ({
             UIButton *button = [[UIButton alloc] init];
@@ -104,10 +116,16 @@
 - (void)_initializeAutolayout {
     CGFloat sideMargin = 20.0f;
     
-    [self.usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.formContainer mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.actionButton);
         make.left.equalTo(self).with.offset(sideMargin);
         make.right.equalTo(self).with.offset(-sideMargin);
         make.centerY.equalTo(self);
+    }];
+    
+    [self.usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.formContainer);
+        make.top.equalTo(self.formContainer);
     }];
     
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
