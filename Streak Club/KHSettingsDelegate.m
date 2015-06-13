@@ -24,10 +24,6 @@
 
 @implementation KHSettingsDelegate
 
-- (instancetype)init {
-    return [self initWithRootVC:nil];
-}
-
 - (instancetype)initWithRootVC:(UIViewController *)vc {
     NSParameterAssert(vc);
     

@@ -10,8 +10,13 @@
 
 #import "KHSettingsDataSource.h" // For the ENUM
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHSettingsDelegate : NSObject<UITableViewDelegate>
 
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
 - (instancetype)initWithRootVC:(UIViewController *)vc;
 
 @end
+
+NS_ASSUME_NONNULL_END

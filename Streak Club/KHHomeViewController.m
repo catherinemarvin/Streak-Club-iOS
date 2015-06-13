@@ -26,7 +26,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.title = NSLocalizedString(@"Home", nil);
+        self.title = NSLocalizedString(@"Home", @"Title for the home screen");
     }
     return self;
 }
