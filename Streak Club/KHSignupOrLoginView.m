@@ -138,7 +138,6 @@
         make.left.and.right.equalTo(self.usernameField);
         make.top.equalTo(self.repeatPasswordField);
         make.bottom.equalTo(self.emailField);
-        self.registerOnlyFieldsHeightConstraint = make.height.mas_equalTo(0);
     }];
     
     [self.repeatPasswordField mas_makeConstraints:^(MASConstraintMaker *make) {
