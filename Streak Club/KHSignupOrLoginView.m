@@ -53,10 +53,11 @@
         _usernameField = ({
             UITextField *field = [[UITextField alloc] init];
             field.font = [UIFont regularWithSize:16];
+            field.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
+            field.layer.borderWidth = 2.0f;
             field.placeholder = NSLocalizedString(@"Username", nil);
             field.autocapitalizationType = UITextAutocapitalizationTypeNone;
             field.autocorrectionType = UITextAutocorrectionTypeNo;
-            field.returnKeyType = UIReturnKeyNext;
             
             field;
         });
@@ -65,10 +66,12 @@
         _passwordField = ({
             UITextField *field = [[UITextField alloc] init];
             field.font = [UIFont regularWithSize:16];
+            field.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
+            field.layer.borderWidth = 2.0f;
             field.placeholder = NSLocalizedString(@"Password", nil);
             field.autocapitalizationType = UITextAutocapitalizationTypeNone;
             field.autocorrectionType = UITextAutocorrectionTypeNo;
-            field.returnKeyType = UIReturnKeyGo;
+            field.secureTextEntry = YES;
             field;
         });
         [_formContainer addSubview:_passwordField];
@@ -79,7 +82,12 @@
         _repeatPasswordField = ({
             UITextField *field = [[UITextField alloc] init];
             field.font = [UIFont regularWithSize:16];
+            field.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
+            field.layer.borderWidth = 2.0f;
             field.placeholder = NSLocalizedString(@"Repeat password", nil);
+            field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            field.autocorrectionType = UITextAutocorrectionTypeNo;
+            field.secureTextEntry = YES;
             field;
         });
         [_registerOnlyFields addSubview:_repeatPasswordField];
@@ -87,6 +95,11 @@
         _emailField = ({
             UITextField *field = [[UITextField alloc] init];
             field.font = [UIFont regularWithSize:16];
+            field.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
+            field.layer.borderWidth = 2.0f;
+            
+            field.autocorrectionType = UITextAutocorrectionTypeNo;
+            field.autocapitalizationType = UITextAutocapitalizationTypeNone;
             field.placeholder = NSLocalizedString(@"E-mail", nil);
             field;
         });
