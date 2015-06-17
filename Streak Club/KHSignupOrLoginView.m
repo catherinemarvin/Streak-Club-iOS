@@ -23,7 +23,6 @@
 @property (nonatomic, strong) UIView *registerOnlyFields;
 @property (nonatomic, strong) MASConstraint *registerOnlyFieldsHeightConstraint;
 
-
 @property (nonatomic, strong) UITextField *repeatPasswordField;
 @property (nonatomic, strong) UITextField *emailField;
 
@@ -136,15 +135,18 @@
         make.right.equalTo(self).with.offset(-sideMargin);
         make.centerY.equalTo(self);
     }];
+    CGFloat sidePadding = 20.0f;
+    CGFloat verticalPadding = 10.0f;
     
     [self.usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.equalTo(self.formContainer);
-        make.top.equalTo(self.formContainer);
+        make.left.equalTo(self.formContainer).with.offset(sidePadding);
+        make.right.equalTo(self.formContainer).with.offset(-sidePadding);
+        make.top.equalTo(self.formContainer).with.offset(verticalPadding);
     }];
     
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.usernameField);
-        make.top.equalTo(self.usernameField.mas_bottom);
+        make.top.equalTo(self.usernameField.mas_bottom).with.offset(verticalPadding);
     }];
     
     [self.registerOnlyFields mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -155,12 +157,12 @@
     
     [self.repeatPasswordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.usernameField);
-        make.top.equalTo(self.passwordField.mas_bottom);
+        make.top.equalTo(self.passwordField.mas_bottom).with.offset(verticalPadding);
     }];
     
     [self.emailField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.usernameField);
-        make.top.equalTo(self.repeatPasswordField.mas_bottom);
+        make.top.equalTo(self.repeatPasswordField.mas_bottom).with.offset(verticalPadding);
     }];
     
     [self.actionButton mas_makeConstraints:^(MASConstraintMaker *make) {
