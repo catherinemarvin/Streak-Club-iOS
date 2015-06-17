@@ -123,15 +123,19 @@ NS_ASSUME_NONNULL_BEGIN
     CGFloat sidePadding = 20.0f;
     CGFloat verticalPadding = 10.0f;
     
+    CGFloat fieldHeight = 44.0f;
+    
     [self.usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.formContainer).with.offset(sidePadding);
         make.right.equalTo(self.formContainer).with.offset(-sidePadding);
         make.top.equalTo(self.formContainer).with.offset(verticalPadding);
+        make.height.mas_equalTo(fieldHeight);
     }];
     
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.usernameField);
         make.top.equalTo(self.usernameField.mas_bottom).with.offset(verticalPadding);
+        make.height.equalTo(self.usernameField);
     }];
     
     [self.registerOnlyFields mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -143,11 +147,13 @@ NS_ASSUME_NONNULL_BEGIN
     [self.repeatPasswordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.usernameField);
         make.top.equalTo(self.passwordField.mas_bottom).with.offset(verticalPadding);
+        make.height.equalTo(self.usernameField);
     }];
     
     [self.emailField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.usernameField);
         make.top.equalTo(self.repeatPasswordField.mas_bottom).with.offset(verticalPadding);
+        make.height.equalTo(self.usernameField);
     }];
     
     [self.actionButton mas_makeConstraints:^(MASConstraintMaker *make) {
