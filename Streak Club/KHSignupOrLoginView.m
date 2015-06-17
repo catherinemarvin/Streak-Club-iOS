@@ -13,6 +13,8 @@
 #import "UIFont+CustomFonts.h"
 #import "UIColor+HexString.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHSignupOrLoginView()
 
 @property (nonatomic, strong) UIView *formContainer;
@@ -51,28 +53,20 @@
         
         _usernameField = ({
             UITextField *field = [[UITextField alloc] init];
-            field.font = [UIFont regularWithSize:16];
-            field.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
-            field.layer.borderWidth = 2.0f;
             field.placeholder = NSLocalizedString(@"Username", nil);
-            field.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            field.autocorrectionType = UITextAutocorrectionTypeNo;
             
             field;
         });
+        [self _configureTextField:_usernameField];
         [_formContainer addSubview:_usernameField];
         
         _passwordField = ({
             UITextField *field = [[UITextField alloc] init];
-            field.font = [UIFont regularWithSize:16];
-            field.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
-            field.layer.borderWidth = 2.0f;
             field.placeholder = NSLocalizedString(@"Password", nil);
-            field.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            field.autocorrectionType = UITextAutocorrectionTypeNo;
             field.secureTextEntry = YES;
             field;
         });
+        [self _configureTextField:_passwordField];
         [_formContainer addSubview:_passwordField];
         
         _registerOnlyFields = [[UIView alloc] init];
@@ -80,28 +74,19 @@
         
         _repeatPasswordField = ({
             UITextField *field = [[UITextField alloc] init];
-            field.font = [UIFont regularWithSize:16];
-            field.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
-            field.layer.borderWidth = 2.0f;
             field.placeholder = NSLocalizedString(@"Repeat password", nil);
-            field.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            field.autocorrectionType = UITextAutocorrectionTypeNo;
             field.secureTextEntry = YES;
             field;
         });
+        [self _configureTextField:_repeatPasswordField];
         [_registerOnlyFields addSubview:_repeatPasswordField];
         
         _emailField = ({
             UITextField *field = [[UITextField alloc] init];
-            field.font = [UIFont regularWithSize:16];
-            field.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
-            field.layer.borderWidth = 2.0f;
-            
-            field.autocorrectionType = UITextAutocorrectionTypeNo;
-            field.autocapitalizationType = UITextAutocapitalizationTypeNone;
             field.placeholder = NSLocalizedString(@"E-mail", nil);
             field;
         });
+        [self _configureTextField:_emailField];
         [_registerOnlyFields addSubview:_emailField];
         
         _actionButton = ({
@@ -176,6 +161,14 @@
     }];
 }
 
+- (void)_configureTextField:(UITextField *)textField {
+    textField.font = [UIFont regularWithSize:16];
+    textField.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
+    textField.layer.borderWidth = 2.0f;
+    textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    textField.autocorrectionType = UITextAutocorrectionTypeNo;
+}
+
 - (void)setLoginForm:(BOOL)loginForm {
     if (_loginForm != loginForm) {
         _loginForm = loginForm;
@@ -207,3 +200,5 @@
 }
 
 @end
+
+NS_ASSUME_NONNULL_END

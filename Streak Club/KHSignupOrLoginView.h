@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHSignupOrLoginView : UIView
 
 @property (nonatomic, strong, readonly) UITextField *usernameField;
@@ -23,3 +25,5 @@
 @property (nonatomic, assign) BOOL loginForm;
 
 @end
+
+NS_ASSUME_NONNULL_END
