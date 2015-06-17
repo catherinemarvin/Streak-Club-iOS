@@ -167,6 +167,10 @@ NS_ASSUME_NONNULL_BEGIN
     textField.layer.borderWidth = 2.0f;
     textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    
+    UIView *viewSpacer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 0)];
+    textField.leftView = viewSpacer;
+    textField.leftViewMode = UITextFieldViewModeAlways;
 }
 
 - (void)setLoginForm:(BOOL)loginForm {
