@@ -8,7 +8,18 @@
 
 #import "KHSignupViewController.h"
 
+// View
+#import "KHSignupView.h"
+
+// Interactor
+#import "KHSignupInteractor.h"
+
+// View Helper
+#import <Masonry.h>
+
 @interface KHSignupViewController ()
+
+@property (nonatomic, strong) KHSignupView *signupView;
 
 @end
 
@@ -16,7 +27,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.signupView = [[KHSignupView alloc] init];
+    [self.view addSubview:self.signupView];
+    
+    [self.signupView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

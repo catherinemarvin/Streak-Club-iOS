@@ -1,5 +1,5 @@
 //
-//  KHSignupViewController.h
+//  KHSignupView.h
 //  Streak Club
 //
 //  Created by Kevin Hwang on 6/18/15.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface KHSignupViewController : UIViewController
+@interface KHSignupView : UIView
 
 @end
-
-NS_ASSUME_NONNULL_END
