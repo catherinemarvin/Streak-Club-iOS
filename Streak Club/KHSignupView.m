@@ -42,6 +42,22 @@ NS_ASSUME_NONNULL_BEGIN
             field;
         });
         [_formContainer addSubview:_usernameField];
+        
+        _passwordField = ({
+            UITextField *field = [[UITextField alloc] init];
+            field.placeholder = NSLocalizedString(@"Password", @"Input form for a password");
+            field.secureTextEntry = YES;
+            field;
+        });
+        [_formContainer addSubview:_passwordField];
+        
+        _repeatPasswordField = ({
+            UITextField *field = [[UITextField alloc] init];
+            field.placeholder = NSLocalizedString(@"Repeat password", @"Input form to confirm password");
+            field.secureTextEntry = YES;
+            field;
+        });
+        [_formContainer addSubview:_repeatPasswordField];
     }
     return self;
 }
