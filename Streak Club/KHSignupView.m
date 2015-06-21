@@ -8,6 +8,9 @@
 
 #import "KHSignupView.h"
 
+#import "UIFont+CustomFonts.h"
+#import "UIColor+HexString.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KHSignupView()
@@ -60,6 +63,18 @@ NS_ASSUME_NONNULL_BEGIN
         [_formContainer addSubview:_repeatPasswordField];
     }
     return self;
+}
+
+- (void)_configureTextField:(UITextField *)textField {
+    textField.font = [UIFont regularWithSize:16];
+    textField.layer.borderColor = [UIColor colorWithHexString:@"cdcdcd"].CGColor;
+    textField.layer.borderWidth = 2.0f;
+    textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    
+    UIView *viewSpacer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 0)];
+    textField.leftView = viewSpacer;
+    textField.leftViewMode = UITextFieldViewModeAlways;
 }
     
 
