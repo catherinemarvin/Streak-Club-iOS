@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UITextField *emailField;
 
 @property (nonatomic, strong) UIButton *actionButton;
+@property (nonatomic, strong) UIButton *switchModeButton;
 
 @end
 
@@ -61,6 +62,20 @@ NS_ASSUME_NONNULL_BEGIN
             field;
         });
         [_formContainer addSubview:_repeatPasswordField];
+        
+        _actionButton = ({
+            UIButton *button = [[UIButton alloc] init];
+            [button setTitle:NSLocalizedString(@"Create Account", @"Button for creating an account") forState:UIControlStateNormal];
+            button;
+        });
+        [_formContainer addSubview:_actionButton];
+        
+        _switchModeButton = ({
+            UIButton *button = [[UIButton alloc] init];
+            [button setTitle:NSLocalizedString(@"Already have an account?", @"Button for moving from the register view to the login view") forState:UIControlStateNormal];
+            button;
+        });
+        [self addSubview:_switchModeButton];
     }
     return self;
 }
