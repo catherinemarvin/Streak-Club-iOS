@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UITextField *emailField;
 
 @property (nonatomic, strong, readonly) UIButton *actionButton;
+@property (nonatomic, strong, readonly) UIButton *switchModeButton;
 
 @end
 

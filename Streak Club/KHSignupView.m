@@ -8,8 +8,10 @@
 
 #import "KHSignupView.h"
 
+// View Helper
 #import "UIFont+CustomFonts.h"
 #import "UIColor+HexString.h"
+#import <Masonry.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -46,6 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
             field;
         });
         [_formContainer addSubview:_usernameField];
+        [self _configureTextField:_usernameField];
         
         _passwordField = ({
             UITextField *field = [[UITextField alloc] init];
@@ -76,6 +79,7 @@ NS_ASSUME_NONNULL_BEGIN
             button;
         });
         [self addSubview:_switchModeButton];
+        [self _initializeAutolayout];
     }
     return self;
 }
@@ -90,6 +94,56 @@ NS_ASSUME_NONNULL_BEGIN
     UIView *viewSpacer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 0)];
     textField.leftView = viewSpacer;
     textField.leftViewMode = UITextFieldViewModeAlways;
+}
+
+- (void)_initializeAutolayout {
+    CGFloat sideMargin = 20.0f;
+    
+    [self.formContainer mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.actionButton);
+        make.left.equalTo(self).with.offset(sideMargin);
+        make.right.equalTo(self).with.offset(-sideMargin);
+        make.centerY.equalTo(self);
+    }];
+    
+    CGFloat sidePadding = 20.0f;
+    CGFloat verticalPadding = 10.0f;
+    CGFloat fieldHeight = 44.0f;
+    
+    [self.usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.formContainer).with.offset(sidePadding);
+        make.right.equalTo(self.formContainer).with.offset(-sidePadding);
+        make.top.equalTo(self.formContainer).with.offset(verticalPadding);
+        make.height.mas_equalTo(fieldHeight);
+    }];
+    
+    [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.usernameField.mas_bottom).with.offset(verticalPadding);
+        make.height.equalTo(self.usernameField);
+    }];
+    
+    [self.repeatPasswordField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.passwordField.mas_bottom).with.offset(verticalPadding);
+        make.height.equalTo(self.usernameField);
+    }];
+    
+    [self.emailField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.repeatPasswordField.mas_bottom).with.offset(verticalPadding);
+        make.height.equalTo(self.usernameField);
+    }];
+    
+    [self.actionButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.emailField.mas_bottom);
+    }];
+    
+    [self.switchModeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.usernameField);
+        make.top.equalTo(self.actionButton.mas_bottom);
+    }];
 }
     
 
