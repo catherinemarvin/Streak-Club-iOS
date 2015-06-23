@@ -17,9 +17,15 @@
 // Views
 #import "KHSplashScreenContentViewController.h"
 #import "KHSignupViewController.h"
+#import "KHLoginViewController.h"
+
+// Protocols
+#import "KHSplashScreenContent.h"
 
 // View Helpers
 #import <Masonry.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface KHSplashScreenViewController ()<UIScrollViewDelegate>
 
@@ -28,6 +34,7 @@
 // Views
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) UIViewController<KHSplashScreenContent> *signupOrLoginVC;
 
 @end
 
@@ -96,8 +103,9 @@
     
     // The last screen is a special signup/login page.
     if (index == [self.dataSource count] - 1) {
-        KHSignupViewController *vc = [[KHSignupViewController alloc] init];
-        return vc;
+        self.signupOrLoginVC = [[KHSignupViewController alloc] init];
+        self.signupOrLoginVC.splashScreenVC = self;
+        return self.signupOrLoginVC;
     }
     
     KHSplashScreenInfo *info = [self.dataSource viewInfoForIndex:index];
@@ -107,6 +115,27 @@
     [vc setImagePath:info.imagePath];
     [vc setDescriptionText:info.descriptionText];
     return vc;
+}
+
+- (void)toggleSignupOrLogin {
+    Class nextClass;
+    
+    if ([self.signupOrLoginVC isKindOfClass:[KHSignupViewController class]]) {
+        nextClass = [KHLoginViewController class];
+    } else {
+        nextClass = [KHSignupViewController class];
+    }
+    
+    UIViewController<KHSplashScreenContent> *vc = [[nextClass alloc] init];
+    
+    [self addChildViewController:vc];
+    vc.view.frame = self.signupOrLoginVC.view.frame;
+    [vc didMoveToParentViewController:self];
+    
+    [self.signupOrLoginVC willMoveToParentViewController:nil];
+    [self.signupOrLoginVC.view removeFromSuperview];
+    [self.signupOrLoginVC removeFromParentViewController];
+    self.signupOrLoginVC = vc;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -119,3 +148,5 @@
 }
 
 @end
+
+NS_ASSUME_NONNULL_END

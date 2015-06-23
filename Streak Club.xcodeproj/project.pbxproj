@@ -159,6 +159,7 @@
 		6E901C501B39095D001F14A5 /* KHLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHLoginView.m; sourceTree = "<group>"; };
 		6E901C531B390990001F14A5 /* KHLoginInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLoginInteractor.h; sourceTree = "<group>"; };
 		6E901C541B390990001F14A5 /* KHLoginInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHLoginInteractor.m; sourceTree = "<group>"; };
+		6E901C561B3930C7001F14A5 /* KHSplashScreenContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenContent.h; sourceTree = "<group>"; };
 		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
 		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
 		6ECCF0BD1ADD0A6B0028EC35 /* KHSettingsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsDataSource.h; sourceTree = "<group>"; };
@@ -269,6 +270,7 @@
 				6E0BE4A01AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m */,
 				6E0BE4C61AC5FFD600BF4B45 /* KHSplashScreenContentView.h */,
 				6E0BE4C71AC5FFD600BF4B45 /* KHSplashScreenContentView.m */,
+				6E901C561B3930C7001F14A5 /* KHSplashScreenContent.h */,
 			);
 			name = "Carousel Pages";
 			sourceTree = "<group>";

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "KHSplashScreenContent.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHLoginViewController : UIViewController
+@interface KHLoginViewController : UIViewController<KHSplashScreenContent>
 
 @end
 

@@ -14,6 +14,8 @@
 // Interactor
 #import "KHSignupInteractor.h"
 
+#import "KHSplashScreenViewController.h"
+
 // View Helper
 #import <Masonry.h>
 
@@ -27,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @implementation KHSignupViewController
+
+@synthesize splashScreenVC = _splashScreenVC;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -74,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)_switchModeTapped:(id)sender {
-    
+    [self.splashScreenVC toggleSignupOrLogin];
 }
 
 #pragma mark - UITextFieldDelegate

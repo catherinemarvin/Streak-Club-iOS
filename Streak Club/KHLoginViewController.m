@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation KHLoginViewController
 
+@synthesize splashScreenVC = _splashScreenVC;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
