@@ -8,7 +8,20 @@
 
 #import "KHLoginViewController.h"
 
+// View
+#import "KHLoginView.h"
+
+// Interactor
+#import "KHLoginInteractor.h"
+
+// View Helper
+#import <Masonry.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHLoginViewController ()
+
+@property (nonatomic, strong) KHLoginView *loginView;
 
 @end
 
@@ -16,22 +29,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.loginView = [[KHLoginView alloc] init];
+    [self.view addSubview:self.loginView];
+    
+    [self.loginView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
+
+NS_ASSUME_NONNULL_END

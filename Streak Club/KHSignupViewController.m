@@ -17,6 +17,8 @@
 // View Helper
 #import <Masonry.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHSignupViewController ()
 
 @property (nonatomic, strong) KHSignupView *signupView;
@@ -36,19 +38,6 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
+
+NS_ASSUME_NONNULL_END
