@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation KHLoginInteractor
 
 - (void)actionTapped:(nullable NSString *)username password:(nullable NSString *)password {
-    
+    [self.loginManager loginWithUsername:username password:password];
 }
 
 #pragma mark - Lazy Instanitation

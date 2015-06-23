@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation KHSignupInteractor
 
 - (void)actionTapped:(nullable NSString *)username password:(nullable NSString *)password repeatPassword:(nullable NSString *)repeatPassword email:(nullable NSString *)email {
-    
+    [self.registerManager registerWithUsername:username password:password repeatPassword:repeatPassword email:email];
 }
 
 #pragma mark - Lazy Instantiation
