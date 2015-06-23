@@ -14,6 +14,8 @@
 // Interactor
 #import "KHLoginInteractor.h"
 
+#import "KHSplashScreenViewController.h"
+
 // View Helper
 #import <Masonry.h>
 
@@ -22,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KHLoginViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) KHLoginView *loginView;
+@property (nonatomic, strong) KHLoginInteractor *interactor;
 
 @end
 
@@ -54,13 +57,24 @@ NS_ASSUME_NONNULL_BEGIN
     return _loginView;
 }
 
+- (KHLoginInteractor *)interactor {
+    if (!_interactor) {
+        _interactor = [[KHLoginInteractor alloc] init];
+    }
+    return _interactor;
+}
+
 #pragma mark - Button Presses
+
 - (void)_actionTapped {
+    NSString *username = self.loginView.usernameField.text;
+    NSString *password = self.loginView.passwordField.text;
     
+    [self.interactor actionTapped:username password:password];
 }
 
 - (void)_switchModeTapped {
-    
+    [self.splashScreenVC toggleSignupOrLogin];
 }
 
 #pragma mark - UITextFieldDelegate 
