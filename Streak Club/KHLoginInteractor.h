@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KHLoginInteractor : NSObject
 
+- (void)actionTapped:(nullable NSString *)username password:(nullable NSString *)password;
+
 
 @end
 
