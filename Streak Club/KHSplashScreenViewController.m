@@ -16,7 +16,7 @@
 
 // Views
 #import "KHSplashScreenContentViewController.h"
-#import "KHSignupOrLoginViewController.h"
+#import "KHSignupViewController.h"
 
 // View Helpers
 #import <Masonry.h>
@@ -96,7 +96,7 @@
     
     // The last screen is a special signup/login page.
     if (index == [self.dataSource count] - 1) {
-        KHSignupOrLoginViewController *vc = [[KHSignupOrLoginViewController alloc] init];
+        KHSignupViewController *vc = [[KHSignupViewController alloc] init];
         return vc;
     }
     
