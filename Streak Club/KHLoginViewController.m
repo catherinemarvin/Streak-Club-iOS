@@ -19,7 +19,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHLoginViewController ()
+@interface KHLoginViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) KHLoginView *loginView;
 
@@ -32,12 +32,48 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.loginView = [[KHLoginView alloc] init];
     [self.view addSubview:self.loginView];
     
     [self.loginView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    self.loginView.usernameField.delegate = self;
+    self.loginView.passwordField.delegate = self;
+    
+    [self.loginView.actionButton addTarget:self action:@selector(_actionTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.loginView.switchModeButton addTarget:self action:@selector(_switchModeTapped) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - Lazy Instantiation
+
+- (KHLoginView *)loginView {
+    if (!_loginView) {
+        _loginView = [[KHLoginView alloc] init];
+    }
+    return _loginView;
+}
+
+#pragma mark - Button Presses
+- (void)_actionTapped {
+    
+}
+
+- (void)_switchModeTapped {
+    
+}
+
+#pragma mark - UITextFieldDelegate 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    BOOL shouldReturn = NO;
+    if ([textField isEqual:self.loginView.usernameField]) {
+        [self.loginView.passwordField becomeFirstResponder];
+    } else if ([textField isEqual:self.loginView.passwordField]) {
+        shouldReturn = YES;
+        [self _actionTapped];
+    }
+    return shouldReturn;
 }
 
 @end

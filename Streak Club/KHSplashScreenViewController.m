@@ -128,8 +128,11 @@ NS_ASSUME_NONNULL_BEGIN
     
     UIViewController<KHSplashScreenContent> *vc = [[nextClass alloc] init];
     
+    [vc willMoveToParentViewController:self];
     [self addChildViewController:vc];
+    [self.scrollView addSubview:vc.view];
     vc.view.frame = self.signupOrLoginVC.view.frame;
+    vc.splashScreenVC = self;
     [vc didMoveToParentViewController:self];
     
     [self.signupOrLoginVC willMoveToParentViewController:nil];
