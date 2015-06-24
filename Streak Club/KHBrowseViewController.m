@@ -29,25 +29,48 @@
     
     self.title = NSLocalizedString(@"Browse", @"Title for the browse screen, where users can browse a list of streaks.");
     
-    self.collectionView = ({
-        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        collectionView.backgroundColor = [UIColor whiteColor];
-        collectionView.alwaysBounceVertical = YES;
-        collectionView;
-    });
     [self.view addSubview:self.collectionView];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     
-    self.refreshControl = ({
-        UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-        [refreshControl addTarget:self action:@selector(_refreshControl:) forControlEvents:UIControlEventValueChanged];
-        refreshControl;
-    });
     [self.collectionView addSubview:self.refreshControl];
+    
+    [self.dataSource refreshData];
+}
+
+#pragma mark - Lazy Instantiation
+
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        _collectionView = ({
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+            UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+            collectionView.backgroundColor = [UIColor whiteColor];
+            collectionView.alwaysBounceVertical = YES;
+            collectionView;
+        });
+    }
+    return _collectionView;
+}
+
+- (UIRefreshControl *)refreshControl {
+    if (!_refreshControl) {
+        _refreshControl = ({
+            UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+            [refreshControl addTarget:self action:@selector(_refreshControl:) forControlEvents:UIControlEventValueChanged];
+            refreshControl;
+        });
+    }
+    return _refreshControl;
+}
+
+- (KHBrowseCollectionViewDataSource *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [[KHBrowseCollectionViewDataSource alloc] initWithCollectionView:self.collectionView];
+    }
+    return _dataSource;
 }
 
 #pragma mark - UIRefreshControl
