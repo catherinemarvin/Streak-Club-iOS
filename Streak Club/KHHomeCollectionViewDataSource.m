@@ -129,8 +129,9 @@ static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
 #pragma mark - UICollectionViewDelegateCollectionFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat width = 200.0f;
     CGFloat height = 200.0f;
-    return CGSizeMake(CGRectGetWidth(collectionView.bounds), height);
+    return CGSizeMake(width, height);
 }
 
 #pragma mark - KHHomeScreenDataSourceDelegate
