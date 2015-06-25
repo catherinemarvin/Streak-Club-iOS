@@ -12,6 +12,8 @@
 #import "KHStreakModel.h"
 #import "KHUserModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHHomeStreakCellViewModel()
 
 @property (nonatomic, strong) NSString *title;
@@ -33,3 +35,5 @@
 }
 
 @end
+
+NS_ASSUME_NONNULL_END
