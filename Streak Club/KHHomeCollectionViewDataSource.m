@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, KHHomeScreenSection) {
     KHHomeScreenSectionActiveStreaks = 0,
     KHHomeScreenSectionCreatedStreaks,
+    KHHomeScreenSectionCompletedStreaks,
     KHHomeScreenSectionCount
 };
 
@@ -94,6 +95,10 @@ static CGFloat const KHkMargin = 20.0f;
             return [[self _createdStreaks] count];
             break;
         }
+        case KHHomeScreenSectionCompletedStreaks: {
+            return [self.streaks.joinedStreaks.completedStreaks count];
+            break;
+        }
         case KHHomeScreenSectionCount:
         default: {
             return 0;
@@ -118,14 +123,18 @@ static CGFloat const KHkMargin = 20.0f;
 
 - (KHStreakModel *)_streakForIndexPath:(NSIndexPath *)indexPath {
     
-    KHHomeStreaksGroup *streakGroup;
+    NSArray *streaks;
     switch (indexPath.section) {
         case KHHomeScreenSectionActiveStreaks: {
-            streakGroup = self.streaks.joinedStreaks;
+            streaks = self.streaks.joinedStreaks.activeStreaks;
             break;
         }
         case KHHomeScreenSectionCreatedStreaks: {
-            streakGroup = self.streaks.hostedStreaks;
+            streaks = [self _createdStreaks];
+            break;
+        }
+        case KHHomeScreenSectionCompletedStreaks: {
+            streaks = self.streaks.joinedStreaks.completedStreaks;
             break;
         }
         case KHHomeScreenSectionCount:
@@ -133,13 +142,7 @@ static CGFloat const KHkMargin = 20.0f;
             break;
         }
     }
-    NSArray *activeStreaks = streakGroup.activeStreaks;
-    NSArray *completedStreaks = streakGroup.completedStreaks;
-    
-    NSMutableArray *allStreaks = [NSMutableArray arrayWithArray:activeStreaks];
-    [allStreaks addObjectsFromArray:completedStreaks];
-    
-    KHStreakModel *streak = allStreaks[indexPath.row];
+    KHStreakModel *streak = streaks[indexPath.row];
     return streak;
 }
 
@@ -164,6 +167,10 @@ static CGFloat const KHkMargin = 20.0f;
                 }
                 case KHHomeScreenSectionCreatedStreaks: {
                     title = NSLocalizedString(@"Streaks you've created", @"Title for a group of the streaks the user has created.");
+                    break;
+                }
+                case KHHomeScreenSectionCompletedStreaks: {
+                    title = NSLocalizedString(@"Streaks you've completed", @"Title for a group of streaks the user has completed");
                     break;
                 }
                 case KHHomeScreenSectionCount:
