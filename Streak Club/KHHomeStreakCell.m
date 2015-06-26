@@ -159,6 +159,8 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_progressView) {
         _progressView = ({
             UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+            progressView.trackTintColor = [UIColor colorWithHexString:@"dadada"];
+            progressView.progressTintColor = [UIColor colorWithHexString:@"aada80"];
             progressView;
         });
     }
