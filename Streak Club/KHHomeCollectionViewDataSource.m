@@ -64,6 +64,18 @@ static CGFloat const KHkMargin = 20.0f;
 - (void)refreshData {
     [self.dataSource requestHomeScreen];
 }
+#pragma mark - Data Source Manipulation
+
+- (NSArray *)_createdStreaks {
+    KHHomeStreaksGroup *createdStreakGroup = self.streaks.hostedStreaks;
+    
+    NSArray *ongoingStreaks = [createdStreakGroup activeStreaks];
+    NSArray *completedStreaks = [createdStreakGroup completedStreaks];
+    NSMutableArray *array = [NSMutableArray arrayWithArray:ongoingStreaks];
+    [array addObjectsFromArray:completedStreaks];
+    
+    return [NSArray arrayWithArray:array];
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -79,7 +91,7 @@ static CGFloat const KHkMargin = 20.0f;
             break;
         }
         case KHHomeScreenSectionCreatedStreaks: {
-            return [[[self.streaks hostedStreaks] activeStreaks] count];
+            return [[self _createdStreaks] count];
             break;
         }
         case KHHomeScreenSectionCount:
@@ -183,6 +195,7 @@ static CGFloat const KHkMargin = 20.0f;
     self.streaks = streaks;
     [self.collectionView reloadData];
 }
+
 
 @end
 
