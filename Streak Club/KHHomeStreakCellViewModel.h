@@ -17,8 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString *title;
 @property (nonatomic, strong, readonly) NSString *author;
 @property (nonatomic, strong, readonly) NSString *duration;
-@property (nonatomic, strong, readonly) NSString *participants;
-@property (nonatomic, strong, readonly) NSString *submissions;
+@property (nonatomic, strong, readonly) NSString *shortDescription;
 
 - (void)configureWithStreak:(KHStreakModel *)streak;
 

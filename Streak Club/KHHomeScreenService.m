@@ -41,7 +41,6 @@ static NSString *const KHkHomeScreenUrl = @"my-streaks";
         NSLog(@"%@", responseObject);
         NSError *error;
         KHHomeStreaksModel *homeStreaks = [MTLJSONAdapter modelOfClass:[KHHomeStreaksModel class] fromJSONDictionary:responseObject error:&error];
-        NSLog(@"%@", homeStreaks);
         [self.delegate homeStreaksReceived:homeStreaks];
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
         NSLog(@"%@", error.debugDescription);

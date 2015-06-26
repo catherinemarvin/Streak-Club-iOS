@@ -31,5 +31,6 @@ typedef NS_ENUM(NSInteger, KHStreakCategory) {
 @property (nonatomic, copy, readonly) NSDate *startDate;
 @property (nonatomic, assign, readonly) KHStreakCategory category;
 @property (nonatomic, copy, readonly) NSString *title;
+@property (nonatomic, copy, readonly) NSString *shortDescription;
 
 @end

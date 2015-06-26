@@ -26,8 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIView *divider;
 
-@property (nonatomic, strong) UILabel *participantsLabel;
-@property (nonatomic, strong) UILabel *submissionsLabel;
+@property (nonatomic, strong) UILabel *shortDescriptionLabel;
 
 @end
 
@@ -49,8 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self.contentView addSubview:self.authorLabel];
     [self.contentView addSubview:self.durationLabel];
     [self.contentView addSubview:self.divider];
-    [self.contentView addSubview:self.participantsLabel];
-    [self.contentView addSubview:self.submissionsLabel];
+    [self.contentView addSubview:self.shortDescriptionLabel];
 }
 
 - (void)_initializeAutolayout {
@@ -78,21 +76,10 @@ NS_ASSUME_NONNULL_BEGIN
         make.height.mas_equalTo(1);
     }];
     
-    [self.participantsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.shortDescriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.titleLabel);
         make.top.equalTo(self.divider.mas_bottom).with.offset(verticalOffset);
-        make.left.equalTo(self.contentView).with.offset(sidePadding);
-        make.width.equalTo(self.submissionsLabel);
-        make.right.equalTo(self.submissionsLabel.mas_left);
     }];
-    
-    [self.submissionsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.participantsLabel);
-        make.right.equalTo(self.contentView).with.offset(-sidePadding);
-        make.width.equalTo(self.participantsLabel);
-        make.left.equalTo(self.participantsLabel.mas_right);
-    }];
-    
-    
 }
 
 - (void)configureWithViewModel:(KHHomeStreakCellViewModel * __nonnull)viewModel {
@@ -100,9 +87,7 @@ NS_ASSUME_NONNULL_BEGIN
     self.titleLabel.text = viewModel.title;
     self.authorLabel.text = viewModel.author;
     self.durationLabel.text = viewModel.duration;
-    
-    self.participantsLabel.text = viewModel.participants;
-    self.submissionsLabel.text = viewModel.participants;
+    self.shortDescriptionLabel.text = viewModel.shortDescription;
 }
 
 #pragma mark - Lazy Instantiation
@@ -151,26 +136,15 @@ NS_ASSUME_NONNULL_BEGIN
     return _divider;
 }
 
-- (UILabel *)participantsLabel {
-    if (!_participantsLabel) {
-        _participantsLabel = ({
+- (UILabel *)shortDescriptionLabel {
+    if (!_shortDescriptionLabel) {
+        _shortDescriptionLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.font = [UIFont regularWithSize:14.0f];
             label;
         });
     }
-    return _participantsLabel;
-}
-
-- (UILabel *)submissionsLabel {
-    if (!_submissionsLabel) {
-        _submissionsLabel = ({
-            UILabel *label = [[UILabel alloc] init];
-            label.font = [UIFont regularWithSize:14.0f];
-            label;
-        });
-    }
-    return _submissionsLabel;
+    return _shortDescriptionLabel;
 }
 
 @end

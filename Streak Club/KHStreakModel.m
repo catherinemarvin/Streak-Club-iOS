@@ -27,7 +27,8 @@
              @"publishStatus" : @"publish_status",
              @"startDate" : @"start_date",
              @"category" : @"category",
-             @"title" : @"title"
+             @"title" : @"title",
+             @"shortDescription" : @"short_description"
              };
 }
 
