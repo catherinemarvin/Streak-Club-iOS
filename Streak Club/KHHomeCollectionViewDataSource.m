@@ -10,6 +10,7 @@
 
 // View
 #import "KHHomeStreakCell.h"
+#import "KHHomeStreakHeaderView.h"
 
 // ViewModel
 #import "KHHomeStreakCellViewModel.h"
@@ -41,6 +42,7 @@ typedef NS_ENUM(NSUInteger, KHHomeScreenSection) {
 @end
 
 static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
+static NSString *const KHkHeaderIdentifier = @"headerIdentifier";
 
 static CGFloat const KHkMargin = 20.0f;
 
@@ -54,6 +56,7 @@ static CGFloat const KHkMargin = 20.0f;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         [_collectionView registerClass:[KHHomeStreakCell class] forCellWithReuseIdentifier:KHkHomeCellIdentifier];
+        [_collectionView registerClass:[KHHomeStreakHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHkHeaderIdentifier];
     }
     return self;
 }
@@ -126,6 +129,40 @@ static CGFloat const KHkMargin = 20.0f;
     
     KHStreakModel *streak = allStreaks[indexPath.row];
     return streak;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    CGFloat width = CGRectGetWidth(collectionView.bounds) - 2 * KHkMargin;
+    CGFloat height = 50.0f;
+    return CGSizeMake(width, height);
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reusableView;
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHkHeaderIdentifier forIndexPath:indexPath];
+        if ([reusableView isKindOfClass:[KHHomeStreakHeaderView class]]) {
+            KHHomeStreakHeaderView *headerView = (KHHomeStreakHeaderView *)reusableView;
+            
+            NSString *title;
+            switch (indexPath.section) {
+                case KHHomeScreenSectionActiveStreaks: {
+                    title = NSLocalizedString(@"Active streaks you're in", @"Title for a group of all the streaks the user is currently in.");
+                    break;
+                }
+                case KHHomeScreenSectionCreatedStreaks: {
+                    title = NSLocalizedString(@"Streaks you've created", @"Title for a group of the streaks the user has created.");
+                    break;
+                }
+                case KHHomeScreenSectionCount:
+                default: {
+                    break;
+                }
+            }
+            [headerView setTitle:title];
+        }
+    }
+    return reusableView;
 }
 
 #pragma mark - UICollectionViewDelegateCollectionFlowLayout
