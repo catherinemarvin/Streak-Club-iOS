@@ -14,6 +14,7 @@
 // View Helper
 #import <Masonry.h>
 #import "UIFont+CustomFonts.h"
+#import "UIColor+HexString.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,8 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-        
         self.layer.borderColor = [UIColor grayColor].CGColor;
         self.layer.borderWidth = 1.0f;
         
@@ -76,18 +75,21 @@ NS_ASSUME_NONNULL_BEGIN
     [self.divider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.contentView);
         make.top.equalTo(self.durationLabel.mas_bottom).with.offset(verticalOffset);
+        make.height.mas_equalTo(1);
     }];
     
     [self.participantsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.divider.mas_bottom).with.offset(verticalOffset);
         make.left.equalTo(self.contentView).with.offset(sidePadding);
         make.width.equalTo(self.submissionsLabel);
+        make.right.equalTo(self.submissionsLabel.mas_left);
     }];
     
     [self.submissionsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.participantsLabel);
         make.right.equalTo(self.contentView).with.offset(-sidePadding);
         make.width.equalTo(self.participantsLabel);
+        make.left.equalTo(self.participantsLabel.mas_right);
     }];
     
     
@@ -109,6 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_titleLabel) {
         _titleLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:22.0f];
             label;
         });
     }
@@ -119,6 +122,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_authorLabel) {
         _authorLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:16.0f];
             label;
         });
     }
@@ -129,6 +133,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_durationLabel) {
         _durationLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:14.0f];
             label;
         });
     }
@@ -139,6 +144,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_divider) {
         _divider = ({
             UIView *view = [[UIView alloc] init];
+            view.backgroundColor = [UIColor colorWithHexString:@"dadada"];
             view;
         });
     }
@@ -149,6 +155,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_participantsLabel) {
         _participantsLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:14.0f];
             label;
         });
     }
@@ -159,6 +166,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_submissionsLabel) {
         _submissionsLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:14.0f];
             label;
         });
     }
