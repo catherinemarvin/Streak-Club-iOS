@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView *divider;
 
 @property (nonatomic, strong) UILabel *shortDescriptionLabel;
+@property (nonatomic, strong) UIProgressView *progressView;
 
 @end
 
@@ -49,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self.contentView addSubview:self.durationLabel];
     [self.contentView addSubview:self.divider];
     [self.contentView addSubview:self.shortDescriptionLabel];
+    [self.contentView addSubview:self.progressView];
 }
 
 - (void)_initializeAutolayout {
@@ -79,6 +81,11 @@ NS_ASSUME_NONNULL_BEGIN
     [self.shortDescriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.titleLabel);
         make.top.equalTo(self.divider.mas_bottom).with.offset(verticalOffset);
+    }];
+    
+    [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.titleLabel);
+        make.top.equalTo(self.shortDescriptionLabel.mas_bottom).with.offset(verticalOffset);
     }];
 }
 
@@ -145,6 +152,16 @@ NS_ASSUME_NONNULL_BEGIN
         });
     }
     return _shortDescriptionLabel;
+}
+
+- (UIProgressView *)progressView {
+    if (!_progressView) {
+        _progressView = ({
+            UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+            progressView;
+        });
+    }
+    return _progressView;
 }
 
 @end
