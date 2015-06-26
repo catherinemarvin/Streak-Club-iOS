@@ -95,6 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
     self.authorLabel.text = viewModel.author;
     self.durationLabel.text = viewModel.duration;
     self.shortDescriptionLabel.text = viewModel.shortDescription;
+    [self.progressView setProgress:viewModel.progressPercentage animated:NO];
 }
 
 #pragma mark - Lazy Instantiation

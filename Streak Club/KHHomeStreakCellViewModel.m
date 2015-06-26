@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSString *duration;
 @property (nonatomic, strong) NSString *shortDescription;
+@property (nonatomic, assign) float progressPercentage;
 
 @end
 
@@ -35,6 +36,10 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *endDateString = [self _dateToString:streak.endDate];
     self.duration = [NSString stringWithFormat:NSLocalizedString(@"from %@ to %@", @"Example: from June 15th to June 20th"), startDateString, endDateString];
     self.shortDescription = streak.shortDescription;
+    
+    float totalStreakLength = [self _daysBetweenDate:streak.startDate andDate:streak.endDate];
+    float timeElapsed = [self _daysBetweenDate:streak.startDate andDate:[NSDate date]];
+    self.progressPercentage = timeElapsed / totalStreakLength;
 }
 
 - (NSString *)_dateToString:(NSDate *)date {
@@ -45,6 +50,23 @@ NS_ASSUME_NONNULL_BEGIN
     
     NSString *string = [dateFormatter stringFromDate:date];
     return string;
+}
+
+- (NSInteger)_daysBetweenDate:(NSDate *)fromDateTime andDate:(NSDate *)toDateTime {
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
+                 interval:NULL forDate:fromDateTime];
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
+                 interval:NULL forDate:toDateTime];
+    
+    NSDateComponents *difference = [calendar components:NSCalendarUnitDay
+                                               fromDate:fromDate toDate:toDate options:0];
+    
+    return [difference day];
 }
 
 @end

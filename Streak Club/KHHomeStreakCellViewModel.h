@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString *author;
 @property (nonatomic, strong, readonly) NSString *duration;
 @property (nonatomic, strong, readonly) NSString *shortDescription;
+@property (nonatomic, assign, readonly) float progressPercentage;
 
 - (void)configureWithStreak:(KHStreakModel *)streak;
 
