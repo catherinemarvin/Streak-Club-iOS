@@ -29,9 +29,22 @@ NS_ASSUME_NONNULL_BEGIN
     NSParameterAssert(streak);
     
     self.title = streak.title;
-    self.author = streak.host.username;
-    self.duration = [NSString stringWithFormat:NSLocalizedString(@"from %@ to %@", @"Example: from June 15th to June 20th"), streak.startDate, streak.endDate];
+    self.author = [NSString stringWithFormat:@"by %@", streak.host.username];
+    
+    NSString *startDateString = [self _dateToString:streak.startDate];
+    NSString *endDateString = [self _dateToString:streak.endDate];
+    self.duration = [NSString stringWithFormat:NSLocalizedString(@"from %@ to %@", @"Example: from June 15th to June 20th"), startDateString, endDateString];
     self.shortDescription = streak.shortDescription;
+}
+
+- (NSString *)_dateToString:(NSDate *)date {
+    NSParameterAssert(date);
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    
+    NSString *string = [dateFormatter stringFromDate:date];
+    return string;
 }
 
 @end
