@@ -42,6 +42,8 @@ typedef NS_ENUM(NSUInteger, KHHomeScreenSection) {
 
 static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
 
+static CGFloat const KHkMargin = 20.0f;
+
 @implementation KHHomeCollectionViewDataSource
 
 - (instancetype)initWithCollectionView:(UICollectionView * __nonnull)collectionView {
@@ -129,9 +131,13 @@ static NSString *const KHkHomeCellIdentifier = @"homeCellIdentifier";
 #pragma mark - UICollectionViewDelegateCollectionFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = 200.0f;
+    CGFloat width = CGRectGetWidth(collectionView.bounds) - 2 * KHkMargin;
     CGFloat height = 200.0f;
     return CGSizeMake(width, height);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(KHkMargin, 0, 0, 0);
 }
 
 #pragma mark - KHHomeScreenDataSourceDelegate
