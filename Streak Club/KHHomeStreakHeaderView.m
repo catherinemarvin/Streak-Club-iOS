@@ -38,7 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)_initializeAutolayout {
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.equalTo(self);
+        make.top.equalTo(self);
+        make.left.equalTo(self).with.offset(20.0f);
     }];
 }
 
