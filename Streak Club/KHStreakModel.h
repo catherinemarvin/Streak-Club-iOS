@@ -21,6 +21,11 @@ typedef NS_ENUM(NSInteger, KHStreakCategory) {
     KHStreakCategoryVisualArt
 };
 
+typedef NS_ENUM(NSInteger, KHStreakRate) {
+    KHStreakRateDaily,
+    KHStreakRateWeekly
+};
+
 @interface KHStreakModel : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, copy, readonly) NSDate *endDate;
@@ -32,5 +37,6 @@ typedef NS_ENUM(NSInteger, KHStreakCategory) {
 @property (nonatomic, assign, readonly) KHStreakCategory category;
 @property (nonatomic, copy, readonly) NSString *title;
 @property (nonatomic, copy, readonly) NSString *shortDescription;
+@property (nonatomic, assign, readonly) KHStreakRate rate;
 
 @end

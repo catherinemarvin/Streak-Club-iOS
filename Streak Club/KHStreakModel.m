@@ -28,7 +28,8 @@
              @"startDate" : @"start_date",
              @"category" : @"category",
              @"title" : @"title",
-             @"shortDescription" : @"short_description"
+             @"shortDescription" : @"short_description",
+             @"rate" : @"rate"
              };
 }
 
@@ -71,6 +72,14 @@
               @"other" : @(KHStreakCategoryOther),
               @"interactive" : @(KHStreakCategoryInteractive),
               @"visual_art" : @(KHStreakCategoryVisualArt)
+              }];
+}
+
++ (NSValueTransformer *)rateJSONTransformer {
+    return [NSValueTransformer mtl_valueMappingTransformerWithDictionary:
+            @{
+              @"daily" : @(KHStreakRateDaily),
+              @"weekly" : @(KHStreakRateWeekly)
               }];
 }
 
