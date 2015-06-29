@@ -34,12 +34,28 @@ NS_ASSUME_NONNULL_BEGIN
     
     NSString *startDateString = [self _dateToString:streak.startDate];
     NSString *endDateString = [self _dateToString:streak.endDate];
-    self.duration = [NSString stringWithFormat:NSLocalizedString(@"from %@ to %@", @"Example: from June 15th to June 20th"), startDateString, endDateString];
+    NSString *rateString = [self _rateString:streak.rate];
+    self.duration = [NSString stringWithFormat:NSLocalizedString(@"%@ from %@ to %@", @"Example: from June 15th to June 20th"), rateString, startDateString, endDateString];
     self.shortDescription = streak.shortDescription;
     
     float totalStreakLength = [self _daysBetweenDate:streak.startDate andDate:streak.endDate];
     float timeElapsed = [self _daysBetweenDate:streak.startDate andDate:[NSDate date]];
     self.progressPercentage = timeElapsed / totalStreakLength;
+}
+
+- (NSString *)_rateString:(KHStreakRate)rate {
+    NSString *rateString;
+    switch (rate) {
+        case KHStreakRateDaily: {
+            rateString = NSLocalizedString(@"Daily", @"Describes a streak that occurs every day");
+            break;
+        }
+        case KHStreakRateWeekly: {
+            rateString = NSLocalizedString(@"Weekly", @"Describes a streak that occurs every week");
+            break;
+        }
+    }
+    return rateString;
 }
 
 - (NSString *)_dateToString:(NSDate *)date {
