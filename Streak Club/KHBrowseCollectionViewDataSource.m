@@ -32,7 +32,6 @@ static NSString *const KHkBrowseCellIdentifier = @"KHkBrowseCellIdentifier";
 - (instancetype)initWithCollectionView:(UICollectionView * __nonnull)collectionView {
     NSParameterAssert(collectionView);
     if (self = [super init]) {
-        _dataSource = [[KHBrowseDataSource alloc] initWithDelegate:self];
         _collectionView = collectionView;
         _collectionView.dataSource = self;
     }
@@ -41,6 +40,15 @@ static NSString *const KHkBrowseCellIdentifier = @"KHkBrowseCellIdentifier";
 
 - (void)refreshData {
     [self.dataSource requestBrowseScreen];
+}
+
+#pragma mark - Lazy Instantiation
+
+- (KHBrowseDataSource *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [[KHBrowseDataSource alloc] initWithDelegate:self];
+    }
+    return _dataSource;
 }
 
 #pragma mark - UICollectionViewDataSource

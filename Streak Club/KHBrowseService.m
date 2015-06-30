@@ -38,6 +38,7 @@ static NSString *const KHkBrowseScreenUrl = @"streaks";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     [self.apiService get:KHkBrowseScreenUrl parameters:params success:^(id responseObject) {
+        NSLog(@"Browse Result");
         NSLog(@"%@", responseObject);
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
         NSLog(@"%@", error.debugDescription);
