@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 Kevin Hwang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Mantle.h>
 
-@interface KHBrowseStreaksModel : NSObject
+@interface KHBrowseStreaksModel : MTLModel<MTLJSONSerializing>
+
+@property (nonatomic, copy, readonly) NSArray *streaks;
 
 @end

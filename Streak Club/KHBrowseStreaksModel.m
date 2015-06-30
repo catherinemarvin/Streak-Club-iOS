@@ -8,6 +8,19 @@
 
 #import "KHBrowseStreaksModel.h"
 
+// Models
+#import "KHStreakModel.h"
+
 @implementation KHBrowseStreaksModel
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"streaks" : @"streaks"
+             };
+}
+
++ (NSValueTransformer *)streaksJSONTransformer {
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[KHStreakModel class]];
+}
 
 @end
