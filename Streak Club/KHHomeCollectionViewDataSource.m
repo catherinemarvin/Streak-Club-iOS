@@ -9,11 +9,11 @@
 #import "KHHomeCollectionViewDataSource.h"
 
 // View
-#import "KHHomeStreakCell.h"
+#import "KHStreakCell.h"
 #import "KHHomeStreakHeaderView.h"
 
 // ViewModel
-#import "KHHomeStreakCellViewModel.h"
+#import "KHStreakCellViewModel.h"
 
 // Data Source
 #import "KHHomeScreenDataSource.h"
@@ -56,7 +56,7 @@ static CGFloat const KHkMargin = 20.0f;
         _collectionView = collectionView;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        [_collectionView registerClass:[KHHomeStreakCell class] forCellWithReuseIdentifier:KHkHomeCellIdentifier];
+        [_collectionView registerClass:[KHStreakCell class] forCellWithReuseIdentifier:KHkHomeCellIdentifier];
         [_collectionView registerClass:[KHHomeStreakHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHkHeaderIdentifier];
     }
     return self;
@@ -110,11 +110,11 @@ static CGFloat const KHkMargin = 20.0f;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHkHomeCellIdentifier forIndexPath:indexPath];
     
-    if ([cell isKindOfClass:[KHHomeStreakCell class]]) {
-        KHHomeStreakCell *homeStreakCell = (KHHomeStreakCell *)cell;
+    if ([cell isKindOfClass:[KHStreakCell class]]) {
+        KHStreakCell *homeStreakCell = (KHStreakCell *)cell;
         
         KHStreakModel *streak = [self _streakForIndexPath:indexPath];
-        KHHomeStreakCellViewModel *vm = [[KHHomeStreakCellViewModel alloc] init];
+        KHStreakCellViewModel *vm = [[KHStreakCellViewModel alloc] init];
         [vm configureWithStreak:streak];
         [homeStreakCell configureWithViewModel:vm];
     }

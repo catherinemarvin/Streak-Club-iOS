@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Kevin Hwang. All rights reserved.
 //
 
-#import "KHHomeStreakCellViewModel.h"
+#import "KHStreakCellViewModel.h"
 
 // Models
 #import "KHStreakModel.h"
@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHHomeStreakCellViewModel()
+@interface KHStreakCellViewModel()
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *author;
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@implementation KHHomeStreakCellViewModel
+@implementation KHStreakCellViewModel
 
 - (void)configureWithStreak:(KHStreakModel *)streak {
     NSParameterAssert(streak);

@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class KHHomeStreakCellViewModel;
+@class KHStreakCellViewModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHHomeStreakCell : UICollectionViewCell
+@interface KHStreakCell : UICollectionViewCell
 
-- (void)configureWithViewModel:(KHHomeStreakCellViewModel *)viewModel;
+- (void)configureWithViewModel:(KHStreakCellViewModel *)viewModel;
 
 @end
 

@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Kevin Hwang. All rights reserved.
 //
 
-#import "KHHomeStreakCell.h"
+#import "KHStreakCell.h"
 
 // ViewModel
-#import "KHHomeStreakCellViewModel.h"
+#import "KHStreakCellViewModel.h"
 
 // View Helper
 #import <Masonry.h>
@@ -18,7 +18,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHHomeStreakCell()
+@interface KHStreakCell()
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *authorLabel;
@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@implementation KHHomeStreakCell
+@implementation KHStreakCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -89,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
     }];
 }
 
-- (void)configureWithViewModel:(KHHomeStreakCellViewModel * __nonnull)viewModel {
+- (void)configureWithViewModel:(KHStreakCellViewModel * __nonnull)viewModel {
     NSParameterAssert(viewModel);
     self.titleLabel.text = viewModel.title;
     self.authorLabel.text = viewModel.author;

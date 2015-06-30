@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHHomeStreakCellViewModel : NSObject
+@interface KHStreakCellViewModel : NSObject
 
 @property (nonatomic, strong, readonly) NSString *title;
 @property (nonatomic, strong, readonly) NSString *author;
