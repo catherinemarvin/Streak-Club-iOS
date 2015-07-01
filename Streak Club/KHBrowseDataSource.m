@@ -26,14 +26,21 @@ NS_ASSUME_NONNULL_BEGIN
     NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
-        _service = [[KHBrowseService alloc] initWithDelegate:self];
-        
     }
     return self;
 }
 
 - (void)requestBrowseScreen {
     [self.service requestBrowse];
+}
+
+#pragma mark - Lazy Instantiation
+
+- (KHBrowseService *)service {
+    if (!_service) {
+        _service = [[KHBrowseService alloc] initWithDelegate:self];
+    }
+    return _service;
 }
 
 #pragma mark - KHBrowseServiceDelegate

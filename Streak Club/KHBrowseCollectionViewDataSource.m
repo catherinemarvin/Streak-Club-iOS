@@ -14,9 +14,12 @@
 // Models
 #import "KHBrowseStreaksModel.h"
 
+// Views
+#import "KHStreakCell.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHBrowseCollectionViewDataSource()<KHBrowseDataSourceDelegate>
+@interface KHBrowseCollectionViewDataSource()<KHBrowseDataSourceDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) KHBrowseDataSource *dataSource;
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -26,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 static NSString *const KHkBrowseCellIdentifier = @"KHkBrowseCellIdentifier";
+static CGFloat const KHkMargin = 20.0f;
 
 @implementation KHBrowseCollectionViewDataSource
 
@@ -34,6 +38,8 @@ static NSString *const KHkBrowseCellIdentifier = @"KHkBrowseCellIdentifier";
     if (self = [super init]) {
         _collectionView = collectionView;
         _collectionView.dataSource = self;
+        _collectionView.delegate = self;
+        [_collectionView registerClass:[KHStreakCell class] forCellWithReuseIdentifier:KHkBrowseCellIdentifier];
     }
     return self;
 }
@@ -58,12 +64,20 @@ static NSString *const KHkBrowseCellIdentifier = @"KHkBrowseCellIdentifier";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;
+    return [self.browseStreaks.streaks count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHkBrowseCellIdentifier forIndexPath:indexPath];
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegateCollectionFlowLayout 
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat width = CGRectGetWidth(collectionView.bounds) - 2 * KHkMargin;
+    CGFloat height = 200.0f;
+    return CGSizeMake(width, height);
 }
 
 #pragma mark - KHBrowseDataSourceDelegate
