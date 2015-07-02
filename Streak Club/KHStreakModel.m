@@ -66,15 +66,6 @@
     }];
 }
 
-+ (NSValueTransformer *)categoryJSONTransformer {
-    return [NSValueTransformer mtl_valueMappingTransformerWithDictionary:
-            @{
-              @"other" : @(KHStreakCategoryOther),
-              @"interactive" : @(KHStreakCategoryInteractive),
-              @"visual_art" : @(KHStreakCategoryVisualArt)
-              }];
-}
-
 + (NSValueTransformer *)rateJSONTransformer {
     return [NSValueTransformer mtl_valueMappingTransformerWithDictionary:
             @{

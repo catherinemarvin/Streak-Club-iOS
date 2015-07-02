@@ -15,12 +15,6 @@ typedef NS_ENUM(NSInteger, KHStreakPublishStatus) {
     KHStreakPublishStatusDraft
 };
 
-typedef NS_ENUM(NSInteger, KHStreakCategory) {
-    KHStreakCategoryOther,
-    KHStreakCategoryInteractive,
-    KHStreakCategoryVisualArt
-};
-
 typedef NS_ENUM(NSInteger, KHStreakRate) {
     KHStreakRateDaily,
     KHStreakRateWeekly
@@ -34,7 +28,7 @@ typedef NS_ENUM(NSInteger, KHStreakRate) {
 @property (nonatomic, copy, readonly) NSNumber *remoteId;
 @property (nonatomic, assign, readonly) KHStreakPublishStatus publishStatus;
 @property (nonatomic, copy, readonly) NSDate *startDate;
-@property (nonatomic, assign, readonly) KHStreakCategory category;
+@property (nonatomic, assign, readonly) NSString *category;
 @property (nonatomic, copy, readonly) NSString *title;
 @property (nonatomic, copy, readonly) NSString *shortDescription;
 @property (nonatomic, assign, readonly) KHStreakRate rate;

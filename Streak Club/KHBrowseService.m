@@ -12,7 +12,9 @@
 #import "KHAPIService.h"
 
 // Models
-#import "KHStreakModel.h"
+#import "KHBrowseStreaksModel.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface KHBrowseService()
 
@@ -29,7 +31,6 @@ static NSString *const KHkBrowseScreenUrl = @"streaks";
     NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
-        _apiService = [[KHAPIService alloc] init];
     }
     return self;
 }
@@ -40,9 +41,23 @@ static NSString *const KHkBrowseScreenUrl = @"streaks";
     [self.apiService get:KHkBrowseScreenUrl parameters:params success:^(id responseObject) {
         NSLog(@"Browse Result");
         NSLog(@"%@", responseObject);
+        NSError *error;
+        KHBrowseStreaksModel *browseStreaks = [MTLJSONAdapter modelOfClass:[KHBrowseStreaksModel class] fromJSONDictionary:responseObject error:&error];
+        [self.delegate browseStreaksReceived:browseStreaks];
     } failure:^(NSDictionary *errorDictionary, NSError *error) {
         NSLog(@"%@", error.debugDescription);
     }];
 }
 
+#pragma mark - Lazy Instantiation
+
+- (KHAPIService *)apiService {
+    if (!_apiService) {
+        _apiService = [[KHAPIService alloc] init];
+    }
+    return _apiService;
+}
+
 @end
+
+NS_ASSUME_NONNULL_END

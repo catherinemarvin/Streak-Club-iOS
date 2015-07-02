@@ -14,6 +14,8 @@
 // Models
 #import "KHHomeStreaksModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHHomeScreenService()
 
 @property (nonatomic, weak) id<KHHomeScreenServiceDelegate>delegate;
@@ -29,7 +31,6 @@ static NSString *const KHkHomeScreenUrl = @"my-streaks";
     NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
-        _apiService = [[KHAPIService alloc] init];
     }
     return self;
 }
@@ -38,6 +39,7 @@ static NSString *const KHkHomeScreenUrl = @"my-streaks";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     [self.apiService post:KHkHomeScreenUrl parameters:params success:^(id responseObject) {
+        NSLog(@"Home Result");
         NSLog(@"%@", responseObject);
         NSError *error;
         KHHomeStreaksModel *homeStreaks = [MTLJSONAdapter modelOfClass:[KHHomeStreaksModel class] fromJSONDictionary:responseObject error:&error];
@@ -47,4 +49,15 @@ static NSString *const KHkHomeScreenUrl = @"my-streaks";
     }];
 }
 
+#pragma mark - Lazy Instantiation
+
+- (KHAPIService *)apiService {
+    if (!_apiService) {
+        _apiService = [[KHAPIService alloc] init];
+    }
+    return _apiService;
+}
+
 @end
+
+NS_ASSUME_NONNULL_END
