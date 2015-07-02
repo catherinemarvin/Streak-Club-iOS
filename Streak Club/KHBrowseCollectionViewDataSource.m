@@ -13,9 +13,13 @@
 
 // Models
 #import "KHBrowseStreaksModel.h"
+#import "KHStreakModel.h"
 
 // Views
 #import "KHStreakCell.h"
+
+// ViewModel
+#import "KHStreakCellViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -69,6 +73,15 @@ static CGFloat const KHkMargin = 20.0f;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHkBrowseCellIdentifier forIndexPath:indexPath];
+    
+    if ([cell isKindOfClass:[KHStreakCell class]]) {
+        KHStreakCell *streakCell = (KHStreakCell *)cell;
+        KHStreakModel *streak = self.browseStreaks.streaks[indexPath.row];
+        
+        KHStreakCellViewModel *vm = [[KHStreakCellViewModel alloc] init];
+        [vm configureWithStreak:streak];
+        [streakCell configureWithViewModel:vm];
+    }
     return cell;
 }
 
@@ -78,6 +91,10 @@ static CGFloat const KHkMargin = 20.0f;
     CGFloat width = CGRectGetWidth(collectionView.bounds) - 2 * KHkMargin;
     CGFloat height = 200.0f;
     return CGSizeMake(width, height);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(KHkMargin, 0, 0, 0);
 }
 
 #pragma mark - KHBrowseDataSourceDelegate
