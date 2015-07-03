@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *duration;
 @property (nonatomic, strong) NSString *shortDescription;
 @property (nonatomic, assign) float progressPercentage;
+@property (nonatomic, assign) BOOL draft;
 
 @end
 
@@ -41,6 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
     float totalStreakLength = [self _daysBetweenDate:streak.startDate andDate:streak.endDate];
     float timeElapsed = [self _daysBetweenDate:streak.startDate andDate:[NSDate date]];
     self.progressPercentage = timeElapsed / totalStreakLength;
+    
+    self.draft = streak.publishStatus == KHStreakPublishStatusDraft;
 }
 
 - (NSString *)_rateString:(KHStreakRate)rate {

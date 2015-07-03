@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KHStreakCell()
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *draftLabel;
 @property (nonatomic, strong) UILabel *authorLabel;
 @property (nonatomic, strong) UILabel *durationLabel;
 
@@ -46,6 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)_configureSubviews {
     [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.draftLabel];
     [self.contentView addSubview:self.authorLabel];
     [self.contentView addSubview:self.durationLabel];
     [self.contentView addSubview:self.divider];
@@ -58,6 +60,11 @@ NS_ASSUME_NONNULL_BEGIN
     CGFloat verticalOffset = 10.0f;
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).with.offset(sidePadding);
+        make.right.equalTo(self.draftLabel.mas_left).with.offset(-sidePadding);
+        make.top.equalTo(self.contentView);
+    }];
+    
+    [self.draftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).with.offset(-sidePadding);
         make.top.equalTo(self.contentView);
     }];
@@ -96,6 +103,7 @@ NS_ASSUME_NONNULL_BEGIN
     self.durationLabel.text = viewModel.duration;
     self.shortDescriptionLabel.text = viewModel.shortDescription;
     [self.progressView setProgress:viewModel.progressPercentage animated:NO];
+    self.draftLabel.hidden = !viewModel.draft;
 }
 
 #pragma mark - Lazy Instantiation
@@ -109,6 +117,17 @@ NS_ASSUME_NONNULL_BEGIN
         });
     }
     return _titleLabel;
+}
+
+- (UILabel *)draftLabel {
+    if (!_draftLabel) {
+        _draftLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:16.0f];
+            label;
+        });
+    }
+    return _draftLabel;
 }
 
 - (UILabel *)authorLabel {
