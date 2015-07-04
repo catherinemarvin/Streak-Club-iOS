@@ -61,12 +61,12 @@ NS_ASSUME_NONNULL_BEGIN
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).with.offset(sidePadding);
         make.right.equalTo(self.draftLabel.mas_left).with.offset(-sidePadding);
-        make.top.equalTo(self.contentView);
+        make.top.equalTo(self.contentView).with.offset(sidePadding);
     }];
     
     [self.draftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).with.offset(-sidePadding);
-        make.top.equalTo(self.contentView);
+        make.top.equalTo(self.contentView).with.offset(sidePadding);
     }];
     
     [self.authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -123,7 +123,13 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_draftLabel) {
         _draftLabel = ({
             UILabel *label = [[UILabel alloc] init];
-            label.font = [UIFont regularWithSize:16.0f];
+            label.font = [UIFont boldWithSize:14.0f];
+            label.text = [NSLocalizedString(@"Draft", @"Label indicating that the current streak is an unpublished draft") uppercaseStringWithLocale:[NSLocale currentLocale]];
+            label.backgroundColor = [UIColor colorWithHexString:@"fe8182"];
+            label.textColor = [UIColor whiteColor];
+            label.textAlignment = NSTextAlignmentCenter;
+            label.layer.cornerRadius = 4.0f;
+            label.layer.masksToBounds = YES;
             label;
         });
     }
