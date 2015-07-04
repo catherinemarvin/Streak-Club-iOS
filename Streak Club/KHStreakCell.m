@@ -70,12 +70,13 @@ NS_ASSUME_NONNULL_BEGIN
     }];
     
     [self.authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.equalTo(self.titleLabel);
+        make.left.equalTo(self.contentView).with.offset(sidePadding);
+        make.right.equalTo(self.contentView).with.offset(-sidePadding);
         make.top.equalTo(self.titleLabel.mas_bottom).with.offset(verticalOffset);
     }];
     
     [self.durationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.equalTo(self.titleLabel);
+        make.left.and.right.equalTo(self.authorLabel);
         make.top.equalTo(self.authorLabel.mas_bottom).with.offset(verticalOffset);
     }];
     
@@ -86,12 +87,12 @@ NS_ASSUME_NONNULL_BEGIN
     }];
     
     [self.shortDescriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.equalTo(self.titleLabel);
+        make.left.and.right.equalTo(self.authorLabel);
         make.top.equalTo(self.divider.mas_bottom).with.offset(verticalOffset);
     }];
     
     [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.equalTo(self.titleLabel);
+        make.left.and.right.equalTo(self.authorLabel);
         make.top.equalTo(self.shortDescriptionLabel.mas_bottom).with.offset(verticalOffset);
     }];
 }
