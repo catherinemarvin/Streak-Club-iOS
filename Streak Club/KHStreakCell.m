@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KHStreakCell()
 
 @property (nonatomic, strong) UILabel *titleLabel;
+
+@property (nonatomic, strong) UIView *draftLabelContainer;
 @property (nonatomic, strong) UILabel *draftLabel;
 @property (nonatomic, strong) UILabel *authorLabel;
 @property (nonatomic, strong) UILabel *durationLabel;
@@ -47,7 +49,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)_configureSubviews {
     [self.contentView addSubview:self.titleLabel];
-    [self.contentView addSubview:self.draftLabel];
+    [self.contentView addSubview:self.draftLabelContainer];
+    [self.draftLabelContainer addSubview:self.draftLabel];
     [self.contentView addSubview:self.authorLabel];
     [self.contentView addSubview:self.durationLabel];
     [self.contentView addSubview:self.divider];
@@ -64,9 +67,14 @@ NS_ASSUME_NONNULL_BEGIN
         make.top.equalTo(self.contentView).with.offset(sidePadding);
     }];
     
-    [self.draftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.draftLabelContainer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).with.offset(-sidePadding);
         make.top.equalTo(self.contentView).with.offset(sidePadding);
+        make.width.equalTo(self.draftLabel).with.offset(10);
+    }];
+    
+    [self.draftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.draftLabelContainer);
     }];
     
     [self.authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -120,6 +128,17 @@ NS_ASSUME_NONNULL_BEGIN
     return _titleLabel;
 }
 
+- (UIView *)draftLabelContainer {
+    if (!_draftLabelContainer) {
+        _draftLabelContainer = ({
+            UIView *view = [[UIView alloc] init];
+            view.backgroundColor = [UIColor colorWithHexString:@"fe8182"];
+            view;
+        });
+    }
+    return _draftLabelContainer;
+}
+
 - (UILabel *)draftLabel {
     if (!_draftLabel) {
         _draftLabel = ({
@@ -131,6 +150,8 @@ NS_ASSUME_NONNULL_BEGIN
             label.textAlignment = NSTextAlignmentCenter;
             label.layer.cornerRadius = 4.0f;
             label.layer.masksToBounds = YES;
+            
+            [label setContentHuggingPriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
             label;
         });
     }
