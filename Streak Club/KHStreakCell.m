@@ -70,6 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self.draftLabelContainer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).with.offset(-sidePadding);
         make.top.equalTo(self.contentView).with.offset(sidePadding);
+        make.height.equalTo(self.draftLabel);
         make.width.equalTo(self.draftLabel).with.offset(10);
     }];
     
@@ -112,7 +113,7 @@ NS_ASSUME_NONNULL_BEGIN
     self.durationLabel.text = viewModel.duration;
     self.shortDescriptionLabel.text = viewModel.shortDescription;
     [self.progressView setProgress:viewModel.progressPercentage animated:NO];
-    self.draftLabel.hidden = !viewModel.draft;
+    self.draftLabelContainer.hidden = !viewModel.draft;
 }
 
 #pragma mark - Lazy Instantiation
@@ -133,6 +134,8 @@ NS_ASSUME_NONNULL_BEGIN
         _draftLabelContainer = ({
             UIView *view = [[UIView alloc] init];
             view.backgroundColor = [UIColor colorWithHexString:@"fe8182"];
+            view.layer.cornerRadius = 3.0f;
+            view.layer.masksToBounds = YES;
             view;
         });
     }
@@ -145,7 +148,6 @@ NS_ASSUME_NONNULL_BEGIN
             UILabel *label = [[UILabel alloc] init];
             label.font = [UIFont boldWithSize:14.0f];
             label.text = [NSLocalizedString(@"Draft", @"Label indicating that the current streak is an unpublished draft") uppercaseStringWithLocale:[NSLocale currentLocale]];
-            label.backgroundColor = [UIColor colorWithHexString:@"fe8182"];
             label.textColor = [UIColor whiteColor];
             label.textAlignment = NSTextAlignmentCenter;
             label.layer.cornerRadius = 4.0f;
