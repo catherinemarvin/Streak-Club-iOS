@@ -138,6 +138,7 @@
 		6E25F0491AF5807400A4E76C /* KHStreakProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakProgressBar.m; sourceTree = "<group>"; };
 		6E25F04C1AF9CD5800A4E76C /* KHStreakCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakCellViewModel.h; sourceTree = "<group>"; };
 		6E25F04D1AF9CD5800A4E76C /* KHStreakCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakCellViewModel.m; sourceTree = "<group>"; };
+		6E4930CF1B4B88A7008F80DF /* KHHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHHomeView.h; sourceTree = "<group>"; };
 		6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E5E60DE1AD1199B00669A0D /* KHGlobalTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarViewController.h; sourceTree = "<group>"; };
 		6E5E60DF1AD1199B00669A0D /* KHGlobalTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarViewController.m; sourceTree = "<group>"; };
@@ -446,6 +447,7 @@
 				6E5E60E21AD3791A00669A0D /* KHHomeViewController.m */,
 				6E901C581B3D0326001F14A5 /* KHHomeStreakHeaderView.h */,
 				6E901C591B3D0326001F14A5 /* KHHomeStreakHeaderView.m */,
+				6E4930CF1B4B88A7008F80DF /* KHHomeView.h */,
 			);
 			name = View;
 			sourceTree = "<group>";

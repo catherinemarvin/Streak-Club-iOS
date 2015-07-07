@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <UIKit/UIKit.h>
+#import "KHHomeView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 
-- (instancetype)initWithCollectionView:(UICollectionView *)collectionView NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithHomeView:(id<KHHomeView>)homeView NS_DESIGNATED_INITIALIZER;
 
 - (void)refreshData;
 

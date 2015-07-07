@@ -16,7 +16,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHHomeViewController ()
+@interface KHHomeViewController ()<KHHomeView>
 
 @property (nonatomic, strong) KHHomeCollectionViewDataSource *dataSource;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -75,9 +75,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (KHHomeCollectionViewDataSource *)dataSource {
     if (!_dataSource) {
-        _dataSource = [[KHHomeCollectionViewDataSource alloc] initWithCollectionView:self.collectionView];
+        _dataSource = [[KHHomeCollectionViewDataSource alloc] initWithHomeView:self];
     }
     return _dataSource;
+}
+
+#pragma mark - KHHomeView
+
+- (void)endRefreshing {
+    [self.refreshControl endRefreshing];
 }
 
 #pragma mark - UIRefreshControl

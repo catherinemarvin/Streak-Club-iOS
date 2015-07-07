@@ -23,6 +23,8 @@
 #import "KHHomeStreaksGroup.h"
 #import "KHStreakModel.h"
 
+#import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, KHHomeScreenSection) {
@@ -34,7 +36,7 @@ typedef NS_ENUM(NSUInteger, KHHomeScreenSection) {
 
 @interface KHHomeCollectionViewDataSource ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, KHHomeScreenDataSourceDelegate>
 
-@property (nonatomic, weak) UICollectionView *collectionView;
+@property (nonatomic, weak) id<KHHomeView>homeView;
 
 @property (nonatomic, strong) KHHomeScreenDataSource *dataSource;
 
@@ -49,15 +51,16 @@ static CGFloat const KHkMargin = 20.0f;
 
 @implementation KHHomeCollectionViewDataSource
 
-- (instancetype)initWithCollectionView:(UICollectionView * __nonnull)collectionView {
-    NSParameterAssert(collectionView);
+- (instancetype)initWithHomeView:(id<KHHomeView> __nonnull)homeView {
+    NSParameterAssert(homeView);
     if (self = [super init]) {
-        _dataSource = [[KHHomeScreenDataSource alloc] initWithDelegate:self];
-        _collectionView = collectionView;
-        _collectionView.dataSource = self;
-        _collectionView.delegate = self;
-        [_collectionView registerClass:[KHStreakCell class] forCellWithReuseIdentifier:KHkHomeCellIdentifier];
-        [_collectionView registerClass:[KHHomeStreakHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHkHeaderIdentifier];
+        _homeView = homeView;
+        
+        UICollectionView *collectionView = [homeView collectionView];
+        collectionView.dataSource = self;
+        collectionView.delegate = self;
+        [collectionView registerClass:[KHStreakCell class] forCellWithReuseIdentifier:KHkHomeCellIdentifier];
+        [collectionView registerClass:[KHHomeStreakHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHkHeaderIdentifier];
     }
     return self;
 }
@@ -65,6 +68,16 @@ static CGFloat const KHkMargin = 20.0f;
 - (void)refreshData {
     [self.dataSource requestHomeScreen];
 }
+
+#pragma mark - Lazy Instantiation
+
+- (KHHomeScreenDataSource *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [[KHHomeScreenDataSource alloc] initWithDelegate:self];
+    }
+    return _dataSource;
+}
+
 #pragma mark - Data Source Manipulation
 
 - (NSArray *)_createdStreaks {
@@ -200,7 +213,8 @@ static CGFloat const KHkMargin = 20.0f;
 
 - (void)homeStreaksReceived:(KHHomeStreaksModel * __nonnull)streaks {
     self.streaks = streaks;
-    [self.collectionView reloadData];
+    [[self.homeView collectionView] reloadData];
+    [self.homeView endRefreshing];
 }
 
 
