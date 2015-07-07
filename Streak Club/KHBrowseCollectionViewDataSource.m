@@ -25,9 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KHBrowseCollectionViewDataSource()<KHBrowseDataSourceDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (nonatomic, weak) id<KHBrowseView> browseView;
 @property (nonatomic, strong) KHBrowseDataSource *dataSource;
-@property (nonatomic, weak) UICollectionView *collectionView;
-
 @property (nonatomic, strong) KHBrowseStreaksModel *browseStreaks;
 
 @end
@@ -37,13 +36,15 @@ static CGFloat const KHkMargin = 20.0f;
 
 @implementation KHBrowseCollectionViewDataSource
 
-- (instancetype)initWithCollectionView:(UICollectionView * __nonnull)collectionView {
-    NSParameterAssert(collectionView);
+- (instancetype)initWithBrowseView:(id<KHBrowseView> __nonnull)browseView {
+    NSParameterAssert(browseView);
     if (self = [super init]) {
-        _collectionView = collectionView;
-        _collectionView.dataSource = self;
-        _collectionView.delegate = self;
-        [_collectionView registerClass:[KHStreakCell class] forCellWithReuseIdentifier:KHkBrowseCellIdentifier];
+        _browseView = browseView;
+        
+        UICollectionView *collectionView = [browseView collectionView];
+        collectionView.dataSource = self;
+        collectionView.delegate = self;
+        [collectionView registerClass:[KHStreakCell class] forCellWithReuseIdentifier:KHkBrowseCellIdentifier];
     }
     return self;
 }
@@ -101,7 +102,8 @@ static CGFloat const KHkMargin = 20.0f;
 
 - (void)browseStreaksReceived:(KHBrowseStreaksModel *)browseStreaks {
     self.browseStreaks = browseStreaks;
-    [self.collectionView reloadData];
+    [[self.browseView collectionView] reloadData];
+    [self.browseView endRefreshing];
 }
 
 

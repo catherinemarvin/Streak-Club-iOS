@@ -16,7 +16,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHBrowseViewController ()
+@interface KHBrowseViewController ()<KHBrowseView>
 
 @property (nonatomic, strong) KHBrowseCollectionViewDataSource *dataSource;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (KHBrowseCollectionViewDataSource *)dataSource {
     if (!_dataSource) {
-        _dataSource = [[KHBrowseCollectionViewDataSource alloc] initWithCollectionView:self.collectionView];
+        _dataSource = [[KHBrowseCollectionViewDataSource alloc] initWithBrowseView:self];
     }
     return _dataSource;
 }
@@ -79,6 +79,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)_refreshControl:(id)sender {
     [self.dataSource refreshData];
+}
+
+#pragma mark - KHBrowseView
+
+- (void)endRefreshing {
+    [self.refreshControl endRefreshing];
 }
 
 @end

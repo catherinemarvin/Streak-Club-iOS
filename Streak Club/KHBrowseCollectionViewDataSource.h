@@ -10,13 +10,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "KHBrowseView.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KHBrowseCollectionViewDataSource : NSObject
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 
-- (instancetype)initWithCollectionView:(UICollectionView *)collectionView NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithBrowseView:(id<KHBrowseView>)browseView NS_DESIGNATED_INITIALIZER;
 
 - (void)refreshData;
 
