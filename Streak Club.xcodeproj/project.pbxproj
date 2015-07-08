@@ -37,6 +37,8 @@
 		6E25F0471AF3658B00A4E76C /* KHStreakCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E25F0461AF3658B00A4E76C /* KHStreakCell.m */; };
 		6E25F04A1AF5807400A4E76C /* KHStreakProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E25F0491AF5807400A4E76C /* KHStreakProgressBar.m */; };
 		6E25F04E1AF9CD5800A4E76C /* KHStreakCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E25F04D1AF9CD5800A4E76C /* KHStreakCellViewModel.m */; };
+		6E5154181B4CB10F00FFA7D7 /* KHStreakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5154171B4CB10F00FFA7D7 /* KHStreakViewController.m */; };
+		6E51541C1B4CB12500FFA7D7 /* KHStreakView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E51541B1B4CB12500FFA7D7 /* KHStreakView.m */; };
 		6E5B3F681A835D9E0091A556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */; };
 		6E5E60E01AD1199B00669A0D /* KHGlobalTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60DF1AD1199B00669A0D /* KHGlobalTabBarViewController.m */; };
 		6E5E60E31AD3791A00669A0D /* KHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60E21AD3791A00669A0D /* KHHomeViewController.m */; };
@@ -140,6 +142,10 @@
 		6E25F04D1AF9CD5800A4E76C /* KHStreakCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakCellViewModel.m; sourceTree = "<group>"; };
 		6E4930CF1B4B88A7008F80DF /* KHHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHHomeView.h; sourceTree = "<group>"; };
 		6E4930D01B4B8C29008F80DF /* KHBrowseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBrowseView.h; sourceTree = "<group>"; };
+		6E5154161B4CB10F00FFA7D7 /* KHStreakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakViewController.h; sourceTree = "<group>"; };
+		6E5154171B4CB10F00FFA7D7 /* KHStreakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakViewController.m; sourceTree = "<group>"; };
+		6E51541A1B4CB12500FFA7D7 /* KHStreakView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakView.h; sourceTree = "<group>"; };
+		6E51541B1B4CB12500FFA7D7 /* KHStreakView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakView.m; sourceTree = "<group>"; };
 		6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E5E60DE1AD1199B00669A0D /* KHGlobalTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarViewController.h; sourceTree = "<group>"; };
 		6E5E60DF1AD1199B00669A0D /* KHGlobalTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarViewController.m; sourceTree = "<group>"; };
@@ -412,6 +418,25 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		6E5154151B4CB0F400FFA7D7 /* Streak Screen */ = {
+			isa = PBXGroup;
+			children = (
+				6E5154191B4CB11200FFA7D7 /* Views */,
+			);
+			name = "Streak Screen";
+			sourceTree = "<group>";
+		};
+		6E5154191B4CB11200FFA7D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E5154161B4CB10F00FFA7D7 /* KHStreakViewController.h */,
+				6E5154171B4CB10F00FFA7D7 /* KHStreakViewController.m */,
+				6E51541A1B4CB12500FFA7D7 /* KHStreakView.h */,
+				6E51541B1B4CB12500FFA7D7 /* KHStreakView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		6E5B3F661A835B500091A556 /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,9 +601,9 @@
 		6E9875491A7A1C0E0042B3DD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6ECCF0C31ADE5C030028EC35 /* Base Models */,
 				6E70CEBC1B42790D00925AE4 /* Base ViewModels */,
 				6E70CEBB1B4278EE00925AE4 /* Base Views */,
-				6ECCF0C31ADE5C030028EC35 /* Base Models */,
 				6E25F01F1AEF246300A4E76C /* Browse Screen */,
 				6E5E60DD1AD1190900669A0D /* Global Tab Bar */,
 				6E5E60DC1AD1185E00669A0D /* Home Screen */,
@@ -586,6 +611,7 @@
 				6E5E60EC1AD6333000669A0D /* Settings Screen */,
 				6E901C3A1B33B244001F14A5 /* Signup */,
 				6E5B3F661A835B500091A556 /* Splash Screen */,
+				6E5154151B4CB0F400FFA7D7 /* Streak Screen */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -880,7 +906,9 @@
 				6E0BE4C81AC5FFD600BF4B45 /* KHSplashScreenContentView.m in Sources */,
 				6E25F0471AF3658B00A4E76C /* KHStreakCell.m in Sources */,
 				6E25F02C1AEF50E600A4E76C /* KHBrowseDataSource.m in Sources */,
+				6E5154181B4CB10F00FFA7D7 /* KHStreakViewController.m in Sources */,
 				6E5E60E01AD1199B00669A0D /* KHGlobalTabBarViewController.m in Sources */,
+				6E51541C1B4CB12500FFA7D7 /* KHStreakView.m in Sources */,
 				6E0BE4A11AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m in Sources */,
 				6E901C511B39095D001F14A5 /* KHLoginView.m in Sources */,
 				6E901C551B390990001F14A5 /* KHLoginInteractor.m in Sources */,
