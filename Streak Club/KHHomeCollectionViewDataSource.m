@@ -23,6 +23,9 @@
 #import "KHHomeStreaksGroup.h"
 #import "KHStreakModel.h"
 
+// External View
+#import "KHStreakViewController.h"
+
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -207,6 +210,16 @@ static CGFloat const KHkMargin = 20.0f;
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(KHkMargin, 0, 0, 0);
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    KHStreakModel *streak = [self _streakForIndexPath:indexPath];
+    
+    KHStreakViewController *streakVC = [[KHStreakViewController alloc] initWithStreakModel:streak];
+    
+    [[self.homeView navigationController] pushViewController:streakVC animated:YES];
 }
 
 #pragma mark - KHHomeScreenDataSourceDelegate

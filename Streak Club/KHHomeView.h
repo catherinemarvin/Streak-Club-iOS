@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @class UICollectionView;
+@class UINavigationController;
 
 @protocol KHHomeView <NSObject>
 
 - (UICollectionView *)collectionView;
 - (void)endRefreshing;
+- (UINavigationController *)navigationController;
 
 @end
