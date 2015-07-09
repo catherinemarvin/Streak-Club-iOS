@@ -14,6 +14,8 @@
 // View Helpers
 #import <Masonry/Masonry.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHStreakViewController ()
 
 @property (nonatomic, strong) KHStreakView *streakView;
@@ -21,6 +23,14 @@
 @end
 
 @implementation KHStreakViewController
+
+- (instancetype)initWithStreakModel:(KHStreakModel * __nonnull)streak {
+    NSParameterAssert(streak);
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,5 +50,6 @@
     return _streakView;
 }
 
-
 @end
+
+NS_ASSUME_NONNULL_END
