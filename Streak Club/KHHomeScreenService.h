@@ -13,8 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KHHomeScreenService : NSObject
 
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
 - (instancetype)initWithDelegate:(id<KHHomeScreenServiceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
+/**
+ @brief Requests the streaks that should be displayed on the home page.
+ */
 - (void)requestHomePage;
 
 @end
