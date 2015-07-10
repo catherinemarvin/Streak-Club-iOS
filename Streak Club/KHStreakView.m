@@ -8,14 +8,43 @@
 
 #import "KHStreakView.h"
 
+// View Helper
+#import <Masonry.h>
+
+@interface KHStreakView()
+
+@property (nonatomic, strong) UIView *headerView;
+
+@end
+
 @implementation KHStreakView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)init {
+    if (self = [super init]) {
+        [self _configureSubviews];
+        [self _setupAutolayout];
+    }
+    return self;
 }
-*/
+
+- (void)_configureSubviews {
+    [self addSubview:self.headerView];
+}
+
+- (void)_setupAutolayout {
+    [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.and.trailing.equalTo(self);
+    }];
+}
+
+#pragma mark - Lazy Instantiation
+
+- (UIView *)headerView {
+    if (!_headerView) {
+        _headerView = [[UIView alloc] init];
+    }
+    return _headerView;
+}
+
 
 @end
