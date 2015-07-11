@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class KHStreakModel;
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHStreakViewModel : NSObject
 
+@property (nonatomic, strong, readonly) NSString *title;
+@property (nonatomic, strong, readonly) NSString *shortDescription;
+
+- (void)configureWithStreak:(KHStreakModel *)streak;
+
 @end
+
+NS_ASSUME_NONNULL_END
