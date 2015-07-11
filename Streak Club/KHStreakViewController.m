@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
     [self.streakView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    [self.dataSource requestStreakViewModel];
 }
 
 #pragma mark - Lazy Instantiation

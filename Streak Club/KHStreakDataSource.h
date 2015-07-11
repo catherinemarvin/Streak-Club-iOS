@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 - (instancetype)initWithStreak:(KHStreakModel *)streak delegate:(id<KHStreakDataSourceDelegate>)delegate;
 
+/**
+ @brief Requests the information pertaining to this streak
+ */
 - (void)requestStreakViewModel;
 
 @end
