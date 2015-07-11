@@ -183,6 +183,7 @@
 		6E901C591B3D0326001F14A5 /* KHHomeStreakHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHHomeStreakHeaderView.m; sourceTree = "<group>"; };
 		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
 		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
+		6E998FB21B50E46400556A56 /* KHStreakDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakDataSourceDelegate.h; sourceTree = "<group>"; };
 		6ECCF0BD1ADD0A6B0028EC35 /* KHSettingsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsDataSource.h; sourceTree = "<group>"; };
 		6ECCF0BE1ADD0A6B0028EC35 /* KHSettingsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSettingsDataSource.m; sourceTree = "<group>"; };
 		6ECCF0C01ADD0EBA0028EC35 /* KHSettingsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsViewCell.h; sourceTree = "<group>"; };
@@ -464,6 +465,7 @@
 			children = (
 				6E51542F1B4F559600FFA7D7 /* KHStreakDataSource.h */,
 				6E5154301B4F559600FFA7D7 /* KHStreakDataSource.m */,
+				6E998FB21B50E46400556A56 /* KHStreakDataSourceDelegate.h */,
 			);
 			name = "Data Source";
 			sourceTree = "<group>";

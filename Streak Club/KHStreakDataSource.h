@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+#import "KHStreakDataSourceDelegate.h"
+
+@class KHStreakModel;
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHStreakDataSource : NSObject
 
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+- (instancetype)initWithStreak:(KHStreakModel *)streak delegate:(id<KHStreakDataSourceDelegate>)delegate;
+
+- (void)requestStreakViewModel;
+
 @end
+
+NS_ASSUME_NONNULL_END
