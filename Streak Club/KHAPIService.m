@@ -21,7 +21,7 @@
 
 @end
 
-static NSString *const KhkStreakClubBaseUrl = @"http://streak.club/api/1/";
+static NSString *const KhkStreakClubBaseUrl = @"https://streak.club/api/1/";
 static NSString *const KHkSourceKey = @"source";
 static NSString *const KhkSourceValue = @"ios";
 static NSString *const KHkKeyKey = @"key";
