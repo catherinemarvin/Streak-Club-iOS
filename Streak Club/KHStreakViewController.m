@@ -14,10 +14,14 @@
 // View Helpers
 #import <Masonry/Masonry.h>
 
+// Data Source
+#import "KHStreakDataSource.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHStreakViewController ()
+@interface KHStreakViewController ()<KHStreakDataSourceDelegate>
 
+@property (nonatomic, strong) KHStreakDataSource *dataSource;
 @property (nonatomic, strong) KHStreakView *streakView;
 
 @end
@@ -27,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithStreakModel:(KHStreakModel * __nonnull)streak {
     NSParameterAssert(streak);
     if (self = [super init]) {
-        
+        _dataSource = [[KHStreakDataSource alloc] initWithStreak:streak delegate:self];
     }
     return self;
 }
@@ -48,6 +52,12 @@ NS_ASSUME_NONNULL_BEGIN
         _streakView = [[KHStreakView alloc] init];
     }
     return _streakView;
+}
+
+#pragma mark - KHStreakDataSourceDelegate
+
+- (void)updateWithStreakViewModel:(KHStreakViewModel *)viewModel {
+   //TODO: Configure view with VM
 }
 
 @end

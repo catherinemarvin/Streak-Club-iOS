@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class KHStreakViewModel;
+
 @protocol KHStreakDataSourceDelegate <NSObject>
+
+- (void)updateWithStreakViewModel:(KHStreakViewModel *)viewModel;
 
 @end
