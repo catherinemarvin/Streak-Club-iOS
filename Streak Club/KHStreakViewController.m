@@ -38,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self.view addSubview:self.streakView];
     [self.streakView mas_makeConstraints:^(MASConstraintMaker *make) {
