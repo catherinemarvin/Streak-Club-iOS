@@ -59,7 +59,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - KHStreakDataSourceDelegate
 
 - (void)updateWithStreakViewModel:(KHStreakViewModel *)viewModel {
-   //TODO: Configure view with VM
+    NSParameterAssert(viewModel);
+    [self.streakView configureWithStreakViewModel:viewModel];
 }
 
 @end
