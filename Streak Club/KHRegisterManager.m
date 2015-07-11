@@ -20,7 +20,12 @@
 
 @implementation KHRegisterManager
 
+- (instancetype)init {
+    return [self initWithDelegate:nil];
+}
+
 - (instancetype)initWithDelegate:(id<KHRegisterManagerDelegate>)delegate {
+    NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
         _registerService = [[KHRegisterService alloc] initWithDelegate:self];

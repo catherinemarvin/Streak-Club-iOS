@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation KHHomeScreenDataSource
 
+- (instancetype)init {
+    return [self initWithDelegate:nil];
+}
+
 - (instancetype)initWithDelegate:(id<KHHomeScreenDataSourceDelegate>)delegate {
     NSParameterAssert(delegate);
     if (self = [super init]) {

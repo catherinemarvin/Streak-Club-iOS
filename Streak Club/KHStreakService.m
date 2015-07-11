@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation KHStreakService
 
+- (instancetype)init {
+    return [self initWithDelegate:nil];
+}
+
 - (instancetype)initWithDelegate:(id<KHStreakServiceDelegate> __nonnull)delegate {
     NSParameterAssert(delegate);
     if (self = [super init]) {

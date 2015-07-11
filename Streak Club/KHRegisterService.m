@@ -36,6 +36,10 @@ static NSString *const KhkRegisterErrorDomain = @"register";
 
 @implementation KHRegisterService
 
+- (instancetype)init {
+    return [self initWithDelegate:nil];
+}
+
 - (instancetype)initWithDelegate:(id<KHRegisterServiceDelegate>)delegate {
     if (self = [super init]) {
         _delegate = delegate;

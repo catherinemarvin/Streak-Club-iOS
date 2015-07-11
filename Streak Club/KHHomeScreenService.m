@@ -27,6 +27,10 @@ static NSString *const KHkHomeScreenUrl = @"my-streaks";
 
 @implementation KHHomeScreenService
 
+- (instancetype)init {
+    return [self initWithDelegate:nil];
+}
+
 - (instancetype)initWithDelegate:(id<KHHomeScreenServiceDelegate>)delegate {
     NSParameterAssert(delegate);
     if (self = [super init]) {

@@ -37,7 +37,12 @@ static NSString *const KHkErrorsKey = @"errors";
 
 @implementation KHLoginService
 
+- (instancetype)init {
+    return [self initWithDelegate:nil];
+}
+
 - (instancetype)initWithDelegate:(id<KHLoginServiceDelegate>)delegate {
+    NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
         _apiService = [[KHAPIService alloc] init];

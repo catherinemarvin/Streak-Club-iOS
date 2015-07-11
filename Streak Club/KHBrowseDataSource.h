@@ -10,7 +10,6 @@
 
 #import "KHBrowseDataSourceDelegate.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface KHBrowseDataSource : NSObject
 
@@ -21,5 +20,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)requestBrowseScreen;
 
 @end
-
-NS_ASSUME_NONNULL_END

@@ -20,7 +20,12 @@
 
 @implementation KHLoginManager
 
+- (instancetype)init {
+    return [self initWithDelegate:nil];
+}
+
 - (instancetype)initWithDelegate:(id<KHLoginManagerDelegate>)delegate {
+    NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
         _loginService = [[KHLoginService alloc] initWithDelegate:self];

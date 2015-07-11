@@ -54,6 +54,10 @@ static CGFloat const KHkMargin = 20.0f;
 
 @implementation KHHomeCollectionViewDataSource
 
+- (instancetype)init {
+    return [self initWithHomeView:nil];
+}
+
 - (instancetype)initWithHomeView:(id<KHHomeView> __nonnull)homeView {
     NSParameterAssert(homeView);
     if (self = [super init]) {

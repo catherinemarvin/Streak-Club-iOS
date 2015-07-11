@@ -36,6 +36,11 @@ static CGFloat const KHkMargin = 20.0f;
 
 @implementation KHBrowseCollectionViewDataSource
 
+- (instancetype)init {
+    id<KHBrowseView>browseView;
+    return [self initWithBrowseView:browseView];
+}
+
 - (instancetype)initWithBrowseView:(id<KHBrowseView> __nonnull)browseView {
     NSParameterAssert(browseView);
     if (self = [super init]) {

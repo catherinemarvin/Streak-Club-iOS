@@ -27,6 +27,11 @@ static NSString *const KHkBrowseScreenUrl = @"streaks";
 
 @implementation KHBrowseService
 
+- (instancetype)init {
+    id<KHBrowseServiceDelegate>delegate;
+    return [self initWithDelegate:delegate];
+}
+
 - (instancetype)initWithDelegate:(id<KHBrowseServiceDelegate>)delegate {
     NSParameterAssert(delegate);
     if (self = [super init]) {

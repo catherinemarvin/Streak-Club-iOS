@@ -18,6 +18,10 @@
 
 @implementation KHSplashScreenInfo
 
+- (instancetype)init {
+    return [self initWithHeaderText:nil descriptionText:nil imagePath:nil];
+}
+
 - (instancetype)initWithHeaderText:(NSString *)headerText descriptionText:(NSString *)descriptionText imagePath :(NSString *)imagePath {
     if (self = [super init]) {
         _headerText = headerText;

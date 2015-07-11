@@ -19,6 +19,10 @@ static NSString *const KHkEmailRecipient = @"k3vinhwang@gmail.com";
 
 @implementation KHSettingsMailController
 
+- (instancetype)init {
+    return [self initWithDelegate:nil];
+}
+
 - (instancetype)initWithDelegate:(id<KHSettingsMailControllerDelegate>)delegate {
     NSParameterAssert(delegate);
     
