@@ -13,6 +13,8 @@
 
 // View Helper
 #import <Masonry.h>
+#import "UIFont+CustomFonts.h"
+#import "UIColor+HexString.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -72,24 +74,40 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIView *)headerView {
     if (!_headerView) {
-        _headerView = [[UIView alloc] init];
+        _headerView = ({
+            UIView *view = [[UIView alloc] init];
+            view.backgroundColor = [UIColor colorWithHexString:@"f5f5f5"];
+            view;
+        });
     }
     return _headerView;
 }
 
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] init];
+        _titleLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:24.f];
+            label.textColor = [UIColor colorWithHexString:@"333333"];
+            label;
+        });
     }
     return _titleLabel;
 }
 
 - (UILabel *)shortDescriptionLabel {
     if (!_shortDescriptionLabel) {
-        _shortDescriptionLabel = [[UILabel alloc] init];
+        _shortDescriptionLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:20.f];
+            label.textColor = [UIColor colorWithHexString:@"333333"];
+            label;
+        });
     }
     return _shortDescriptionLabel;
 }
+
+#pragma mark - Styling
 
 @end
 
