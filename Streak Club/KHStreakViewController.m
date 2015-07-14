@@ -8,9 +8,6 @@
 
 #import "KHStreakViewController.h"
 
-// Views
-#import "KHStreakView.h"
-
 // ViewModel
 #import "KHStreakViewModel.h"
 
@@ -27,7 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KHStreakViewController ()<KHStreakDataSourceDelegate>
 
 @property (nonatomic, strong) KHStreakDataSource *dataSource;
-@property (nonatomic, strong) KHStreakView *streakView;
+
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -43,33 +42,50 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    [self.view addSubview:self.streakView];
-    [self.streakView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+    [self.view addSubview:self.collectionView];
+    [self.collectionView addSubview:self.refreshControl];
     
     [self.dataSource requestStreakViewModel];
 }
 
 #pragma mark - Lazy Instantiation
 
-- (KHStreakView *)streakView {
-    if (!_streakView) {
-        _streakView = [[KHStreakView alloc] init];
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        _collectionView = ({
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+            UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+            collectionView.backgroundColor = [UIColor whiteColor];
+            collectionView.alwaysBounceVertical = YES;
+            collectionView;
+        });
     }
-    return _streakView;
+    return _collectionView;
+}
+
+- (UIRefreshControl *)refreshControl {
+    if (!_refreshControl) {
+        _refreshControl = ({
+            UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+            [refreshControl addTarget:self action:@selector(_refreshControl:) forControlEvents:UIControlEventValueChanged];
+            refreshControl;
+        });
+    }
+    return _refreshControl;
 }
 
 #pragma mark - KHStreakDataSourceDelegate
 
 - (void)updateWithStreakViewModel:(KHStreakViewModel *)viewModel {
     NSParameterAssert(viewModel);
-    [self.streakView configureWithStreakViewModel:viewModel];
     self.title = viewModel.title;
 }
 
+#pragma mark - UIRefreshControl
+
+- (void)_refreshControl:(id)sender {
+    //TODO: Refresh
+}
 @end
 
 NS_ASSUME_NONNULL_END
