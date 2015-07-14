@@ -11,11 +11,16 @@
 // Views
 #import "KHStreakView.h"
 
-// View Helpers
-#import <Masonry/Masonry.h>
+// ViewModel
+#import "KHStreakViewModel.h"
 
 // Data Source
 #import "KHStreakDataSource.h"
+
+// View Helpers
+#import <Masonry/Masonry.h>
+
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -62,6 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateWithStreakViewModel:(KHStreakViewModel *)viewModel {
     NSParameterAssert(viewModel);
     [self.streakView configureWithStreakViewModel:viewModel];
+    self.title = viewModel.title;
 }
 
 @end
