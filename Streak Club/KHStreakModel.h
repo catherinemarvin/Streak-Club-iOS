@@ -32,5 +32,7 @@ typedef NS_ENUM(NSInteger, KHStreakRate) {
 @property (nonatomic, copy, readonly) NSString *title;
 @property (nonatomic, copy, readonly) NSString *shortDescription;
 @property (nonatomic, assign, readonly) KHStreakRate rate;
+@property (nonatomic, copy, readonly) NSNumber *submissionsCount;
+@property (nonatomic, copy, readonly) NSNumber *usersCount;
 
 @end

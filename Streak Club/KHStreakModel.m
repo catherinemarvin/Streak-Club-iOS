@@ -29,7 +29,9 @@
              @"category" : @"category",
              @"title" : @"title",
              @"shortDescription" : @"short_description",
-             @"rate" : @"rate"
+             @"rate" : @"rate",
+             @"submissionsCount" : @"submissions_count",
+             @"usersCount" : @"users_count"
              };
 }
 
