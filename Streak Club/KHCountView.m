@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
         make.top.equalTo(self);
         make.centerX.equalTo(self);
         make.left.and.right.equalTo(self);
+        make.bottom.equalTo(self.textLabel.mas_top);
     }];
     
     [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
