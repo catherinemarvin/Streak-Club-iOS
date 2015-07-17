@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString *shortDescription;
 @property (nonatomic, assign, readonly) float progressPercentage;
 @property (nonatomic, assign, readonly) BOOL draft;
+@property (nonatomic, assign, readonly) NSInteger participants;
+@property (nonatomic, assign, readonly) NSInteger submissions;
 
 - (void)configureWithStreak:(KHStreakModel *)streak;
 

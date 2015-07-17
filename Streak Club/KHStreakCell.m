@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self.contentView addSubview:self.shortDescriptionLabel];
     [self.contentView addSubview:self.progressView];
     [self.contentView addSubview:self.submissionsView];
-    [self.contentView addSubview:self.contentView];
+    [self.contentView addSubview:self.participantsView];
 }
 
 - (void)_initializeAutolayout {
@@ -134,6 +134,9 @@ NS_ASSUME_NONNULL_BEGIN
     self.shortDescriptionLabel.text = viewModel.shortDescription;
     [self.progressView setProgress:viewModel.progressPercentage animated:NO];
     self.draftLabelContainer.hidden = !viewModel.draft;
+    
+    [self.participantsView setCount:viewModel.participants];
+    [self.submissionsView setCount:viewModel.submissions];
 }
 
 #pragma mark - Lazy Instantiation
@@ -239,6 +242,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (KHCountView *)submissionsView {
     if (!_submissionsView) {
         _submissionsView = [[KHCountView alloc] init];
+        [_submissionsView setText:NSLocalizedString(@"Submissions", @"Example: {5} submissions")];
     }
     return _submissionsView;
 }
@@ -246,6 +250,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (KHCountView *)participantsView {
     if (!_participantsView) {
         _participantsView = [[KHCountView alloc] init];
+        [_participantsView setText:NSLocalizedString(@"Participants", @"Ex: {5} participants")];
     }
     return _participantsView;
 }

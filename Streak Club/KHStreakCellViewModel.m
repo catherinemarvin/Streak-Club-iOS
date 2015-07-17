@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *shortDescription;
 @property (nonatomic, assign) float progressPercentage;
 @property (nonatomic, assign) BOOL draft;
+@property (nonatomic, assign) NSInteger participants;
+@property (nonatomic, assign) NSInteger submissions;
 
 @end
 
@@ -44,6 +46,9 @@ NS_ASSUME_NONNULL_BEGIN
     self.progressPercentage = timeElapsed / totalStreakLength;
     
     self.draft = streak.publishStatus == KHStreakPublishStatusDraft;
+    
+    self.participants = [streak.usersCount integerValue];
+    self.submissions = [streak.submissionsCount integerValue];
 }
 
 - (NSString *)_rateString:(KHStreakRate)rate {
