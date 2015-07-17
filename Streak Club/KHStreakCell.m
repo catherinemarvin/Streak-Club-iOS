@@ -11,6 +11,9 @@
 // ViewModel
 #import "KHStreakCellViewModel.h"
 
+// View
+#import "KHCountView.h"
+
 // View Helper
 #import <Masonry.h>
 #import "UIFont+CustomFonts.h"
@@ -31,6 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UILabel *shortDescriptionLabel;
 @property (nonatomic, strong) UIProgressView *progressView;
+
+@property (nonatomic, strong) KHCountView *submissionsView;
+@property (nonatomic, strong) KHCountView *participantsView;
 
 @end
 
@@ -56,6 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
     [self.contentView addSubview:self.divider];
     [self.contentView addSubview:self.shortDescriptionLabel];
     [self.contentView addSubview:self.progressView];
+    [self.contentView addSubview:self.submissionsView];
+    [self.contentView addSubview:self.contentView];
 }
 
 - (void)_initializeAutolayout {
@@ -103,6 +111,18 @@ NS_ASSUME_NONNULL_BEGIN
     [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.authorLabel);
         make.top.equalTo(self.shortDescriptionLabel.mas_bottom).with.offset(verticalOffset);
+    }];
+    
+    [self.participantsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.progressView.mas_bottom);
+        make.left.equalTo(self.contentView);
+        make.right.equalTo(self.submissionsView.mas_left);
+    }];
+    
+    [self.submissionsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.progressView.mas_bottom);
+        make.right.equalTo(self.contentView);
+        make.left.equalTo(self.participantsView);
     }];
 }
 
@@ -214,6 +234,20 @@ NS_ASSUME_NONNULL_BEGIN
         });
     }
     return _progressView;
+}
+
+- (KHCountView *)submissionsView {
+    if (!_submissionsView) {
+        _submissionsView = [[KHCountView alloc] init];
+    }
+    return _submissionsView;
+}
+
+- (KHCountView *)participantsView {
+    if (!_participantsView) {
+        _participantsView = [[KHCountView alloc] init];
+    }
+    return _participantsView;
 }
 
 @end
