@@ -44,6 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
     
     [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
+        make.height.equalTo(self.countLabel);
         make.bottom.equalTo(self);
         make.left.and.right.equalTo(self);
     }];
@@ -52,12 +53,12 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Public Methods
 
 - (void)setCount:(NSInteger)count {
-    
+    self.countLabel.text = [NSString stringWithFormat:@"%ld", (long)count];
 }
 
 - (void)setText:(NSString * __nonnull)text {
     NSParameterAssert(text);
-    
+    self.textLabel.text = text;
 }
 
 #pragma mark - Lazy Instantiation

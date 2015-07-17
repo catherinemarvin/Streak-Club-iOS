@@ -122,7 +122,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self.submissionsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.progressView.mas_bottom);
         make.right.equalTo(self.contentView);
-        make.left.equalTo(self.participantsView);
+        make.width.equalTo(self.participantsView);
     }];
 }
 
