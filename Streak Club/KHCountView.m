@@ -9,6 +9,7 @@
 #import "KHCountView.h"
 
 #import <Masonry/Masonry.h>
+#import "UIFont+CustomFonts.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -69,6 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
         _countLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.textAlignment = NSTextAlignmentCenter;
+            label.font = [UIFont regularWithSize:14];
             
             label;
         });
@@ -81,6 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
         _textLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.textAlignment = NSTextAlignmentCenter;
+            label.font = [UIFont regularWithSize:14];
             
             label;
         });
