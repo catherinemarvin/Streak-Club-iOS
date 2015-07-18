@@ -47,6 +47,12 @@ NS_ASSUME_NONNULL_BEGIN
     return self;
 }
 
+#pragma mark - Public Methods
+
+- (void)refreshData {
+   
+}
+
 #pragma mark - Lazy Instantiation
 
 - (KHStreakDataSource *)dataSource {

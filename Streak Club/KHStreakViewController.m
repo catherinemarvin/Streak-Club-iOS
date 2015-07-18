@@ -12,7 +12,7 @@
 #import "KHStreakViewModel.h"
 
 // Data Source
-#import "KHStreakDataSource.h"
+#import "KHStreakCollectionViewDataSource.h"
 
 // View Helpers
 #import <Masonry/Masonry.h>
@@ -21,9 +21,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHStreakViewController ()<KHStreakDataSourceDelegate>
+@interface KHStreakViewController ()<KHStreakView>
 
-@property (nonatomic, strong) KHStreakDataSource *dataSource;
+@property (nonatomic, strong) KHStreakCollectionViewDataSource *dataSource;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithStreakModel:(KHStreakModel * __nonnull)streak {
     NSParameterAssert(streak);
     if (self = [super init]) {
-        _dataSource = [[KHStreakDataSource alloc] initWithStreak:streak delegate:self];
+        _dataSource = [[KHStreakCollectionViewDataSource alloc] initWithStreak:streak view:self];
     }
     return self;
 }
@@ -43,9 +43,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
     [self.collectionView addSubview:self.refreshControl];
     
-    [self.dataSource requestStreakViewModel];
+    [self.dataSource refreshData];
 }
 
 #pragma mark - Lazy Instantiation
@@ -74,11 +78,10 @@ NS_ASSUME_NONNULL_BEGIN
     return _refreshControl;
 }
 
-#pragma mark - KHStreakDataSourceDelegate
+#pragma mark - KHStreakView 
 
-- (void)updateWithStreakViewModel:(KHStreakViewModel *)viewModel {
-    NSParameterAssert(viewModel);
-    self.title = viewModel.title;
+- (void)endRefreshing {
+    
 }
 
 #pragma mark - UIRefreshControl
@@ -86,6 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)_refreshControl:(id)sender {
     //TODO: Refresh
 }
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,4 +16,6 @@
 
 - (instancetype)initWithStreak:(KHStreakModel *)streak view:(id<KHStreakView>)streakView NS_DESIGNATED_INITIALIZER;
 
+- (void)refreshData;
+
 @end
