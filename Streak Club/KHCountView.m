@@ -69,7 +69,6 @@ NS_ASSUME_NONNULL_BEGIN
         _countLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.textAlignment = NSTextAlignmentCenter;
-            label.text = @"5";
             
             label;
         });
@@ -82,7 +81,6 @@ NS_ASSUME_NONNULL_BEGIN
         _textLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.textAlignment = NSTextAlignmentCenter;
-            label.text = @"Items";
             
             label;
         });
