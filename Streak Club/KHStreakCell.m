@@ -32,7 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIView *divider;
 
-@property (nonatomic, strong) UILabel *shortDescriptionLabel;
 @property (nonatomic, strong) UIProgressView *progressView;
 
 @property (nonatomic, strong) KHCountView *submissionsView;
@@ -60,10 +59,9 @@ NS_ASSUME_NONNULL_BEGIN
     [self.contentView addSubview:self.authorLabel];
     [self.contentView addSubview:self.durationLabel];
     [self.contentView addSubview:self.divider];
-    [self.contentView addSubview:self.shortDescriptionLabel];
-    [self.contentView addSubview:self.progressView];
     [self.contentView addSubview:self.submissionsView];
     [self.contentView addSubview:self.participantsView];
+    [self.contentView addSubview:self.progressView];
 }
 
 - (void)_initializeAutolayout {
@@ -103,24 +101,20 @@ NS_ASSUME_NONNULL_BEGIN
         make.height.mas_equalTo(1);
     }];
     
-    [self.shortDescriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.equalTo(self.authorLabel);
-        make.top.equalTo(self.divider.mas_bottom).with.offset(verticalOffset);
-    }];
-    
     [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.authorLabel);
-        make.top.equalTo(self.shortDescriptionLabel.mas_bottom).with.offset(verticalOffset);
+        make.bottom.equalTo(self.mas_bottom).with.offset(-verticalOffset);
+        make.top.greaterThanOrEqualTo(self.participantsView.mas_bottom);
     }];
     
     [self.participantsView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.progressView.mas_bottom);
+        make.top.equalTo(self.divider.mas_bottom).with.offset(verticalOffset);
         make.left.equalTo(self.contentView);
         make.right.equalTo(self.submissionsView.mas_left);
     }];
     
     [self.submissionsView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.progressView.mas_bottom);
+        make.top.equalTo(self.participantsView);
         make.right.equalTo(self.contentView);
         make.width.equalTo(self.participantsView);
     }];
@@ -131,7 +125,6 @@ NS_ASSUME_NONNULL_BEGIN
     self.titleLabel.text = viewModel.title;
     self.authorLabel.text = viewModel.author;
     self.durationLabel.text = viewModel.duration;
-    self.shortDescriptionLabel.text = viewModel.shortDescription;
     [self.progressView setProgress:viewModel.progressPercentage animated:NO];
     self.draftLabelContainer.hidden = !viewModel.draft;
     
@@ -214,17 +207,6 @@ NS_ASSUME_NONNULL_BEGIN
         });
     }
     return _divider;
-}
-
-- (UILabel *)shortDescriptionLabel {
-    if (!_shortDescriptionLabel) {
-        _shortDescriptionLabel = ({
-            UILabel *label = [[UILabel alloc] init];
-            label.font = [UIFont regularWithSize:14.0f];
-            label;
-        });
-    }
-    return _shortDescriptionLabel;
 }
 
 - (UIProgressView *)progressView {

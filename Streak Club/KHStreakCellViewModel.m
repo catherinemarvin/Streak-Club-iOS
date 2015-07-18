@@ -19,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSString *duration;
-@property (nonatomic, strong) NSString *shortDescription;
 @property (nonatomic, assign) float progressPercentage;
 @property (nonatomic, assign) BOOL draft;
 @property (nonatomic, assign) NSInteger participants;
@@ -39,7 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *endDateString = [self _dateToString:streak.endDate];
     NSString *rateString = [self _rateString:streak.rate];
     self.duration = [NSString stringWithFormat:NSLocalizedString(@"%@ from %@ to %@", @"Example: from June 15th to June 20th"), rateString, startDateString, endDateString];
-    self.shortDescription = streak.shortDescription;
     
     float totalStreakLength = [self _daysBetweenDate:streak.startDate andDate:streak.endDate];
     float timeElapsed = [self _daysBetweenDate:streak.startDate andDate:[NSDate date]];
