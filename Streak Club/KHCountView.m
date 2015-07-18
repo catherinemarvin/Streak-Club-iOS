@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
         _countLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.textAlignment = NSTextAlignmentCenter;
-            label.font = [UIFont regularWithSize:14];
+            label.font = [UIFont regularWithSize:18];
             
             label;
         });
@@ -83,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
         _textLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.textAlignment = NSTextAlignmentCenter;
-            label.font = [UIFont regularWithSize:14];
+            label.font = [UIFont regularWithSize:18];
             
             label;
         });
