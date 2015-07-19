@@ -12,7 +12,7 @@
 @interface KHStreakService : NSObject
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
-- (instancetype)initWithDelegate:(id<KHStreakServiceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithRemoteId:(NSNumber *)remoteId delegate:(id<KHStreakServiceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 /**
  @brief Requests detailed information about a streak.

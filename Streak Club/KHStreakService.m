@@ -20,13 +20,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+static NSString *const KHkStreakUrl = @"streak/%@";
+
 @implementation KHStreakService
 
 - (instancetype)init {
-    return [self initWithDelegate:nil];
+    return [self initWithRemoteId:nil delegate:nil];
 }
 
-- (instancetype)initWithDelegate:(id<KHStreakServiceDelegate> __nonnull)delegate {
+- (instancetype)initWithRemoteId:(NSNumber *)remoteId delegate:(id<KHStreakServiceDelegate>)delegate {
+    NSParameterAssert(remoteId);
     NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
