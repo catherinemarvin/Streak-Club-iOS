@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<KHStreakServiceDelegate>delegate;
 @property (nonatomic, strong) KHAPIService *apiService;
+@property (nonatomic, strong) NSNumber *remoteId;
 
 @end
 
@@ -33,6 +34,7 @@ static NSString *const KHkStreakUrl = @"streak/%@";
     NSParameterAssert(delegate);
     if (self = [super init]) {
         _delegate = delegate;
+        _remoteId = remoteId;
     }
     return self;
 }
