@@ -19,6 +19,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, KHStreakModule) {
+    KHStreakModuleTitle = 0,
+    KHStreakModuleCount
+};
+
 @interface KHStreakCollectionViewDataSource()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, KHStreakDataSourceDelegate>
 
 @property (nonatomic, weak) KHStreakModel *streak;
@@ -26,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) KHStreakDataSource *dataSource;
 
 @end
+
+static NSString *const KHkStreakModuleTitleReuseIdentifier = @"KHkStreakModuleTitleReuseIdentifier";
 
 @implementation KHStreakCollectionViewDataSource
 
@@ -66,17 +73,31 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSInteger)numberOfSectionsInCollectionView:(nonnull UICollectionView *)collectionView {
     //TODO: Fill in
-    return 0;
+    return 1;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    //TODO: Fill in
-    return 0;
+    return KHStreakModuleCount;
 }
 
 - (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    //TODO: Fill in
-    return nil;
+    KHStreakModule module = indexPath.row;
+    NSString *reuseIdentifier = [self _reuseIdentifierForModule:module];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    return cell;
+}
+
+- (NSString *)_reuseIdentifierForModule:(KHStreakModule)module {
+    NSString *reuseIdentifier;
+    
+    switch (module) {
+        case KHStreakModuleTitle:
+            reuseIdentifier = KHkStreakModuleTitleReuseIdentifier;
+        case KHStreakModuleCount: {
+            // Should not get here
+        }
+    }
+    return reuseIdentifier;
 }
 
 #pragma mark - UICollectionViewDelegateCollectionFlowLayout
