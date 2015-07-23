@@ -103,8 +103,11 @@ static NSString *const KHkStreakModuleTitleReuseIdentifier = @"KHkStreakModuleTi
 #pragma mark - UICollectionViewDelegateCollectionFlowLayout
 
 - (CGSize)collectionView:(nonnull UICollectionView *)collectionView layout:(nonnull UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    //TODO: Fill in
-    return CGSizeZero;
+    
+    CGFloat width = CGRectGetWidth(collectionView.bounds);
+    CGFloat height = 100.0f;
+    
+    return CGSizeMake(width, height);
 }
 
 #pragma mark - KHStreakDataSourceDelegate
