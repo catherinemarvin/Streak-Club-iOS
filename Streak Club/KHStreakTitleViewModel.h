@@ -1,9 +1,9 @@
 //
-//  KHStreakViewModel.h
+//  KHStreakTitleViewModel.h
 //  Streak Club
 //
-//  Created by Kevin Hwang on 7/9/15.
-//  Copyright (c) 2015 Kevin Hwang. All rights reserved.
+//  Created by Kevin Hwang on 7/24/15.
+//  Copyright © 2015 Kevin Hwang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,12 +12,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHStreakViewModel : NSObject
+@interface KHStreakTitleViewModel : NSObject
 
 @property (nonatomic, strong, readonly) NSString *title;
 @property (nonatomic, strong, readonly) NSString *shortDescription;
 
-- (void)configureWithStreak:(KHStreakModel *)streak;
+- (instancetype)initWithStreak:(KHStreakModel *)streak;
 
 @end
 
