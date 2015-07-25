@@ -200,6 +200,7 @@
 		6ED9B2891B6332C9003AAA7F /* KHStreakModuleTitleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakModuleTitleDataSource.m; sourceTree = "<group>"; };
 		6ED9B28D1B6334F0003AAA7F /* KHStreakSubmissionsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakSubmissionsService.h; sourceTree = "<group>"; };
 		6ED9B28E1B6334F0003AAA7F /* KHStreakSubmissionsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakSubmissionsService.m; sourceTree = "<group>"; };
+		6ED9B2931B6411F7003AAA7F /* KHStreakSubmissionsServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakSubmissionsServiceDelegate.h; sourceTree = "<group>"; };
 		6EE80AFD1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarWireframe.h; sourceTree = "<group>"; };
 		6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarWireframe.m; sourceTree = "<group>"; };
 		6EE80B051AFDEBCB0091B4E4 /* KHBrowseStreaksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBrowseStreaksModel.h; sourceTree = "<group>"; };
@@ -738,6 +739,7 @@
 			children = (
 				6ED9B28D1B6334F0003AAA7F /* KHStreakSubmissionsService.h */,
 				6ED9B28E1B6334F0003AAA7F /* KHStreakSubmissionsService.m */,
+				6ED9B2931B6411F7003AAA7F /* KHStreakSubmissionsServiceDelegate.h */,
 			);
 			name = Submissions;
 			sourceTree = "<group>";

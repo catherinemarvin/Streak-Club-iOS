@@ -7,7 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KHStreakSubmissionsServiceDelegate.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface KHStreakSubmissionsService : NSObject
 
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+- (instancetype)initWithStreakId:(NSNumber *)streakId delegate:(id<KHStreakSubmissionsServiceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
+
+/**
+ @brief Requests the submissions that have been made for a given streak.
+ */
+- (void)requestSubmissions;
+
 @end
+
+NS_ASSUME_NONNULL_END

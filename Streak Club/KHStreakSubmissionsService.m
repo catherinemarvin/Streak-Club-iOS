@@ -8,6 +8,32 @@
 
 #import "KHStreakSubmissionsService.h"
 
-@implementation KHStreakSubmissionsService
+NS_ASSUME_NONNULL_BEGIN
+
+@interface KHStreakSubmissionsService()
+
+@property (nonatomic, strong) NSNumber *streakId;
+@property (nonatomic, strong) id<KHStreakSubmissionsServiceDelegate>delegate;
 
 @end
+
+@implementation KHStreakSubmissionsService
+
+- (instancetype)initWithStreakId:(nonnull NSNumber *)streakId delegate:(nonnull id<KHStreakSubmissionsServiceDelegate>)delegate {
+    NSParameterAssert(streakId);
+    NSParameterAssert(delegate);
+    
+    if (self = [super init]) {
+        _streakId = streakId;
+        _delegate = delegate;
+    }
+    return self;
+}
+
+- (void)requestSubmissions {
+    
+}
+
+@end
+
+NS_ASSUME_NONNULL_END
