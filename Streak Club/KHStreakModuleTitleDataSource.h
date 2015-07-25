@@ -1,5 +1,5 @@
 //
-//  KHStreakTitleViewModel.h
+//  KHStreakModuleTitleDataSource.h
 //  Streak Club
 //
 //  Created by Kevin Hwang on 7/24/15.
@@ -9,15 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @class KHStreakModel;
+@class KHStreakModuleTitleViewModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHStreakTitleViewModel : NSObject
+/**
+ @brief Responsible for configuring the header
+ */
 
-@property (nonatomic, strong, readonly) NSString *title;
-@property (nonatomic, strong, readonly) NSString *shortDescription;
+@interface KHStreakModuleTitleDataSource : NSObject
 
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
 - (instancetype)initWithStreak:(KHStreakModel *)streak;
+
+- (KHStreakModuleTitleViewModel *)viewModel;
 
 @end
 

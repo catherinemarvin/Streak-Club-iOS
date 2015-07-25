@@ -6,14 +6,14 @@
 //  Copyright © 2015 Kevin Hwang. All rights reserved.
 //
 
-#import "KHStreakTitleViewModel.h"
+#import "KHStreakModuleTitleViewModel.h"
 
 // Model
 #import "KHStreakModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@implementation KHStreakTitleViewModel
+@implementation KHStreakModuleTitleViewModel
 
 - (instancetype)initWithStreak:(nonnull KHStreakModel *)streak {
     NSParameterAssert(streak);
