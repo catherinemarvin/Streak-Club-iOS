@@ -201,7 +201,6 @@
 		6ECCF0CA1AE620DA0028EC35 /* KHSettingsMailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsMailController.h; sourceTree = "<group>"; };
 		6ECCF0CB1AE620DA0028EC35 /* KHSettingsMailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSettingsMailController.m; sourceTree = "<group>"; };
 		6ECCF0CE1AE621920028EC35 /* KHSettingsMailControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSettingsMailControllerDelegate.h; sourceTree = "<group>"; };
-		6ED219341B54BDC500A5C805 /* KHStreakView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakView.h; sourceTree = "<group>"; };
 		6EE80AFD1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarWireframe.h; sourceTree = "<group>"; };
 		6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarWireframe.m; sourceTree = "<group>"; };
 		6EE80B051AFDEBCB0091B4E4 /* KHBrowseStreaksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBrowseStreaksModel.h; sourceTree = "<group>"; };
@@ -453,7 +452,6 @@
 				6EAEB63A1B55EDCB00F1905D /* Modules */,
 				6E5154161B4CB10F00FFA7D7 /* KHStreakViewController.h */,
 				6E5154171B4CB10F00FFA7D7 /* KHStreakViewController.m */,
-				6ED219341B54BDC500A5C805 /* KHStreakView.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";
