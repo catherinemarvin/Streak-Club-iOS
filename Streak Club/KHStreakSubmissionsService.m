@@ -8,6 +8,10 @@
 
 #import "KHStreakSubmissionsService.h"
 
+// API
+
+#import "KHAPIService.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KHStreakSubmissionsService()
@@ -15,7 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *streakId;
 @property (nonatomic, strong) id<KHStreakSubmissionsServiceDelegate>delegate;
 
+@property (nonatomic, strong) KHAPIService *apiService;
+
 @end
+
+static NSString *const KHkSubmissionsUrl = @"streak/%@/submissions";
 
 @implementation KHStreakSubmissionsService
 
@@ -31,7 +39,16 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)requestSubmissions {
-    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+}
+
+#pragma mark - Lazy Instantiation
+
+- (KHAPIService *)apiService {
+    if (!_apiService) {
+        _apiService = [[KHAPIService alloc] init];
+    }
+    return _apiService;
 }
 
 @end

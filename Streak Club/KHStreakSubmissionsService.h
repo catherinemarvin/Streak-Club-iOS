@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KHStreakSubmissionsService : NSObject
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
-- (instancetype)initWithStreakId:(NSNumber *)streakId delegate:(id<KHStreakSubmissionsServiceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithStreakId:(NSNumber *)streakId delegate:(id<KHStreakSubmissionsServiceDelegate>)delegate;
 
 /**
  @brief Requests the submissions that have been made for a given streak.
