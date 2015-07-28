@@ -40,6 +40,14 @@ static NSString *const KHkSubmissionsUrl = @"streak/%@/submissions";
 
 - (void)requestSubmissions {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    NSString *endPoint = [NSString stringWithFormat:KHkSubmissionsUrl, self.streakId];
+    
+    [self.apiService get:endPoint parameters:params success:^(id responseObject) {
+        NSLog(@"Submissions: %@", responseObject);
+    } failure:^(NSDictionary *errorDictionary, NSError *error) {
+        NSLog(@"%@", error.debugDescription);
+    }];
 }
 
 #pragma mark - Lazy Instantiation
