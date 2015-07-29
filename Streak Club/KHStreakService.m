@@ -40,7 +40,15 @@ static NSString *const KHkStreakUrl = @"streak/%@";
 }
 
 - (void)requestStreakInfo {
-    //TODO: Fill this in when the API is there
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    NSString *endPoint = [NSString stringWithFormat:KHkStreakUrl, self.remoteId];
+    
+    [self.apiService get:endPoint parameters:params success:^(id responseObject) {
+        NSLog(@"Response: %@", responseObject);
+    } failure:^(NSDictionary *errorDictionary, NSError *error) {
+        NSLog(@"%@", error.debugDescription);
+    }];
 }
 
 #pragma mark - Lazy Instantiation
