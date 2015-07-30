@@ -62,6 +62,8 @@
 		6ED9B2871B633253003AAA7F /* KHStreakScreenDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2861B633253003AAA7F /* KHStreakScreenDataSource.m */; };
 		6ED9B28A1B6332C9003AAA7F /* KHStreakModuleTitleDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2891B6332C9003AAA7F /* KHStreakModuleTitleDataSource.m */; };
 		6ED9B28F1B6334F0003AAA7F /* KHStreakSubmissionsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B28E1B6334F0003AAA7F /* KHStreakSubmissionsService.m */; };
+		6ED9B2971B69B862003AAA7F /* KHJoinStreakService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2961B69B862003AAA7F /* KHJoinStreakService.m */; };
+		6ED9B29A1B69B86E003AAA7F /* KHLeaveStreakService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2991B69B86E003AAA7F /* KHLeaveStreakService.m */; };
 		6EE80AFF1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */; };
 		6EE80B071AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80B061AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m */; };
 		6EE80B0A1B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80B091B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m */; };
@@ -201,6 +203,10 @@
 		6ED9B28D1B6334F0003AAA7F /* KHStreakSubmissionsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakSubmissionsService.h; sourceTree = "<group>"; };
 		6ED9B28E1B6334F0003AAA7F /* KHStreakSubmissionsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakSubmissionsService.m; sourceTree = "<group>"; };
 		6ED9B2931B6411F7003AAA7F /* KHStreakSubmissionsServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakSubmissionsServiceDelegate.h; sourceTree = "<group>"; };
+		6ED9B2951B69B862003AAA7F /* KHJoinStreakService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHJoinStreakService.h; sourceTree = "<group>"; };
+		6ED9B2961B69B862003AAA7F /* KHJoinStreakService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHJoinStreakService.m; sourceTree = "<group>"; };
+		6ED9B2981B69B86E003AAA7F /* KHLeaveStreakService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLeaveStreakService.h; sourceTree = "<group>"; };
+		6ED9B2991B69B86E003AAA7F /* KHLeaveStreakService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHLeaveStreakService.m; sourceTree = "<group>"; };
 		6EE80AFD1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarWireframe.h; sourceTree = "<group>"; };
 		6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarWireframe.m; sourceTree = "<group>"; };
 		6EE80B051AFDEBCB0091B4E4 /* KHBrowseStreaksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBrowseStreaksModel.h; sourceTree = "<group>"; };
@@ -479,10 +485,12 @@
 		6E51542E1B4F557D00FFA7D7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				6ED9B28C1B6334E2003AAA7F /* Submissions */,
+				6ED9B2941B69B855003AAA7F /* Joining */,
 				6E5154321B4F55A100FFA7D7 /* KHStreakService.h */,
 				6E5154331B4F55A100FFA7D7 /* KHStreakService.m */,
 				6E5154351B4F55D400FFA7D7 /* KHStreakServiceDelegate.h */,
+				6ED9B29B1B69B874003AAA7F /* Leaving */,
+				6ED9B28C1B6334E2003AAA7F /* Submissions */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -744,6 +752,24 @@
 			name = Submissions;
 			sourceTree = "<group>";
 		};
+		6ED9B2941B69B855003AAA7F /* Joining */ = {
+			isa = PBXGroup;
+			children = (
+				6ED9B2951B69B862003AAA7F /* KHJoinStreakService.h */,
+				6ED9B2961B69B862003AAA7F /* KHJoinStreakService.m */,
+			);
+			name = Joining;
+			sourceTree = "<group>";
+		};
+		6ED9B29B1B69B874003AAA7F /* Leaving */ = {
+			isa = PBXGroup;
+			children = (
+				6ED9B2981B69B86E003AAA7F /* KHLeaveStreakService.h */,
+				6ED9B2991B69B86E003AAA7F /* KHLeaveStreakService.m */,
+			);
+			name = Leaving;
+			sourceTree = "<group>";
+		};
 		6EE80B001AFB49B90091B4E4 /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
@@ -993,6 +1019,7 @@
 				6E25F0471AF3658B00A4E76C /* KHStreakCell.m in Sources */,
 				6E25F02C1AEF50E600A4E76C /* KHBrowseDataSource.m in Sources */,
 				6E5154181B4CB10F00FFA7D7 /* KHStreakViewController.m in Sources */,
+				6ED9B2971B69B862003AAA7F /* KHJoinStreakService.m in Sources */,
 				6E5E60E01AD1199B00669A0D /* KHGlobalTabBarViewController.m in Sources */,
 				6E0BE4A11AC3D52C00BF4B45 /* KHSplashScreenContentViewController.m in Sources */,
 				6E901C511B39095D001F14A5 /* KHLoginView.m in Sources */,
@@ -1011,6 +1038,7 @@
 				6E0BE4A81AC3D74800BF4B45 /* KHSplashScreenInfo.m in Sources */,
 				6E25F0271AEF4E5E00A4E76C /* KHBrowseService.m in Sources */,
 				6EE80AFF1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m in Sources */,
+				6ED9B29A1B69B86E003AAA7F /* KHLeaveStreakService.m in Sources */,
 				6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */,
 				6EE80B071AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m in Sources */,
 				6E0BE4DD1AC8E09D00BF4B45 /* KHRegisterService.m in Sources */,
