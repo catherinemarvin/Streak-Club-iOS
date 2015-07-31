@@ -207,6 +207,8 @@
 		6ED9B2961B69B862003AAA7F /* KHJoinStreakService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHJoinStreakService.m; sourceTree = "<group>"; };
 		6ED9B2981B69B86E003AAA7F /* KHLeaveStreakService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLeaveStreakService.h; sourceTree = "<group>"; };
 		6ED9B2991B69B86E003AAA7F /* KHLeaveStreakService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHLeaveStreakService.m; sourceTree = "<group>"; };
+		6ED9B29C1B6B0950003AAA7F /* KHLeaveStreakServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLeaveStreakServiceDelegate.h; sourceTree = "<group>"; };
+		6ED9B29D1B6B095E003AAA7F /* KHJoinStreakServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHJoinStreakServiceDelegate.h; sourceTree = "<group>"; };
 		6EE80AFD1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarWireframe.h; sourceTree = "<group>"; };
 		6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarWireframe.m; sourceTree = "<group>"; };
 		6EE80B051AFDEBCB0091B4E4 /* KHBrowseStreaksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBrowseStreaksModel.h; sourceTree = "<group>"; };
@@ -757,6 +759,7 @@
 			children = (
 				6ED9B2951B69B862003AAA7F /* KHJoinStreakService.h */,
 				6ED9B2961B69B862003AAA7F /* KHJoinStreakService.m */,
+				6ED9B29D1B6B095E003AAA7F /* KHJoinStreakServiceDelegate.h */,
 			);
 			name = Joining;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 			children = (
 				6ED9B2981B69B86E003AAA7F /* KHLeaveStreakService.h */,
 				6ED9B2991B69B86E003AAA7F /* KHLeaveStreakService.m */,
+				6ED9B29C1B6B0950003AAA7F /* KHLeaveStreakServiceDelegate.h */,
 			);
 			name = Leaving;
 			sourceTree = "<group>";
