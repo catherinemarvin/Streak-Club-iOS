@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol KHLeaveStreakServiceDelegate <NSObject>
 
+/**
+ @brief Indicates that the streak with this ID has been left.
+ @param streakId the ID of the streak that the user has left.
+ */
+- (void)streakLeft:(NSNumber *)streakId;
+
 @end
+
+NS_ASSUME_NONNULL_END
