@@ -8,12 +8,17 @@
 
 #import "KHStreakViewController.h"
 
+// View
+#import "KHStreakView.h"
+
 // View Helpers
 #import <Masonry/Masonry.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KHStreakViewController ()
+
+@property (nonatomic, strong) KHStreakView *streakView;
 
 @end
 
@@ -28,6 +33,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.view addSubview:self.streakView];
+    [self.streakView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
+
+#pragma mark - Lazy Instantiation
+
+- (KHStreakView *)streakView {
+    if (!_streakView) {
+        _streakView = [[KHStreakView alloc] init];
+    }
+    return _streakView;
 }
 
 
