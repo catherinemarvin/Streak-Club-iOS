@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class KHStreakModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -15,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 @interface KHStreakScreenDataSource : NSObject
+
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+- (instancetype)initWithStreakModel:(KHStreakModel *)streakModel;
 
 @end
 
