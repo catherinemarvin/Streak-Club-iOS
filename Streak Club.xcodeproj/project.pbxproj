@@ -65,6 +65,7 @@
 		6ED9B2A01B71AC8B003AAA7F /* KHStreakView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B29F1B71AC8B003AAA7F /* KHStreakView.m */; };
 		6ED9B2A41B71ACFD003AAA7F /* KHStreakTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2A31B71ACFD003AAA7F /* KHStreakTitleView.m */; };
 		6ED9B2A71B71AD23003AAA7F /* KHStreakTitleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2A61B71AD23003AAA7F /* KHStreakTitleViewModel.m */; };
+		6ED9B2AB1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2AA1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m */; };
 		6EE80AFF1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */; };
 		6EE80B071AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80B061AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m */; };
 		6EE80B0A1B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80B091B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m */; };
@@ -212,6 +213,8 @@
 		6ED9B2A31B71ACFD003AAA7F /* KHStreakTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakTitleView.m; sourceTree = "<group>"; };
 		6ED9B2A51B71AD23003AAA7F /* KHStreakTitleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakTitleViewModel.h; sourceTree = "<group>"; };
 		6ED9B2A61B71AD23003AAA7F /* KHStreakTitleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakTitleViewModel.m; sourceTree = "<group>"; };
+		6ED9B2A91B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakScreenTitleModuleDataSource.h; sourceTree = "<group>"; };
+		6ED9B2AA1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakScreenTitleModuleDataSource.m; sourceTree = "<group>"; };
 		6EE80AFD1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarWireframe.h; sourceTree = "<group>"; };
 		6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarWireframe.m; sourceTree = "<group>"; };
 		6EE80B051AFDEBCB0091B4E4 /* KHBrowseStreaksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBrowseStreaksModel.h; sourceTree = "<group>"; };
@@ -482,6 +485,7 @@
 			children = (
 				6ED9B2851B633253003AAA7F /* KHStreakScreenDataSource.h */,
 				6ED9B2861B633253003AAA7F /* KHStreakScreenDataSource.m */,
+				6ED9B2A81B71B11F003AAA7F /* Modules */,
 			);
 			name = "Data Source";
 			sourceTree = "<group>";
@@ -771,6 +775,15 @@
 			name = Modules;
 			sourceTree = "<group>";
 		};
+		6ED9B2A81B71B11F003AAA7F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6ED9B2A91B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.h */,
+				6ED9B2AA1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
 		6EE80B001AFB49B90091B4E4 /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
@@ -1043,6 +1056,7 @@
 				6ED9B29A1B69B86E003AAA7F /* KHLeaveStreakService.m in Sources */,
 				6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */,
 				6EE80B071AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m in Sources */,
+				6ED9B2AB1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m in Sources */,
 				6E0BE4DD1AC8E09D00BF4B45 /* KHRegisterService.m in Sources */,
 				6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */,
 				6E901C3D1B33B256001F14A5 /* KHSignupViewController.m in Sources */,
