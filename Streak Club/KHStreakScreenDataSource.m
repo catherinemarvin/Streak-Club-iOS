@@ -9,6 +9,7 @@
 #import "KHStreakScreenDataSource.h"
 
 // Module Data sources
+#import "KHStreakScreenTitleModuleDataSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,6 +27,13 @@ NS_ASSUME_NONNULL_BEGIN
         _streakModel = streakModel;
     }
     return self;
+}
+
+#pragma mark - Data Sources
+
+- (KHStreakScreenTitleModuleDataSource *)titleModuleDataSource {
+    KHStreakScreenTitleModuleDataSource *dataSource = [[KHStreakScreenTitleModuleDataSource alloc] initWithStreakModel:self.streakModel];
+    return dataSource;
 }
 
 @end
