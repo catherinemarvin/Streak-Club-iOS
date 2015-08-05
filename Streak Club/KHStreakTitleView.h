@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class KHStreakTitleViewModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KHStreakTitleView : UIView
+
+- (void)configureWithViewModel:(KHStreakTitleViewModel *)viewModel;
 
 @end
 
