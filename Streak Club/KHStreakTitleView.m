@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)configureWithViewModel:(nonnull KHStreakTitleViewModel *)viewModel {
     self.titleLabel.text = viewModel.titleText;
-    self.shortDescriptionLabel.text = viewModel.titleText;
+    self.shortDescriptionLabel.text = viewModel.shortDescriptionText;
 }
 
 #pragma mark - Lazy Instantiation
