@@ -11,6 +11,10 @@
 // Module Data sources
 #import "KHStreakScreenTitleModuleDataSource.h"
 
+// ViewModels
+#import "KHStreakViewModel.h"
+#import "KHStreakTitleViewModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KHStreakScreenDataSource()
@@ -27,6 +31,12 @@ NS_ASSUME_NONNULL_BEGIN
         _streakModel = streakModel;
     }
     return self;
+}
+
+- (KHStreakViewModel *)viewModel {
+    KHStreakTitleViewModel *titleVM = [[self titleModuleDataSource] viewModel];
+    KHStreakViewModel *vm = [[KHStreakViewModel alloc] initWithTitleVM:titleVM];
+    return vm;
 }
 
 #pragma mark - Data Sources

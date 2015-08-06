@@ -10,7 +10,7 @@
 
 @class KHStreakModel;
 
-@class KHStreakScreenTitleModuleDataSource;
+@class KHStreakViewModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 - (instancetype)initWithStreakModel:(KHStreakModel *)streakModel;
 
-- (KHStreakScreenTitleModuleDataSource *)titleModuleDataSource;
+- (KHStreakViewModel *)viewModel;
 
 @end
 
