@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init {
     if (self = [super init]) {
+        self.backgroundColor = [UIColor whiteColor];
         [self _configureSubviews];
         [self _initializeAutolayout];
     }
