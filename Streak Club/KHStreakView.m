@@ -11,6 +11,9 @@
 // Modules
 #import "KHStreakTitleView.h"
 
+// ViewModel
+#import "KHStreakViewModel.h"
+
 // View Helper
 #import <Masonry.h>
 
@@ -43,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)configureWithViewModel:(nonnull KHStreakViewModel *)viewModel {
-    
+    [self.titleView configureWithViewModel:viewModel.titleViewModel];
 }
 
 #pragma mark - Lazy Instantiation
