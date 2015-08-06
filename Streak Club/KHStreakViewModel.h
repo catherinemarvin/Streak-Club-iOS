@@ -15,9 +15,14 @@
  */
 @interface KHStreakViewModel : NSObject
 
+/**
+ @brief The title of the view
+ */
+@property (nonatomic, copy, readonly) NSString *title;
+
 @property (nonatomic, strong, readonly) KHStreakTitleViewModel *titleViewModel;
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
-- (instancetype)initWithTitleVM:(KHStreakTitleViewModel *)titleVM;
+- (instancetype)initWithTitle:(NSString *)title titleVM:(KHStreakTitleViewModel *)titleVM;
 
 @end

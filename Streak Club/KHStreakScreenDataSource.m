@@ -15,6 +15,9 @@
 #import "KHStreakViewModel.h"
 #import "KHStreakTitleViewModel.h"
 
+// Models
+#import "KHStreakModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KHStreakScreenDataSource()
@@ -34,8 +37,9 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (KHStreakViewModel *)viewModel {
+    NSString *title = [self.streakModel title];
     KHStreakTitleViewModel *titleVM = [[self titleModuleDataSource] viewModel];
-    KHStreakViewModel *vm = [[KHStreakViewModel alloc] initWithTitleVM:titleVM];
+    KHStreakViewModel *vm = [[KHStreakViewModel alloc] initWithTitle:title titleVM:titleVM];
     return vm;
 }
 

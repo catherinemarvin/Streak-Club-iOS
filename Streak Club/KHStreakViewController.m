@@ -14,6 +14,9 @@
 // View
 #import "KHStreakView.h"
 
+// ViewModel
+#import "KHStreakViewModel.h"
+
 // View Helpers
 #import <Masonry/Masonry.h>
 
@@ -44,7 +47,10 @@ NS_ASSUME_NONNULL_BEGIN
         make.edges.equalTo(self.view);
     }];
     
-    [self.streakView configureWithViewModel:[self.dataSource viewModel]];
+    KHStreakViewModel *vm = [self.dataSource viewModel];
+    
+    self.title = vm.title;
+    [self.streakView configureWithViewModel:vm];
 }
 
 #pragma mark - Lazy Instantiation
