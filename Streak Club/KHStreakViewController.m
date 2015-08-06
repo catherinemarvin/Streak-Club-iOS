@@ -8,6 +8,9 @@
 
 #import "KHStreakViewController.h"
 
+// Data Source
+#import "KHStreakScreenDataSource.h"
+
 // View
 #import "KHStreakView.h"
 
@@ -18,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KHStreakViewController ()
 
+@property (nonatomic, strong) KHStreakScreenDataSource *dataSource;
 @property (nonatomic, strong) KHStreakView *streakView;
 
 @end
@@ -27,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithStreakModel:(KHStreakModel * __nonnull)streak {
     NSParameterAssert(streak);
     if (self = [super init]) {
+        _dataSource = [[KHStreakScreenDataSource alloc] initWithStreakModel:streak];
     }
     return self;
 }
@@ -38,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
     [self.streakView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    [self.streakView configureWithViewModel:[self.dataSource viewModel]];
 }
 
 #pragma mark - Lazy Instantiation
