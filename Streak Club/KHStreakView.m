@@ -8,6 +8,53 @@
 
 #import "KHStreakView.h"
 
-@implementation KHStreakView
+// Modules
+#import "KHStreakTitleView.h"
+
+// View Helper
+#import <Masonry.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface KHStreakView()
+
+@property (nonatomic, strong) KHStreakTitleView *titleView;
 
 @end
+
+@implementation KHStreakView
+
+- (instancetype)init {
+    if (self = [super init]) {
+        [self _configureSubviews];
+        [self _initializeAutolayout];
+    }
+    return self;
+}
+
+- (void)_configureSubviews {
+    [self addSubview:self.titleView];
+}
+
+- (void)_initializeAutolayout {
+    [self.titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
+}
+
+- (void)configureWithViewModel:(nonnull KHStreakViewModel *)viewModel {
+    
+}
+
+#pragma mark - Lazy Instantiation
+
+- (KHStreakTitleView *)titleView {
+    if (!_titleView) {
+        _titleView = [[KHStreakTitleView alloc] init];
+    }
+    return _titleView;
+}
+
+@end
+
+NS_ASSUME_NONNULL_END

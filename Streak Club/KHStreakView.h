@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class KHStreakViewModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KHStreakView : UIView
+
+- (void)configureWithViewModel:(KHStreakViewModel *)viewModel;
 
 @end
 
