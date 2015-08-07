@@ -50,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
     
     [self.shortDescriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
+        make.top.equalTo(self.titleLabel.mas_bottom).with.offset(6.0f);
         make.bottom.equalTo(self);
     }];
 }

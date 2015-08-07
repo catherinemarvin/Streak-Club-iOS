@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)_initializeAutolayout {
     [self.titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
+        make.left.and.right.and.top.equalTo(self);
     }];
 }
 
