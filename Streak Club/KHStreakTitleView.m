@@ -67,6 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_titleLabel) {
         _titleLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:18.0f];
             label;
         });
     }
@@ -77,6 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_shortDescriptionLabel) {
         _shortDescriptionLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:14.0f];
             label;
         });
     }
