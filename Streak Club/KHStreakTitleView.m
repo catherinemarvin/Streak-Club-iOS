@@ -12,6 +12,7 @@
 #import "KHStreakTitleViewModel.h"
 
 // View helpers
+#import "UIColor+HexString.h"
 #import "UIFont+CustomFonts.h"
 #import <Masonry.h>
 
@@ -28,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init {
     if (self = [super init]) {
+        self.backgroundColor = [UIColor colorWithHexString:@"f5f5f5"];
+        
         [self _configureSubviews];
         [self _initializeAutolayout];
     }
