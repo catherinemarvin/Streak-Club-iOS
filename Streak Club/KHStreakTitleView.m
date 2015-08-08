@@ -43,13 +43,14 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)_initializeAutolayout {
+    CGFloat margin = 20.0f;
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
+        make.left.equalTo(self).with.offset(margin);
         make.top.equalTo(self);
     }];
     
     [self.shortDescriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
+        make.left.equalTo(self.titleLabel);
         make.top.equalTo(self.titleLabel.mas_bottom).with.offset(6.0f);
         make.bottom.equalTo(self);
     }];
