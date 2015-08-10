@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHStreakModuleSelectorViewModel : NSObject
 
+@property (nonatomic, strong) NSString *currentlySelectedModule;
+
 @end
+
+NS_ASSUME_NONNULL_END

@@ -8,6 +8,10 @@
 
 #import "KHStreakModuleSelectorViewModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @implementation KHStreakModuleSelectorViewModel
 
 @end
+
+NS_ASSUME_NONNULL_END
