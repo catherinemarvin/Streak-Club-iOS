@@ -10,10 +10,12 @@
 
 // Module Data sources
 #import "KHStreakScreenTitleModuleDataSource.h"
+#import "KHStreakModuleSelectorDataSource.h"
 
 // ViewModels
 #import "KHStreakViewModel.h"
 #import "KHStreakTitleViewModel.h"
+#import "KHStreakModuleSelectorViewModel.h"
 
 // Models
 #import "KHStreakModel.h"
@@ -38,15 +40,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (KHStreakViewModel *)viewModel {
     NSString *title = [self.streakModel title];
-    KHStreakTitleViewModel *titleVM = [[self titleModuleDataSource] viewModel];
-    KHStreakViewModel *vm = [[KHStreakViewModel alloc] initWithTitle:title titleVM:titleVM];
+    KHStreakTitleViewModel *titleVM = [[self _titleModuleDataSource] viewModel];
+    KHStreakModuleSelectorViewModel *selectorVM = [[self _moduleSelectorDataSource] viewModel];
+    KHStreakViewModel *vm = [[KHStreakViewModel alloc] initWithTitle:title titleVM:titleVM moduleSelectorVM:selectorVM];
     return vm;
 }
 
 #pragma mark - Data Sources
 
-- (KHStreakScreenTitleModuleDataSource *)titleModuleDataSource {
+- (KHStreakScreenTitleModuleDataSource *)_titleModuleDataSource {
     KHStreakScreenTitleModuleDataSource *dataSource = [[KHStreakScreenTitleModuleDataSource alloc] initWithStreakModel:self.streakModel];
+    return dataSource;
+}
+
+- (KHStreakModuleSelectorDataSource *)_moduleSelectorDataSource {
+    KHStreakModuleSelectorDataSource *dataSource = [[KHStreakModuleSelectorDataSource alloc] init];
     return dataSource;
 }
 

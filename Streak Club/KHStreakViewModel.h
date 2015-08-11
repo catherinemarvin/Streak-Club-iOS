@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class KHStreakTitleViewModel;
+@class KHStreakModuleSelectorViewModel;
 
 /**
  @brief Top level streak screen ViewModel;
@@ -22,7 +23,11 @@
 
 @property (nonatomic, strong, readonly) KHStreakTitleViewModel *titleViewModel;
 
+@property (nonatomic, strong, readonly) KHStreakModuleSelectorViewModel *moduleSelectorViewModel;
+
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
-- (instancetype)initWithTitle:(NSString *)title titleVM:(KHStreakTitleViewModel *)titleVM;
+- (instancetype)initWithTitle:(NSString *)title
+                      titleVM:(KHStreakTitleViewModel *)titleVM
+             moduleSelectorVM:(KHStreakModuleSelectorViewModel *)moduleSelectorVM;
 
 @end

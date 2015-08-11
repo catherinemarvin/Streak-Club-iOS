@@ -12,13 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation KHStreakViewModel
 
-- (instancetype)initWithTitle:(NSString *)title titleVM:(KHStreakTitleViewModel *)titleVM {
+- (instancetype)initWithTitle:(NSString *)title titleVM:(KHStreakTitleViewModel *)titleVM moduleSelectorVM:(KHStreakModuleSelectorViewModel *)moduleSelectorVM {
+    NSParameterAssert(title);
     NSParameterAssert(titleVM);
-    NSParameterAssert(titleVM);
+    NSParameterAssert(moduleSelectorVM);
     
     if (self = [super init]) {
         _title = title;
         _titleViewModel = titleVM;
+        _moduleSelectorViewModel = moduleSelectorVM;
     }
     return self;
 }
