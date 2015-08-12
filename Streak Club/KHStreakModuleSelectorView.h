@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class KHStreakModuleSelectorViewModel;
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHStreakModuleSelectorView : UIView
 
+- (void)configureWithViewModel:(KHStreakModuleSelectorViewModel *)viewModel;
+
 @end
+
+NS_ASSUME_NONNULL_END

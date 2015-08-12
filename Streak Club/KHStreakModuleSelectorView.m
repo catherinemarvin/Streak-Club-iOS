@@ -8,14 +8,14 @@
 
 #import "KHStreakModuleSelectorView.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @implementation KHStreakModuleSelectorView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)configureWithViewModel:(nonnull KHStreakModuleSelectorViewModel *)viewModel {
+    NSParameterAssert(viewModel);
 }
-*/
 
 @end
+
+NS_ASSUME_NONNULL_END

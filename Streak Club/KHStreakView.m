@@ -10,6 +10,7 @@
 
 // Modules
 #import "KHStreakTitleView.h"
+#import "KHStreakModuleSelectorView.h"
 
 // ViewModel
 #import "KHStreakViewModel.h"
@@ -22,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KHStreakView()
 
 @property (nonatomic, strong) KHStreakTitleView *titleView;
+@property (nonatomic, strong) KHStreakModuleSelectorView *moduleSelectorView;
 
 @end
 
@@ -38,16 +40,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)_configureSubviews {
     [self addSubview:self.titleView];
+    [self addSubview:self.moduleSelectorView];
 }
 
 - (void)_initializeAutolayout {
     [self.titleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.and.top.equalTo(self);
     }];
+    
+    [self.moduleSelectorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self);
+        make.top.equalTo(self.titleView.mas_bottom);
+    }];
 }
 
 - (void)configureWithViewModel:(nonnull KHStreakViewModel *)viewModel {
     [self.titleView configureWithViewModel:viewModel.titleViewModel];
+    [self.moduleSelectorView configureWithViewModel:viewModel.moduleSelectorViewModel];
 }
 
 #pragma mark - Lazy Instantiation
@@ -57,6 +66,13 @@ NS_ASSUME_NONNULL_BEGIN
         _titleView = [[KHStreakTitleView alloc] init];
     }
     return _titleView;
+}
+
+- (KHStreakModuleSelectorView *)moduleSelectorView {
+    if (!_moduleSelectorView) {
+        _moduleSelectorView = [[KHStreakModuleSelectorView alloc] init];
+    }
+    return _moduleSelectorView;
 }
 
 @end
