@@ -70,6 +70,7 @@
 		6ED9B2A71B71AD23003AAA7F /* KHStreakTitleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2A61B71AD23003AAA7F /* KHStreakTitleViewModel.m */; };
 		6ED9B2AB1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2AA1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m */; };
 		6ED9B2AE1B71B351003AAA7F /* KHStreakViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B2AD1B71B351003AAA7F /* KHStreakViewModel.m */; };
+		6EE21B6D1B80016200787BA8 /* KHRecentSubmissionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE21B6C1B80016200787BA8 /* KHRecentSubmissionsDataSource.m */; };
 		6EE80AFF1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */; };
 		6EE80B071AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80B061AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m */; };
 		6EE80B0A1B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80B091B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m */; };
@@ -227,6 +228,8 @@
 		6ED9B2AA1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakScreenTitleModuleDataSource.m; sourceTree = "<group>"; };
 		6ED9B2AC1B71B351003AAA7F /* KHStreakViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakViewModel.h; sourceTree = "<group>"; };
 		6ED9B2AD1B71B351003AAA7F /* KHStreakViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakViewModel.m; sourceTree = "<group>"; };
+		6EE21B6B1B80016200787BA8 /* KHRecentSubmissionsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHRecentSubmissionsDataSource.h; sourceTree = "<group>"; };
+		6EE21B6C1B80016200787BA8 /* KHRecentSubmissionsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHRecentSubmissionsDataSource.m; sourceTree = "<group>"; };
 		6EE80AFD1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarWireframe.h; sourceTree = "<group>"; };
 		6EE80AFE1AFB49B70091B4E4 /* KHGlobalTabBarWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarWireframe.m; sourceTree = "<group>"; };
 		6EE80B051AFDEBCB0091B4E4 /* KHBrowseStreaksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHBrowseStreaksModel.h; sourceTree = "<group>"; };
@@ -800,6 +803,8 @@
 				6ED9B2AA1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m */,
 				6EBDE15E1B79AE6B00A5230B /* KHStreakModuleSelectorDataSource.h */,
 				6EBDE15F1B79AE6B00A5230B /* KHStreakModuleSelectorDataSource.m */,
+				6EE21B6B1B80016200787BA8 /* KHRecentSubmissionsDataSource.h */,
+				6EE21B6C1B80016200787BA8 /* KHRecentSubmissionsDataSource.m */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -1050,6 +1055,7 @@
 				6E25F0331AEF665100A4E76C /* KHUserModel.m in Sources */,
 				6E0BE4C81AC5FFD600BF4B45 /* KHSplashScreenContentView.m in Sources */,
 				6ED9B2871B633253003AAA7F /* KHStreakScreenDataSource.m in Sources */,
+				6EE21B6D1B80016200787BA8 /* KHRecentSubmissionsDataSource.m in Sources */,
 				6E25F0471AF3658B00A4E76C /* KHStreakCell.m in Sources */,
 				6E25F02C1AEF50E600A4E76C /* KHBrowseDataSource.m in Sources */,
 				6ED9B2A41B71ACFD003AAA7F /* KHStreakTitleView.m in Sources */,
