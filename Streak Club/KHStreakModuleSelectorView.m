@@ -55,6 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (!_selectedModuleLabel) {
         _selectedModuleLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.textAlignment = NSTextAlignmentCenter;
             label.font = [UIFont regularWithSize:14.0f];
             
             label;
