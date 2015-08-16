@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class UICollectionView;
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KHRecentSubmissionsDataSource : NSObject
 
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+- (instancetype)initWithCollectionView:(UICollectionView *)collectionView;
+
 @end
+
+NS_ASSUME_NONNULL_END
