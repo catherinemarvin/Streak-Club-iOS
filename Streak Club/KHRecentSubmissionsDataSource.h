@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KHRecentSubmissionsDataSource : NSObject
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
-- (instancetype)initWithCollectionView:(UICollectionView *)collectionView;
+- (instancetype)initWithCollectionView:(UICollectionView *)collectionView streakId:(NSNumber *)streakId;
 
 @end
 

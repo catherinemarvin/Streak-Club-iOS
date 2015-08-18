@@ -8,14 +8,17 @@
 
 #import "KHRecentSubmissionsDataSource.h"
 
+#import "KHStreakSubmissionsService.h"
+
 // Collection View
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KHRecentSubmissionsDataSource()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface KHRecentSubmissionsDataSource()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, KHStreakSubmissionsServiceDelegate>
 
 @property (nonatomic, weak) UICollectionView *collectionView;
+@property (nonatomic, strong) KHStreakSubmissionsService *submissionsService;
 
 @end
 
@@ -23,12 +26,16 @@ static NSString *const KHkRecentSubmissionCellIdentifier = @"KHkRecentSubmission
 
 @implementation KHRecentSubmissionsDataSource
 
-- (instancetype)initWithCollectionView:(nonnull UICollectionView *)collectionView {
+- (instancetype)initWithCollectionView:(nonnull UICollectionView *)collectionView streakId:(nonnull NSNumber *)streakId {
     NSParameterAssert(collectionView);
+    NSParameterAssert(streakId);
+    
     if (self = [super init]) {
         _collectionView = collectionView;
         collectionView.dataSource = self;
         collectionView.delegate = self;
+        
+        _submissionsService = [[KHStreakSubmissionsService alloc] initWithStreakId:streakId delegate:self];
     }
     return self;
 }
@@ -47,6 +54,10 @@ static NSString *const KHkRecentSubmissionCellIdentifier = @"KHkRecentSubmission
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHkRecentSubmissionCellIdentifier forIndexPath:indexPath];
     return cell;
 }
+
+#pragma mark - KHStreakSubmissionsServiceDelegate
+
+
 
 @end
 
