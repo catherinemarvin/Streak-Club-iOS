@@ -17,6 +17,7 @@
 
 // Views
 #import "KHStreakCell.h"
+#import "KHStreakViewController.h"
 
 // ViewModel
 #import "KHStreakCellViewModel.h"
@@ -89,6 +90,16 @@ static CGFloat const KHkMargin = 20.0f;
         [streakCell configureWithViewModel:vm];
     }
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(nonnull UICollectionView *)collectionView didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    KHStreakModel *streak = self.browseStreaks.streaks[indexPath.row];
+    
+    KHStreakViewController *streakVC = [[KHStreakViewController alloc] initWithStreakModel:streak];
+    
+    [[self.browseView navigationController] pushViewController:streakVC animated:YES];
 }
 
 #pragma mark - UICollectionViewDelegateCollectionFlowLayout 

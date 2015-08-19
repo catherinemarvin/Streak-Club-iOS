@@ -14,5 +14,6 @@
 
 - (UICollectionView *)collectionView;
 - (void)endRefreshing;
+- (UINavigationController *)navigationController;
 
 @end
