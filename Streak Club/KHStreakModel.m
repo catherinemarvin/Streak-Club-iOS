@@ -64,7 +64,8 @@
             mtl_valueMappingTransformerWithDictionary:
   @{
     @"draft" : @(KHStreakPublishStatusDraft),
-    @"published" : @(KHStreakPublishStatusPublished)
+    @"published" : @(KHStreakPublishStatusPublished),
+    @"hidden" : @(KHStreakPublishStatusHidden),
     }];
 }
 

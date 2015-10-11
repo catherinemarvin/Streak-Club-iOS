@@ -12,7 +12,8 @@
 
 typedef NS_ENUM(NSInteger, KHStreakPublishStatus) {
     KHStreakPublishStatusPublished,
-    KHStreakPublishStatusDraft
+    KHStreakPublishStatusDraft,
+    KHStreakPublishStatusHidden,
 };
 
 typedef NS_ENUM(NSInteger, KHStreakRate) {
