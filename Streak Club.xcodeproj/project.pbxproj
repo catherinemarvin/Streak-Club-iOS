@@ -712,7 +712,6 @@
 				6ECCF0C01ADD0EBA0028EC35 /* KHSettingsViewCell.h */,
 				6ECCF0C11ADD0EBA0028EC35 /* KHSettingsViewCell.m */,
 				6E595F551BCDF02A0023DABC /* SettingsViewController.swift */,
-				6E595F541BCDF02A0023DABC /* Streak Club-Bridging-Header.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -872,6 +871,7 @@
 		6EF6617B1A773A7600DA5177 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E595F541BCDF02A0023DABC /* Streak Club-Bridging-Header.h */,
 				6EF6617C1A773A7600DA5177 /* Info.plist */,
 				6EF6617D1A773A7600DA5177 /* main.m */,
 			);
