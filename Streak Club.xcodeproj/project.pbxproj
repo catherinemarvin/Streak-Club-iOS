@@ -41,6 +41,7 @@
 		6E5154341B4F55A100FFA7D7 /* KHStreakService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5154331B4F55A100FFA7D7 /* KHStreakService.m */; };
 		6E595F561BCDF02A0023DABC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E595F551BCDF02A0023DABC /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		6E595F581BCDF0830023DABC /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E595F571BCDF0830023DABC /* SettingsViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		6E595F5A1BCDF1D50023DABC /* UIFont+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E595F591BCDF1D50023DABC /* UIFont+CustomFont.swift */; settings = {ASSET_TAGS = (); }; };
 		6E5B3F681A835D9E0091A556 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */; };
 		6E5E60E01AD1199B00669A0D /* KHGlobalTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60DF1AD1199B00669A0D /* KHGlobalTabBarViewController.m */; };
 		6E5E60E31AD3791A00669A0D /* KHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E60E21AD3791A00669A0D /* KHHomeViewController.m */; };
@@ -166,6 +167,7 @@
 		6E595F541BCDF02A0023DABC /* Streak Club-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Streak Club-Bridging-Header.h"; sourceTree = "<group>"; };
 		6E595F551BCDF02A0023DABC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6E595F571BCDF0830023DABC /* SettingsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
+		6E595F591BCDF1D50023DABC /* UIFont+CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFont.swift"; sourceTree = "<group>"; };
 		6E5B3F671A835D9E0091A556 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E5E60DE1AD1199B00669A0D /* KHGlobalTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHGlobalTabBarViewController.h; sourceTree = "<group>"; };
 		6E5E60DF1AD1199B00669A0D /* KHGlobalTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHGlobalTabBarViewController.m; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				6E0BE4BC1AC5FB5500BF4B45 /* Dosis-Medium.otf */,
 				6E0BE4BD1AC5FB5500BF4B45 /* Dosis-Regular.otf */,
 				6E0BE4BE1AC5FB5500BF4B45 /* Dosis-SemiBold.otf */,
+				6E595F591BCDF1D50023DABC /* UIFont+CustomFont.swift */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -1094,6 +1097,7 @@
 				6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */,
 				6EE80B071AFDEBCB0091B4E4 /* KHBrowseStreaksModel.m in Sources */,
 				6ED9B2AB1B71B133003AAA7F /* KHStreakScreenTitleModuleDataSource.m in Sources */,
+				6E595F5A1BCDF1D50023DABC /* UIFont+CustomFont.swift in Sources */,
 				6E0BE4DD1AC8E09D00BF4B45 /* KHRegisterService.m in Sources */,
 				6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */,
 				6E901C3D1B33B256001F14A5 /* KHSignupViewController.m in Sources */,
