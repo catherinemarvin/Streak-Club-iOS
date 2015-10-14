@@ -12,11 +12,13 @@ private let regularFont = "Dosis-Regular"
 private let boldFont = "Dosis-Bold"
 
 extension UIFont {
-    func regularWithSize(size: CGFloat) -> UIFont {
-       return UIFont(name: regularFont, size: size)!
+    class func regularWithSize(size: Float) -> UIFont {
+        let convertedSize = CGFloat(size)
+        return UIFont(name: regularFont, size: convertedSize)!
     }
     
-    func boldWithSize(size: CGFloat) -> UIFont {
-       return UIFont(name: boldFont, size: size)!
+    class func boldWithSize(size: Float) -> UIFont {
+        let convertedSize = CGFloat(size)
+        return UIFont(name: boldFont, size: convertedSize)!
     }
 }

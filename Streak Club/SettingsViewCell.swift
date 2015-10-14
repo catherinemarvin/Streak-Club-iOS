@@ -10,15 +10,12 @@ import UIKit
 
 class SettingsViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported")
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.textLabel?.font = UIFont.regularWithSize(18)
     }
-
 }
