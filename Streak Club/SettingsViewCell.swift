@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewCell: UITableViewCell {
+final class SettingsViewCell: UITableViewCell {
 
     required init(coder: NSCoder) {
         fatalError("NSCoding not supported")
