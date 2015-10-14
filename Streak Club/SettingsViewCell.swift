@@ -16,6 +16,6 @@ class SettingsViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.textLabel?.font = UIFont.regularWithSize(18)
+        textLabel?.font = UIFont.regularWithSize(18)
     }
 }
