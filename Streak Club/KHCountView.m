@@ -7,10 +7,9 @@
 //
 
 #import "KHCountView.h"
+#import <Streak_Club-Swift.h>
 
 #import <Masonry/Masonry.h>
-#import "UIFont+CustomFonts.h"
-
 
 NS_ASSUME_NONNULL_BEGIN
 

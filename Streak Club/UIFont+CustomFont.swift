@@ -11,7 +11,7 @@ import UIKit
 private let regularFont = "Dosis-Regular"
 private let boldFont = "Dosis-Bold"
 
-extension UIFont {
+public extension UIFont {
     class func regularWithSize(size: Float) -> UIFont {
         let convertedSize = CGFloat(size)
         return UIFont(name: regularFont, size: convertedSize)!

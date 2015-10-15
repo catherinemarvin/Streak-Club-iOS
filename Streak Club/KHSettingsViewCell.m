@@ -8,7 +8,7 @@
 
 #import "KHSettingsViewCell.h"
 
-#import "UIFont+CustomFonts.h"
+#import <Streak_Club-Swift.h>
 
 @implementation KHSettingsViewCell
 

@@ -10,7 +10,7 @@
 
 // View Helpers
 #import "UIColor+HexString.h"
-#import "UIFont+CustomFonts.h"
+#import <Streak_Club-Swift.h>
 #import <Masonry/Masonry.h>
 
 @interface KHSplashScreenContentView()

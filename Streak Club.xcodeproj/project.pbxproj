@@ -12,7 +12,6 @@
 		6E0BE4A51AC3D54000BF4B45 /* KHSplashScreenDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4A41AC3D54000BF4B45 /* KHSplashScreenDataSource.m */; };
 		6E0BE4A81AC3D74800BF4B45 /* KHSplashScreenInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4A71AC3D74800BF4B45 /* KHSplashScreenInfo.m */; };
 		6E0BE4B31AC5F11000BF4B45 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4B21AC5F11000BF4B45 /* UIColor+HexString.m */; };
-		6E0BE4B61AC5FAF200BF4B45 /* UIFont+CustomFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BE4B51AC5FAF200BF4B45 /* UIFont+CustomFonts.m */; };
 		6E0BE4BF1AC5FB5500BF4B45 /* Dosis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4B81AC5FB5500BF4B45 /* Dosis-Bold.otf */; };
 		6E0BE4C01AC5FB5500BF4B45 /* Dosis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4B91AC5FB5500BF4B45 /* Dosis-ExtraBold.otf */; };
 		6E0BE4C11AC5FB5500BF4B45 /* Dosis-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0BE4BA1AC5FB5500BF4B45 /* Dosis-ExtraLight.otf */; };
@@ -109,8 +108,6 @@
 		6E0BE4A71AC3D74800BF4B45 /* KHSplashScreenInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenInfo.m; sourceTree = "<group>"; };
 		6E0BE4B11AC5F11000BF4B45 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
 		6E0BE4B21AC5F11000BF4B45 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
-		6E0BE4B41AC5FAF200BF4B45 /* UIFont+CustomFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CustomFonts.h"; sourceTree = "<group>"; };
-		6E0BE4B51AC5FAF200BF4B45 /* UIFont+CustomFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CustomFonts.m"; sourceTree = "<group>"; };
 		6E0BE4B81AC5FB5500BF4B45 /* Dosis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Bold.otf"; sourceTree = "<group>"; };
 		6E0BE4B91AC5FB5500BF4B45 /* Dosis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraBold.otf"; sourceTree = "<group>"; };
 		6E0BE4BA1AC5FB5500BF4B45 /* Dosis-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -300,8 +297,6 @@
 			children = (
 				6E0BE4B11AC5F11000BF4B45 /* UIColor+HexString.h */,
 				6E0BE4B21AC5F11000BF4B45 /* UIColor+HexString.m */,
-				6E0BE4B41AC5FAF200BF4B45 /* UIFont+CustomFonts.h */,
-				6E0BE4B51AC5FAF200BF4B45 /* UIFont+CustomFonts.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1110,7 +1105,6 @@
 				6ECCF0C21ADD0EBA0028EC35 /* KHSettingsViewCell.m in Sources */,
 				6ED9B2AE1B71B351003AAA7F /* KHStreakViewModel.m in Sources */,
 				6E25F0221AEF247700A4E76C /* KHBrowseViewController.m in Sources */,
-				6E0BE4B61AC5FAF200BF4B45 /* UIFont+CustomFonts.m in Sources */,
 				6E0BE4D51AC8DEB800BF4B45 /* KHAPIService.m in Sources */,
 				6E25F04E1AF9CD5800A4E76C /* KHStreakCellViewModel.m in Sources */,
 				6ECCF0C91AE60C890028EC35 /* KHSettingsDelegate.m in Sources */,
@@ -1237,6 +1231,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Streak Club/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1258,6 +1253,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Streak Club/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

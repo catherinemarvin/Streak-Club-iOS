@@ -9,7 +9,7 @@
 #import "KHLoginView.h"
 
 // View Helper
-#import "UIFont+CustomFonts.h"
+#import <Streak_Club-Swift.h>
 #import "UIColor+HexString.h"
 #import <Masonry.h>
 

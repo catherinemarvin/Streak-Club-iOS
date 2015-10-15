@@ -16,7 +16,7 @@
 
 // View Helper
 #import <Masonry.h>
-#import "UIFont+CustomFonts.h"
+#import <Streak_Club-Swift.h>
 #import "UIColor+HexString.h"
 
 NS_ASSUME_NONNULL_BEGIN
