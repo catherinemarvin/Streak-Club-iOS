@@ -7,3 +7,11 @@
 //
 
 import UIKit
+
+let usernameField: UITextField
+let passwordField: UITextField
+let repeatPasswordField: UITextField
+let emailField: UITextField
+
+let actionButtion: UIButton
+let switchModeButton: UIButton
