@@ -8,10 +8,26 @@
 
 import UIKit
 
-let usernameField: UITextField
-let passwordField: UITextField
-let repeatPasswordField: UITextField
-let emailField: UITextField
+final class SignupView: UIView {
+    let formContainer: UIView = {
+        let view = UITextField()
+        view.backgroundColor = UIColor.whiteColor()
+        view.layer.cornerRadius = 3
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
+    init() {
+        super.init(frame: CGRectZero)
+        _configureSubviews()
+    }
 
-let actionButtion: UIButton
-let switchModeButton: UIButton
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func _configureSubviews() {
+        addSubview(formContainer)
+    }
+    
+}
