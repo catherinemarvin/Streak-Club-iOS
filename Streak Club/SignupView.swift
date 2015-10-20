@@ -62,6 +62,7 @@ final class SignupView: UIView {
     init() {
         super.init(frame: CGRectZero)
         _configureSubviews()
+        _initializeAutolayout()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -76,6 +77,20 @@ final class SignupView: UIView {
         formContainer.addSubview(emailField)
         formContainer.addSubview(actionButton)
         addSubview(switchModeButton)
+    }
+    
+    private func _initializeAutolayout() {
+        let sideMargin: Float = 20
+        formContainer.snp_makeConstraints { (make) -> Void in
+            make.bottom.equalTo(actionButton)
+            make.left.equalTo(self).offset(sideMargin)
+            make.right.equalTo(self).offset(-sideMargin)
+            make.centerY.equalTo(self)
+        }
+        
+        let sidePadding: Float = 20
+        let verticalPadding: Float = 10
+        let fieldHeight: Float = 44
     }
     
 }
