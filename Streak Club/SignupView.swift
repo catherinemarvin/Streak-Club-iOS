@@ -44,7 +44,7 @@ final class SignupView: UIView {
         return field
     }()
     
-    let actionField: UIButton = {
+    let actionButton: UIButton = {
         let button = UIButton()
         button.setTitle(NSLocalizedString("Create Account", comment: "Button for creating an account"), forState: UIControlState.Normal)
         button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
@@ -70,6 +70,12 @@ final class SignupView: UIView {
     
     private func _configureSubviews() {
         addSubview(formContainer)
+        formContainer.addSubview(usernameField)
+        formContainer.addSubview(passwordField)
+        formContainer.addSubview(repeatPasswordField)
+        formContainer.addSubview(emailField)
+        formContainer.addSubview(actionButton)
+        addSubview(switchModeButton)
     }
     
 }
