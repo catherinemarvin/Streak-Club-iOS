@@ -98,6 +98,36 @@ final class SignupView: UIView {
             make.top.equalTo(formContainer).offset(verticalPadding)
             make.height.equalTo(fieldHeight)
         }
+        
+        passwordField.snp_makeConstraints { (make) -> Void in
+            make.left.right.equalTo(usernameField)
+            make.top.equalTo(usernameField.snp_bottom).offset(verticalPadding)
+            make.height.equalTo(usernameField)
+        }
+        
+        repeatPasswordField.snp_makeConstraints { (make) -> Void in
+            make.left.right.equalTo(usernameField)
+            make.top.equalTo(passwordField.snp_bottom).offset(verticalPadding)
+            make.height.equalTo(usernameField)
+        }
+        
+        emailField.snp_makeConstraints { (make) -> Void in
+            make.left.right.equalTo(usernameField)
+            make.top.equalTo(repeatPasswordField.snp_bottom).offset(verticalPadding)
+            make.height.equalTo(usernameField)
+        }
+        
+        actionButton.snp_makeConstraints { (make) -> Void in
+            make.left.right.equalTo(usernameField)
+            make.top.equalTo(emailField.snp_bottom)
+            make.height.equalTo(usernameField)
+        }
+        
+        switchModeButton.snp_makeConstraints { (make) -> Void in
+            make.left.right.equalTo(usernameField)
+            make.top.equalTo(actionButton.snp_bottom)
+            make.height.equalTo(usernameField)
+        }
     }
     
 }
