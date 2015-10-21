@@ -91,6 +91,13 @@ final class SignupView: UIView {
         let sidePadding: Float = 20
         let verticalPadding: Float = 10
         let fieldHeight: Float = 44
+        
+        usernameField.snp_makeConstraints { (make) -> Void in
+            make.left.equalTo(formContainer).offset(sidePadding)
+            make.right.equalTo(formContainer).offset(-sidePadding)
+            make.top.equalTo(formContainer).offset(verticalPadding)
+            make.height.equalTo(fieldHeight)
+        }
     }
     
 }
