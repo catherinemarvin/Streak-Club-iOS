@@ -57,8 +57,6 @@ final class SignupView: UIView {
         return button
     }()
     
-    
-    
     init() {
         super.init(frame: CGRectZero)
         _configureSubviews()
@@ -77,6 +75,18 @@ final class SignupView: UIView {
         formContainer.addSubview(emailField)
         formContainer.addSubview(actionButton)
         addSubview(switchModeButton)
+    }
+    
+    private func _configureTextField(textField: UITextField) {
+        textField.font = UIFont.regularWithSize(16)
+        textField.layer.borderColor = UIColor(hexString: "cdcdcd").CGColor
+        textField.layer.borderWidth = 2
+        textField.autocapitalizationType = UITextAutocapitalizationType.None
+        textField.autocorrectionType = UITextAutocorrectionType.No
+        
+        let viewSpacer = UIView(frame: CGRectMake(0, 0, 10, 0))
+        textField.leftView = viewSpacer
+        textField.leftViewMode = UITextFieldViewMode.Always
     }
     
     private func _initializeAutolayout() {
