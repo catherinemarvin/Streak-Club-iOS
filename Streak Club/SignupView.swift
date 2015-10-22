@@ -69,6 +69,7 @@ final class SignupView: UIView {
     }
     
     private func _configureViews() {
+        backgroundColor = UIColor(hexString: "34a0f2")
         _configureTextField(usernameField)
         _configureTextField(passwordField)
         _configureTextField(repeatPasswordField)
