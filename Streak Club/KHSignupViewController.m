@@ -9,7 +9,6 @@
 #import "KHSignupViewController.h"
 
 // View
-#import "KHSignupView.h"
 
 // Interactor
 #import "KHSignupInteractor.h"
@@ -19,12 +18,14 @@
 // View Helper
 #import <Masonry.h>
 
+#import <Streak_Club-Swift.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KHSignupViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) KHSignupInteractor *interactor;
-@property (nonatomic, strong) KHSignupView *signupView;
+@property (nonatomic, strong) SignupView *signupView;
 
 @end
 
@@ -52,9 +53,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Lazy Instantiation
 
-- (KHSignupView *)signupView {
+- (SignupView *)signupView {
     if (!_signupView) {
-        _signupView = [[KHSignupView alloc] init];
+        _signupView = [[SignupView alloc] init];
     }
     return _signupView;
 }
