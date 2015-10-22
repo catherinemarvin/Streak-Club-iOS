@@ -59,12 +59,20 @@ final class SignupView: UIView {
     
     init() {
         super.init(frame: CGRectZero)
+        _configureViews()
         _configureSubviews()
         _initializeAutolayout()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func _configureViews() {
+        _configureTextField(usernameField)
+        _configureTextField(passwordField)
+        _configureTextField(repeatPasswordField)
+        _configureTextField(emailField)
     }
     
     private func _configureSubviews() {
