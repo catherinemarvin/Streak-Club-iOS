@@ -80,6 +80,7 @@
 		6EE80B0A1B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE80B091B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m */; };
 		6EF3D0F71BD9367200CE4C99 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF3D0F61BD9367200CE4C99 /* SessionManager.swift */; settings = {ASSET_TAGS = (); }; };
 		6EF3D0F91BDA8BEB00CE4C99 /* StreakCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF3D0F81BDA8BEB00CE4C99 /* StreakCellViewModel.swift */; settings = {ASSET_TAGS = (); }; };
+		6EF3D0FB1BDB67CE00CE4C99 /* StreakCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF3D0FA1BDB67CE00CE4C99 /* StreakCell.swift */; settings = {ASSET_TAGS = (); }; };
 		6EF6617E1A773A7600DA5177 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6617D1A773A7600DA5177 /* main.m */; };
 		6EF661811A773A7600DA5177 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF661801A773A7600DA5177 /* KHAppDelegate.m */; };
 		6EF661891A773A7600DA5177 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF661881A773A7600DA5177 /* Images.xcassets */; };
@@ -247,6 +248,7 @@
 		6EE80B091B0013470091B4E4 /* KHBrowseCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHBrowseCollectionViewDataSource.m; sourceTree = "<group>"; };
 		6EF3D0F61BD9367200CE4C99 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		6EF3D0F81BDA8BEB00CE4C99 /* StreakCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakCellViewModel.swift; sourceTree = "<group>"; };
+		6EF3D0FA1BDB67CE00CE4C99 /* StreakCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakCell.swift; sourceTree = "<group>"; };
 		6EF661781A773A7600DA5177 /* Streak Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Streak Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF6617C1A773A7600DA5177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF6617D1A773A7600DA5177 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 				6EAEB6451B5736ED00F1905D /* KHCountView.h */,
 				6EAEB6461B5736ED00F1905D /* KHCountView.m */,
 				6E9B10DF1BCF85CE00C18C6A /* StreakProgressBar.swift */,
+				6EF3D0FA1BDB67CE00CE4C99 /* StreakCell.swift */,
 			);
 			name = "Base Views";
 			sourceTree = "<group>";
@@ -1115,6 +1118,7 @@
 				6ED9B2AE1B71B351003AAA7F /* KHStreakViewModel.m in Sources */,
 				6E25F0221AEF247700A4E76C /* KHBrowseViewController.m in Sources */,
 				6E0BE4D51AC8DEB800BF4B45 /* KHAPIService.m in Sources */,
+				6EF3D0FB1BDB67CE00CE4C99 /* StreakCell.swift in Sources */,
 				6E25F04E1AF9CD5800A4E76C /* KHStreakCellViewModel.m in Sources */,
 				6E9B10E01BCF85CE00C18C6A /* StreakProgressBar.swift in Sources */,
 				6ECCF0C91AE60C890028EC35 /* KHSettingsDelegate.m in Sources */,
