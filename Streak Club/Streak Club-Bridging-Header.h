@@ -5,3 +5,4 @@
 #import "UIColor+HexString.h"
 #import "KHStreakModel.h"
 #import "KHUserModel.h"
+#import "KHStreakCellViewModel.h"

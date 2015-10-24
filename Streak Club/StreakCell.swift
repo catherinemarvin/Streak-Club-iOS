@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+final class StreakCell: UICollectionViewCell {
+    func init(viewModel: KHStreakCellViewModel) {
+        
+    }
+}
