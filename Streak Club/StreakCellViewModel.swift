@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct StreakCellViewModel {
+// TODO: Make this into a struct when we're all Swift
+class StreakCellViewModel: NSObject {
     let title: String
     let author: String
     let duration: String
