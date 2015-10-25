@@ -9,17 +9,65 @@
 import Foundation
 
 final class StreakCell: UICollectionViewCell {
-    let titleLabel: UILabel
-    let draftLabelContainer: UIView
-    let draftLabel: UILabel
-    let authorLabel: UILabel
-    let durationLabel: UILabel
-    let divider: UIView
-    let progressView: UIProgressView
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.regularWithSize(22)
+        return label
+        }()
+    
+    private let draftLabelContainer: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(hexString: "fe8182")
+        view.layer.cornerRadius = 3
+        view.layer.masksToBounds = true
+        
+        return view
+        }()
+    
+    private let draftLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldWithSize(14)
+        label.text = NSLocalizedString("Draft", comment: "Label indicating that the current streak is an unpublished draft").uppercaseStringWithLocale(NSLocale.currentLocale())
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = NSTextAlignment.Center
+        label.layer.cornerRadius = 4
+        label.layer.masksToBounds = true
+        label.setContentHuggingPriority(UILayoutPriorityDefaultHigh, forAxis: UILayoutConstraintAxis.Horizontal)
+        
+        return label;
+    }()
+    
+    private let authorLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.regularWithSize(16)
+        return label
+    }()
+    
+    private let durationLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.regularWithSize(14)
+        return label
+    }()
+    
+    private let divider: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(hexString: "dadada")
+        return view
+    }()
+    
+    private let progressView: UIProgressView = {
+        let view = UIProgressView(progressViewStyle: UIProgressViewStyle.Default)
+        view.trackTintColor = UIColor(hexString: "dadada")
+        view.progressTintColor = UIColor(hexString: "aada80")
+        return view
+    }()
+    
+    private let submissionsView = CountView()
+    
+    private let participantsView = CountView()
     
     init(viewModel: KHStreakCellViewModel) {
-        super.init()
-        
+        super.init(frame: CGRectZero)
     }
 
     required init?(coder aDecoder: NSCoder) {
