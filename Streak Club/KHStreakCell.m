@@ -12,7 +12,6 @@
 #import "KHStreakCellViewModel.h"
 
 // View
-#import "KHCountView.h"
 
 // View Helper
 #import <Masonry.h>
@@ -34,8 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIProgressView *progressView;
 
-@property (nonatomic, strong) KHCountView *submissionsView;
-@property (nonatomic, strong) KHCountView *participantsView;
+@property (nonatomic, strong) CountView *submissionsView;
+@property (nonatomic, strong) CountView *participantsView;
 
 @end
 
@@ -128,8 +127,8 @@ NS_ASSUME_NONNULL_BEGIN
     [self.progressView setProgress:viewModel.progressPercentage animated:NO];
     self.draftLabelContainer.hidden = !viewModel.draft;
     
-    [self.participantsView setCount:viewModel.participants];
-    [self.submissionsView setCount:viewModel.submissions];
+    [self.participantsView update:viewModel.participants text:NSLocalizedString(@"Participants", nil)];
+    [self.submissionsView update:viewModel.submissions text:NSLocalizedString(@"Submissions", nil)];
 }
 
 #pragma mark - Lazy Instantiation
@@ -221,18 +220,16 @@ NS_ASSUME_NONNULL_BEGIN
     return _progressView;
 }
 
-- (KHCountView *)submissionsView {
+- (CountView *)submissionsView {
     if (!_submissionsView) {
-        _submissionsView = [[KHCountView alloc] init];
-        [_submissionsView setText:NSLocalizedString(@"Submissions", @"Example: {5} submissions")];
+        _submissionsView = [[CountView alloc] init];
     }
     return _submissionsView;
 }
 
-- (KHCountView *)participantsView {
+- (CountView *)participantsView {
     if (!_participantsView) {
-        _participantsView = [[KHCountView alloc] init];
-        [_participantsView setText:NSLocalizedString(@"Participants", @"Ex: {5} participants")];
+        _participantsView = [[CountView alloc] init];
     }
     return _participantsView;
 }

@@ -56,7 +56,6 @@
 		6E901C5A1B3D0326001F14A5 /* KHHomeStreakHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E901C591B3D0326001F14A5 /* KHHomeStreakHeaderView.m */; };
 		6E98754C1A7A1C860042B3DD /* KHSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */; };
 		6E9B10E01BCF85CE00C18C6A /* StreakProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9B10DF1BCF85CE00C18C6A /* StreakProgressBar.swift */; settings = {ASSET_TAGS = (); }; };
-		6EAEB6471B5736ED00F1905D /* KHCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAEB6461B5736ED00F1905D /* KHCountView.m */; };
 		6EBDE15A1B75EA8800A5230B /* KHStreakModuleSelectorViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDE1591B75EA8800A5230B /* KHStreakModuleSelectorViewModel.m */; };
 		6EBDE15D1B75EA9700A5230B /* KHStreakModuleSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDE15C1B75EA9700A5230B /* KHStreakModuleSelectorView.m */; };
 		6EBDE1601B79AE6B00A5230B /* KHStreakModuleSelectorDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBDE15F1B79AE6B00A5230B /* KHStreakModuleSelectorDataSource.m */; };
@@ -199,8 +198,6 @@
 		6E98754A1A7A1C860042B3DD /* KHSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSplashScreenViewController.h; sourceTree = "<group>"; };
 		6E98754B1A7A1C860042B3DD /* KHSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSplashScreenViewController.m; sourceTree = "<group>"; };
 		6E9B10DF1BCF85CE00C18C6A /* StreakProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakProgressBar.swift; sourceTree = "<group>"; };
-		6EAEB6451B5736ED00F1905D /* KHCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHCountView.h; sourceTree = "<group>"; };
-		6EAEB6461B5736ED00F1905D /* KHCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHCountView.m; sourceTree = "<group>"; };
 		6EBDE1581B75EA8800A5230B /* KHStreakModuleSelectorViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakModuleSelectorViewModel.h; sourceTree = "<group>"; };
 		6EBDE1591B75EA8800A5230B /* KHStreakModuleSelectorViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHStreakModuleSelectorViewModel.m; sourceTree = "<group>"; };
 		6EBDE15B1B75EA9700A5230B /* KHStreakModuleSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHStreakModuleSelectorView.h; sourceTree = "<group>"; };
@@ -625,8 +622,6 @@
 				6E25F0461AF3658B00A4E76C /* KHStreakCell.m */,
 				6E25F0481AF5807400A4E76C /* KHStreakProgressBar.h */,
 				6E25F0491AF5807400A4E76C /* KHStreakProgressBar.m */,
-				6EAEB6451B5736ED00F1905D /* KHCountView.h */,
-				6EAEB6461B5736ED00F1905D /* KHCountView.m */,
 				6E9B10DF1BCF85CE00C18C6A /* StreakProgressBar.swift */,
 				6EF3D0FA1BDB67CE00CE4C99 /* StreakCell.swift */,
 				6EF3D0FC1BDB6BCB00CE4C99 /* CountView.swift */,
@@ -1095,7 +1090,6 @@
 				6E5E60EA1AD5158F00669A0D /* KHHomeScreenService.m in Sources */,
 				6E25F04A1AF5807400A4E76C /* KHStreakProgressBar.m in Sources */,
 				6E5E60E31AD3791A00669A0D /* KHHomeViewController.m in Sources */,
-				6EAEB6471B5736ED00F1905D /* KHCountView.m in Sources */,
 				6E0BE4E91AC92C2000BF4B45 /* KHLoginManager.m in Sources */,
 				6E25F0441AF342F100A4E76C /* KHHomeStreaksGroup.m in Sources */,
 				6E5154341B4F55A100FFA7D7 /* KHStreakService.m in Sources */,
