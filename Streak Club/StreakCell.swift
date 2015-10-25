@@ -9,7 +9,20 @@
 import Foundation
 
 final class StreakCell: UICollectionViewCell {
-    func init(viewModel: KHStreakCellViewModel) {
+    let titleLabel: UILabel
+    let draftLabelContainer: UIView
+    let draftLabel: UILabel
+    let authorLabel: UILabel
+    let durationLabel: UILabel
+    let divider: UIView
+    let progressView: UIProgressView
+    
+    init(viewModel: KHStreakCellViewModel) {
+        super.init()
         
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
