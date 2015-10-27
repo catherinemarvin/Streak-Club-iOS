@@ -13,7 +13,7 @@ import SnapKit
 Displays an interface like "5 views", with the 5 above a centered "views"
 */
 final class CountView: UIView {
-    let countLabel: UILabel = {
+    private let countLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = NSTextAlignment.Center
         label.font = UIFont.regularWithSize(18)
@@ -21,7 +21,7 @@ final class CountView: UIView {
         return label
     }()
     
-    let textLabel: UILabel = {
+    private let textLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = NSTextAlignment.Center
         label.font = UIFont.regularWithSize(18)
