@@ -145,4 +145,15 @@ final class StreakCell: UICollectionViewCell {
             make.width.equalTo(participantsView)
         }
     }
+    
+    func configureWithViewModel(viewModel: StreakCellViewModel) {
+        titleLabel.text = viewModel.title
+        authorLabel.text = viewModel.author
+        durationLabel.text = viewModel.duration
+        progressView.setProgress(viewModel.progressPercentage, animated: false)
+        draftLabelContainer.hidden = !viewModel.draft
+        
+        participantsView.update(viewModel.participants, text: NSLocalizedString("Participants", comment: "As in, 5 participants"))
+        submissionsView.update(viewModel.submissions, text: NSLocalizedString("Submissions", comment: "As in, 5 submissions"))
+    }
 }
